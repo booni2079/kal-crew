@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<title>MEAL SURVEY EDIT - CREWNET</title>
+		<link rel="stylesheet" href="../assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/content.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+		<script type="text/javascript" src="../assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../assets/script/common.js"></script>
+	</head>
+	<body>
+		<div id="skipNav"><a href="#container">본문내용 바로가기</a></div>
+		<div id="gnb">
+			<div class="gnb-width">
+				<h1>
+					<a href="../main.html" class="logo">CREWNET</a> <!-- 링크 메인페이지로 연결 -->
+					<span>Seoul (KST) 120.5.8 11:28:32</span>
+				</h1>
+				<a href="#none" class="btn-menu" title="모바일/태블릿 메뉴 버튼">메뉴</a>
+				<ul class="nav">
+					<li><a href="#none">FLT DUTY</a></li>
+					<li><a href="#none">BULLETIN</a></li>
+					<li><a href="#none">REPORT</a></li>
+					<li><a href="#none">REQUEST</a></li>
+					<li><a href="#none">OPEN PLAZA</a></li>
+				</ul>
+				<div class="myinfo">
+					<button class="search">검색</button>
+					<a href="#none" class="user">my info</a>
+					<p>안녕하세요! <strong>홍길동님</strong> <br>오늘도 화이팅 :)</p>
+					<div class="tooltip-menu">
+						<p class="txt">안녕하세요! <strong class="accent2">홍길동</strong>님<br>오늘도 화이팅:)</p>
+						<ul>
+							<li><a href="#none" class="info">MY INFO</a></li>
+							<li><a href="#none" class="logout">로그아웃</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="search-wrap">
+				<div class="search-area">
+					<select title="통합검색">
+						<option value="통합검색">통합검색</option>
+						<option value="검색조건1">검색조건1</option>
+						<option value="검색조건2">검색조건2</option>
+					</select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button>검색</button>
+				</div>
+			</div>
+		
+			<button class="menu-close">닫기</button>
+		</div>
+		<!-- //gnb -->
+		
+		<div class="menu-full">
+			<p class="logo"><a href="../main.html">CREWNET</a></p> <!-- 링크 메인페이지로 연결 -->
+			<ul class="depth1">
+				<li>
+					<a href="#none">FLT DUTY</a>
+					<ul class="depth2">
+						<li><a href="#none">MY SKD</a></li>
+						<li><a href="#none">DAY-OFF CHECK</a></li>
+						<li><a href="#none">SKD Q&amp;A</a></li>
+						<li><a href="#none">BRIEFING SHEET</a></li>
+						<li><a href="#none">DUTY ASSIGNMENT</a></li>
+						<li><a href="#none">MY STAFF SKD</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">BULLETIN</a>
+					<ul class="depth2">
+						<li><a href="#none">SAFET</a></li>
+						<li><a href="#none">SERVICE</a></li>
+						<li><a href="#none">SALES</a></li>
+						<li><a href="#none">TRAINING</a></li>
+						<li><a href="#none">NOTICE</a></li>
+						<li><a href="#none">DP NOTICE</a></li>
+						<li><a href="#none">R/S NOTICE</a></li>
+						<li><a href="#none">Voice of Customer</a></li>
+						<li><a href="#none">인사발령</a></li>
+						<li><a href="#none">FOCAL POINT (중점강조)</a></li>
+						<li><a href="#none">최근 주요 지시 공지</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REPORT</a>
+					<ul class="depth2">
+						<li><a href="#none">REPORT</a></li>
+						<li><a href="#none">SAFENET</a></li>
+						<li><a href="#none">MEAL SURVEY</a></li>
+						<li><a href="#none">EVALUATION</a></li>
+						<li><a href="#none">CHECK LIST</a></li>
+						<li><a href="#none">Duty-Free declaration</a></li>
+						<li><a href="#none">기판 과부족 조회</a></li>
+						<li><a href="#none">고충상담</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REQUEST</a>
+					<ul class="depth2">
+						<li><a href="#none">SKD CHANGE</a></li>
+						<li><a href="#none">VACATION REQUEST</a></li>
+						<li><a href="#none">EDUCATION REQUEST</a></li>
+						<li><a href="#none">SKD SWAP</a></li>
+						<li><a href="#none">지급신청</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">OPEN PLAZA</a>
+					<ul class="depth2">
+						<li><a href="#none">BOARD</a></li>
+						<li><a href="#none">R/S BOARD</a></li>
+						<li><a href="#none">MEMBERS' EVENT</a></li>
+						<li><a href="#none">HEALTH PLUS</a></li>
+						<li><a href="#none">FELA MARKET</a></li>
+						<li><a href="#none">승우회/고니회</a></li>
+						<li><a href="#none">Q&amp;A</a></li>
+						<li><a href="#none">COOK방(F&amp;B) CAFE</a></li>
+					</ul>
+				</li>
+			</ul>
+			<button class="btn-close">닫기</button>
+		</div>
+		<!-- //menu-full -->
+
+		<div class="visual title">
+			<h2>MEAL SURVEY</h2>
+			<button class="btn-print">print</button>
+		</div>
+		<!-- //visual -->
+
+		<div id="container">
+			<div class="content-wrap">
+				<ul class="box-list col3">
+					<li>
+						<div>
+							<strong>Flight NO</strong>
+							<p>
+								<span>KE</span>
+								<strong>0159</strong>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>DEP STN</strong>
+							<p>
+								<span>ICN - HGH</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>Flight Date</strong>
+							<p>
+								<span>2020.02.03</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>Writer</strong>
+							<p>
+								<span>최보미 (1655032)</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>date</strong>
+							<p>
+								<span>2020.06.21 06:40</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>Duty Purser</strong>
+							<p>
+								<span>객실승무2급 이정민(9357810) 객실승무2급 이정민(9357810)</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+				<!-- //box-list -->
+
+				<p class="caption"><span class="accent">탑재량 정보는 입력 불필요합니다.</span> (자동 입력되며, 표기 되지 않아도 시스템에서 사후 처리예정)</p>
+
+				<h4 class="lv4">FR CLASS</h4>
+				<div class="tab-wrap meal-tab write"> <!-- class="write" -->
+					<ul class="tab-menu">
+						<li rel="tab1"><a href="#none">1st MEAL</a></li>
+						<li rel="tab2"><a href="#none">2nd MEAL</a></li>
+					</ul>					
+					<!--// tab-menu -->
+				
+					<div class="tab-container">
+						<div id="tab1" class="tab-cont">
+							<p class="line-btn">
+								<button class="del">-</button>
+								<button class="add">+</button>
+							</p>
+							<ul class="meal-list">
+								<li>MENU #1</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #2</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #3</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #4</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<div class="remark">
+								<span class="label">PR Remark</span>
+								<textarea class="remark-text autosize" placeholder="각 메뉴별 승객 Comment등 특이사항 작성"></textarea>
+							</div>
+						</div>
+						<!-- //cont1 -->
+
+						<div id="tab2" class="tab-cont">
+							<p class="line-btn">
+								<button class="del">-</button>
+								<button class="add">+</button>
+							</p>
+							<ul class="meal-list">
+								<li>MENU #1</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #2</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #3</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #4</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<div class="remark">
+								<span class="label">PR Remark</span>
+								<textarea class="remark-text autosize" placeholder="각 메뉴별 승객 Comment등 특이사항 작성"></textarea>
+							</div>
+						</div>
+						<!-- //cont2 -->
+					</div>
+					<!--// tab-container -->
+				</div>
+				<!-- //tab-wrap -->
+				<p class="desc2">※주문량 : 고객이 최초 주문했던 수량으로 실제로 고객에게 제공된 수량은 아님.</p>
+
+				<h4 class="lv4">PR CLASS</h4>
+				<div class="tab-wrap meal-tab write"> <!-- class="write" -->
+					<ul class="tab-menu">
+						<li rel="tab3"><a href="#none">1st MEAL</a></li>
+						<li rel="tab4"><a href="#none">2nd MEAL</a></li>
+					</ul>					
+					<!--// tab-menu -->
+				
+					<div class="tab-container">
+						<div id="tab3" class="tab-cont">
+							<p class="line-btn">
+								<button class="del">-</button>
+								<button class="add">+</button>
+							</p>
+							<ul class="meal-list">
+								<li>MENU #1</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #2</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #3</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+							<ul class="meal-list">
+								<li>MENU #4</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>DESSERT #1</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>9</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<div class="remark">
+								<span class="label">PR Remark</span>
+								<textarea class="remark-text autosize" placeholder="각 메뉴별 승객 Comment등 특이사항 작성"></textarea>
+							</div>
+						</div>
+						<!-- //cont1 -->
+
+						<div id="tab4" class="tab-cont">
+							<p class="line-btn">
+								<button class="del">-</button>
+								<button class="add">+</button>
+							</p>
+							<ul class="meal-list">
+								<li>MENU #1</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #2</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #3</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+							<ul class="meal-list">
+								<li>MENU #4</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>DESSERT #1</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>9</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<div class="remark">
+								<span class="label">PR Remark</span>
+								<textarea class="remark-text autosize" placeholder="각 메뉴별 승객 Comment등 특이사항 작성"></textarea>
+							</div>
+						</div>
+						<!-- //cont2 -->
+					</div>
+					<!--// tab-container -->
+				</div>
+				<!-- //tab-wrap -->
+				<p class="desc2">※주문량 : 고객이 최초 주문했던 수량으로 실제로 고객에게 제공된 수량은 아님.</p>
+
+				<h4 class="lv4">EY CLASS</h4>
+				<div class="tab-wrap meal-tab write"> <!-- class="write" -->
+					<ul class="tab-menu">
+						<li rel="tab5"><a href="#none">1st MEAL</a></li>
+						<li rel="tab6"><a href="#none">2nd MEAL</a></li>
+					</ul>					
+					<!--// tab-menu -->
+				
+					<div class="tab-container">
+						<div id="tab5" class="tab-cont">
+							<p class="line-btn">
+								<button class="del">-</button>
+								<button class="add">+</button>
+							</p>
+							<ul class="meal-list">
+								<li>MENU #1</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #2</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<div class="remark">
+								<span class="label">PR Remark</span>
+								<textarea class="remark-text autosize" placeholder="각 메뉴별 승객 Comment등 특이사항 작성"></textarea>
+							</div>
+						</div>
+						<!-- //cont1 -->
+
+						<div id="tab6" class="tab-cont">
+							<p class="line-btn">
+								<button class="del">-</button>
+								<button class="add">+</button>
+							</p>
+							<ul class="meal-list">
+								<li>MENU #1</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<ul class="meal-list">
+								<li>MENU #2</li>
+								<li>
+									<select title="menu">
+										<option value="menu">MENU</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</li>
+								<li>
+									<strong>탑재량</strong>
+									<span>2</span>
+								</li>
+								<li>
+									<strong>주문량</strong>
+									<p class="cnt-btn">
+										<button class="minus">-</button>
+										<span>1</span>
+										<button class="plus">+</button>
+									</p>
+								</li>
+							</ul>
+
+							<div class="remark">
+								<span class="label">PR Remark</span>
+								<textarea class="remark-text autosize" placeholder="각 메뉴별 승객 Comment등 특이사항 작성"></textarea>
+							</div>
+						</div>
+						<!-- //cont2 -->
+					</div>
+					<!--// tab-container -->
+				</div>
+				<!-- //tab-wrap -->
+				<p class="desc2">※주문량 : 고객이 최초 주문했던 수량으로 실제로 고객에게 제공된 수량은 아님.</p>
+
+				<p class="btn-wrap double">
+					<a href="#none" class="btn border">CANCEL</a>
+					<a href="#none" class="btn blue">SAVE</a>
+				</p>
+			</div>
+			<!-- //content-wrap -->
+		</div>
+		<!-- //container -->
+
+		<div id="footer">
+			<div class="foot-area">
+				<select title="LINK" class="link" onchange="window.open(value,'_blank')">
+					<option value="LINK">LINK</option>
+					<option value="HANWAY">HANWAY</option>
+					<option value="CYBER CAMPUS">CYBER CAMPUS</option>
+					<option value="SKY SAFETY21">SKY SAFETY21</option>
+					<option value="SAFENET">SAFENET</option>
+					<option value="CYBER SKYSHOP">CYBER SKYSHOP</option>
+					<option value="MMS QRS">MMS QRS</option>
+					<option value="KALMAN">KALMAN</option>
+					<option value="SKY NEWS">SKY NEWS</option>
+					<option value="E-CATERING">E-CATERING</option>
+				</select>
+				<ul>
+					<li><a href="#none">HANWAY</a></li>
+					<li><a href="#none">CYBER CAMPUS</a></li>
+					<li><a href="#none">SKY SAFETY21</a></li>
+					<li><a href="#none">SAFENET</a></li>
+					<li><a href="#none">CYBER SKYSHOP</a></li>
+					<li><a href="#none">MMS QRS</a></li>
+					<li><a href="#none">KALMAN</a></li>
+					<li><a href="#none">SKY NEWS</a></li>
+					<li><a href="#none">E-CATERING</a></li>
+				</ul>
+				<select title="자주쓰는항목" class="bookmark" onchange="window.open(value,'_blank')">
+					<option value="자주쓰는항목">자주쓰는항목</option>
+					<option value="http://www.naver.com">네이버</option>
+				</select>
+				<p class="terms">
+					<a href="#none">OFFICE INFO</a><span>|</span>
+					<a href="#none">CONTACT US</a><span>|</span>
+					<a href="#none">시스템이용약관</a>
+				</p>
+				<p class="copy">&copy; 2020 Korean Air. Crew Net All rights reserved.</p>
+			</div>
+		</div>
+		<!-- //footer -->
+
+		<button class="btn-top">top</button>
+
+		<div class="dimmed"></div>
+	</body>
+</html>

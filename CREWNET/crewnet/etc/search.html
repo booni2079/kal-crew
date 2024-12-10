@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<title>통합검색 - CREWNET</title>
+		<link rel="stylesheet" href="../assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/content.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+		<script type="text/javascript" src="../assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../assets/script/common.js"></script>
+	</head>
+	<body>
+		<div id="skipNav"><a href="#container">본문내용 바로가기</a></div>
+		<div id="gnb">
+			<div class="gnb-width">
+				<h1>
+					<a href="../main.html" class="logo">CREWNET</a> <!-- 링크 메인페이지로 연결 -->
+					<span>Seoul (KST) 120.5.8 11:28:32</span>
+				</h1>
+				<a href="#none" class="btn-menu" title="모바일/태블릿 메뉴 버튼">메뉴</a>
+				<ul class="nav">
+					<li><a href="#none">FLT DUTY</a></li>
+					<li><a href="#none">BULLETIN</a></li>
+					<li><a href="#none">REPORT</a></li>
+					<li><a href="#none">REQUEST</a></li>
+					<li><a href="#none">OPEN PLAZA</a></li>
+				</ul>
+				<div class="myinfo">
+					<button class="search">검색</button>
+					<a href="#none" class="user">my info</a>
+					<p>안녕하세요! <strong>홍길동님</strong> <br>오늘도 화이팅 :)</p>
+					<div class="tooltip-menu">
+						<p class="txt">안녕하세요! <strong class="accent2">홍길동</strong>님<br>오늘도 화이팅:)</p>
+						<ul>
+							<li><a href="#none" class="info">MY INFO</a></li>
+							<li><a href="#none" class="logout">로그아웃</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="search-wrap">
+				<div class="search-area">
+					<select title="통합검색">
+						<option value="통합검색">통합검색</option>
+						<option value="검색조건1">검색조건1</option>
+						<option value="검색조건2">검색조건2</option>
+					</select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button>검색</button>
+				</div>
+			</div>
+		
+			<button class="menu-close">닫기</button>
+		</div>
+		<!-- //gnb -->
+		
+		<div class="menu-full">
+			<p class="logo"><a href="../main.html">CREWNET</a></p> <!-- 링크 메인페이지로 연결 -->
+			<ul class="depth1">
+				<li>
+					<a href="#none">FLT DUTY</a>
+					<ul class="depth2">
+						<li><a href="#none">MY SKD</a></li>
+						<li><a href="#none">DAY-OFF CHECK</a></li>
+						<li><a href="#none">SKD Q&amp;A</a></li>
+						<li><a href="#none">BRIEFING SHEET</a></li>
+						<li><a href="#none">DUTY ASSIGNMENT</a></li>
+						<li><a href="#none">MY STAFF SKD</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">BULLETIN</a>
+					<ul class="depth2">
+						<li><a href="#none">SAFET</a></li>
+						<li><a href="#none">SERVICE</a></li>
+						<li><a href="#none">SALES</a></li>
+						<li><a href="#none">TRAINING</a></li>
+						<li><a href="#none">NOTICE</a></li>
+						<li><a href="#none">DP NOTICE</a></li>
+						<li><a href="#none">R/S NOTICE</a></li>
+						<li><a href="#none">Voice of Customer</a></li>
+						<li><a href="#none">인사발령</a></li>
+						<li><a href="#none">FOCAL POINT (중점강조)</a></li>
+						<li><a href="#none">최근 주요 지시 공지</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REPORT</a>
+					<ul class="depth2">
+						<li><a href="#none">REPORT</a></li>
+						<li><a href="#none">SAFENET</a></li>
+						<li><a href="#none">MEAL SURVEY</a></li>
+						<li><a href="#none">EVALUATION</a></li>
+						<li><a href="#none">CHECK LIST</a></li>
+						<li><a href="#none">Duty-Free declaration</a></li>
+						<li><a href="#none">기판 과부족 조회</a></li>
+						<li><a href="#none">고충상담</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REQUEST</a>
+					<ul class="depth2">
+						<li><a href="#none">SKD CHANGE</a></li>
+						<li><a href="#none">VACATION REQUEST</a></li>
+						<li><a href="#none">EDUCATION REQUEST</a></li>
+						<li><a href="#none">SKD SWAP</a></li>
+						<li><a href="#none">지급신청</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">OPEN PLAZA</a>
+					<ul class="depth2">
+						<li><a href="#none">BOARD</a></li>
+						<li><a href="#none">R/S BOARD</a></li>
+						<li><a href="#none">MEMBERS' EVENT</a></li>
+						<li><a href="#none">HEALTH PLUS</a></li>
+						<li><a href="#none">FELA MARKET</a></li>
+						<li><a href="#none">승우회/고니회</a></li>
+						<li><a href="#none">Q&amp;A</a></li>
+						<li><a href="#none">COOK방(F&amp;B) CAFE</a></li>
+					</ul>
+				</li>
+			</ul>
+			<button class="btn-close">닫기</button>
+		</div>
+		<!-- //menu-full -->
+
+		<div class="visual title">
+			<h2>통합검색</h2>
+			<button class="btn-print">print</button>
+		</div>
+		<!-- //visual -->
+
+		<div id="container">
+			<div class="page-search">
+				<p class="search-set">
+					<select title="검색카테고리 선택">
+						<option value="">통합검색</option>
+					</select>
+					<input type="text">
+					<button>검색</button>
+				</p>
+				<div class="my-search">
+					<p>나의 검색어</p>
+					<ul>
+						<li>
+							<a href="#none">코로나</a>
+							<p>09.07 <button>삭제</button></p>
+						</li>
+						<li>
+							<a href="#none">휴업</a>
+							<p>09.07 <button>삭제</button></p>
+						</li>
+					</ul>
+					<button class="close">닫기</button>
+				</div>
+				<ul class="search-option">
+					<li><input type="checkbox" id="synonym"><label for="synonym">동의어</label></li>
+					<li><input type="checkbox" id="rechk"><label for="rechk">결과 내 재검색</label></li>
+					<li><input type="checkbox" id="detailchk"><label for="detailchk">상세검색</label></li>
+				</ul>
+				<!-- 201221 상세검색 추가 -->
+				<div class="detail-search">
+					<p>상세검색</p>
+					<ul>
+						<li>
+							<span class="label">검색어</span>
+							<p class="chk-wrap">
+								<input type="checkbox" id="d1"><label for="d1">전체</label>
+								<input type="checkbox" id="d2"><label for="d2">제목</label>
+								<input type="checkbox" id="d3"><label for="d3">내용</label>
+								<input type="checkbox" id="d4"><label for="d4">첨부파일</label>
+							</p>
+						</li>
+						<li>
+							<span class="label">기간</span>
+							<input type="text" class="calendar"><span class="unit">~</span><input type="text" class="calendar">
+						</li>
+						<li>
+							<p class="half">
+								<label for="name">작성자</label>
+								<input type="text" id="name" placeholder="이름">
+							</p>
+							<p class="half">
+								<label for="team">작성부서</label>
+								<input type="text" id="team" placeholder="부서명">
+							</p>
+						</li>
+					</ul>
+					<button class="btn txt">SEARCH</button>
+					<button class="close">닫기</button>
+				</div>
+				<!-- //201221 상세검색 추가 -->
+			</div>
+			<!-- //page-search -->
+			<div class="search-keyword">
+				<strong>인기검색어</strong>
+				<ul>
+					<li><a href="#none">코로나</a></li>
+					<li><a href="#none">예방</a></li>
+					<li><a href="#none">공지사항</a></li>
+					<li><a href="#none">도착편</a></li>
+					<li><a href="#none">휴업</a></li>
+				</ul>
+			</div>
+
+			<div class="content-wrap">
+				<p class="search-tit"><strong>코로나</strong>에 대한 검색결과 4건</p>
+				<div class="tab-wrap full-tab col6">
+					<ul class="tab-menu search-menu">
+						<li rel="tab1"><a href="#none">통합검색(4)</a></li>
+						<li rel="tab2"><a href="#none">FLT DUTY(0)</a></li>
+						<li rel="tab3"><a href="#none">BULLETIN(4)</a></li>
+						<li rel="tab4"><a href="#none">REPORT(0)</a></li>
+						<li rel="tab5"><a href="#none">OPEN PLAZA(0)</a></li>
+						<li rel="tab6"><a href="#none" class="cloud">Cloud Search</a></li>
+					</ul>					
+					<!--// tab-menu -->
+				
+					<div class="tab-container search-cont"> <!-- class="search-cont" -->
+						<div id="tab1" class="tab-cont" style="display: none;">
+							<p class="sort">
+								<button class="on">정확도순</button>
+								<button>등록일순</button>
+								<button>수정일순</button>
+								<button>제목순</button>
+							</p>
+							<!--// p.sort pc/tablet에서만 노출 -->
+
+							<div class="sort">
+								<select title="정렬선택">
+									<option value="정확도순">정확도순</option>
+									<option value="등록일순">등록일순</option>
+									<option value="수정일순">수정일순</option>
+									<option value="제목순">제목순</option>
+								</select>
+							</div>
+							<!--// p.sort mobile에서만 노출 -->
+
+							<div class="tbl-both">
+								<div class="left">
+									<h4 class="tit">FLT DUTY</h4>
+									<p class="result-cnt">( 총 <strong>0</strong> 건 )</p>
+								</div>
+								<p class="right">
+									<a href="#none" class="more">더보기</a>
+								</p>
+							</div>
+							<!-- //tbl-both -->
+
+							<div class="tbl-both">
+								<div class="left">
+									<h4 class="tit">BULLETIN</h4>
+									<p class="result-cnt">( 총 <strong>4</strong> 건 )</p>
+								</div>
+								<p class="right">
+									<a href="#none" class="more">더보기</a>
+								</p>
+							</div>
+							<!-- //tbl-both -->
+							<div class="result-summary">
+								<div class="result-cont">
+									<p class="subject"><a href="#none">객실승무원<span class="accent2">코로나</span>휴업 절차 안내 객실승무원 코로나 휴업 절차 안내 객실 승무원 코로나 객실승무원 코로나 휴업 절차 안내 객실 승무원 코로나 객실승무원 코로나 휴업 절차 안내 객실 승무원 코로나</a></p>
+									<p class="cont-info">
+										<span>이창희</span>
+										<span>객실지원팀</span>
+										<span>2019.12.30</span>
+										<span class="edit">수정일 : 2020.0416</span>
+									</p>
+									<p class="cont-txt">객실승무원 휴업 절차 및 근무 인원 선정 안내 1. 휴업 운영 기간 및 대상 가. 기간 : 2020.5월 1일 ~ 10월 31일(1개월 단위 총 6개월 간) 나. 대상 : 휴업월 기준 비행근무 가능 객실승무원 2. 근무/휴업 인원 선정 절차 가능. 매월 영업 소요에 따라 승무 인력 규모 산정 나. 초도 근무 개시 라인팀 추첨 국제승원팀,...</p>
+									<ul class="file">
+										<li><a href="#none">1.휴업 시행 관련 (전사) FAQ.pdf</a></li>
+										<li><a href="#none">2.객실승무직 추가 FAQ.pd</a></li>
+									</ul>
+									<p class="depth">BULLETIN<span>NOTICE</span></p>
+								</div>
+								<!-- //result-cont -->
+
+								<div class="result-cont">
+									<p class="subject">'<a href="#none"><span class="accent2">코로나</span>19' 예방 위한 브리핑 장소 한시적 변경</a></p>
+									<p class="cont-info">
+										<span>우승목</span>
+										<span>2019.12.30</span>
+										<span class="edit">수정일 : 2020.0416</span>
+									</p>
+									<p class="cont-txt">객실승무원 휴업 절차 및 근무 인원 선정 안내 1. 휴업 운영 기간 및 대상 가. 기간 : 2020.5월 1일 ~ 10월 31일(1개월 단위 총 6개월 간) 나. 대상 : 휴업월 기준 비행근무 가능 객실승무원 2. 근무/휴업 인원 선정 절차 가능. 매월 영업 소요에 따라 승무 인력 규모 산정 나. 초도 근무 개시 라인팀 추첨 국제승원팀,...</p>
+									<p class="depth">BULLETIN<span>SAFETY</span></p>
+								</div>
+								<!-- //result-cont -->
+
+								<div class="result-cont">
+									<p class="subject"><a href="#none"><span class="accent2">코로나</span>관련 휴가문의</a></p>
+									<p class="cont-info"> 
+										<span>우승목</span>
+										<span>2019.12.30</span>
+										<span class="edit">수정일 : 2020.0416</span>
+									</p>
+									<p class="cont-txt">객실승무원 휴업 절차 및 근무 인원 선정 안내 1. 휴업 운영 기간 및 대상 가. 기간 : 2020.5월 1일 ~ 10월 31일(1개월 단위 총 6개월 간) 나. 대상 : 휴업월 기준 비행근무 가능 객실승무원 2. 근무/휴업 인원 선정 절차 가능. 매월 영업 소요에 따라 승무 인력 규모 산정 나. 초도 근무 개시 라인팀 추첨 국제승원팀,...</p>
+									<p class="depth">BULLETIN<span>SAFETY</span></p>
+								</div>
+								<!-- //result-cont -->
+							</div>
+							<!-- //result-summary -->
+
+							<div class="tbl-both">
+								<div class="left">
+									<h4 class="tit">REPORT</h4>
+									<p class="result-cnt">( 총 <strong>0</strong> 건 )</p>
+								</div>
+								<p class="right">
+									<a href="#none" class="more">더보기</a>
+								</p>
+							</div>
+							<!-- //tbl-both -->
+
+							<div class="tbl-both">
+								<div class="left">
+									<h4 class="tit">OPEN PLAZA</h4>
+									<p class="result-cnt">( 총 <strong>0</strong> 건 )</p>
+								</div>
+								<p class="right">
+									<a href="#none" class="more">더보기</a>
+								</p>
+							</div>
+							<!-- //tbl-both -->
+						</div>
+						<!-- //cont1 -->
+
+						<div id="tab2" class="tab-cont" style="display: none;">
+							<p class="no-data">검색 결과가 없습니다.</p>
+						</div>
+						<!-- //cont2 -->
+
+						<div id="tab3" class="tab-cont" style="display: none;">
+							<div class="search-category">
+								<p>CATEGODY</p>
+								<ul>
+									<li><input type="checkbox" id="all"><label for="all">전체체크</label></li>
+									<li><input type="checkbox" id="sub1"><label for="sub1">SKD Q&amp;A <span>(5)</span></label></li>
+								</ul>
+								<button class="search">SEARCH</button>
+								<button class="close"></button>
+							</div>
+							<!-- //search-category -->
+
+							<div class="category-cont">
+								<p class="sort">
+									<button class="on">정확도순</button>
+									<button>등록일순</button>
+									<button>수정일순</button>
+									<button>제목순</button>
+								</p>
+								<!--// p.sort pc/tablet에서만 노출 -->
+
+								<div class="sort">
+								<button>필터</button> 
+								<select title="정렬선택">
+									<option value="정확도순">정확도순</option>
+									<option value="등록일순">등록일순</option>
+									<option value="수정일순">수정일순</option>
+									<option value="제목순">제목순</option>
+								</select>
+							</div>
+							<!--// p.sort mobile에서만 노출 -->
+								
+								<div class="result-summary">
+									<div class="result-cont">
+										<p class="subject"><a href="#none">객실승무원<span class="accent2">코로나</span>휴업 절차 안내</a></p>
+										<p class="cont-info">
+											<span>이창희</span>
+											<span>객실지원팀</span>
+											<span>2019.12.30</span>
+											<span class="edit">수정일 : 2020.0416</span>
+										</p>
+										<p class="cont-txt">객실승무원 휴업 절차 및 근무 인원 선정 안내 1. 휴업 운영 기간 및 대상 가. 기간 : 2020.5월 1일 ~ 10월 31일(1개월 단위 총 6개월 간) 나. 대상 : 휴업월 기준 비행근무 가능 객실승무원 2. 근무/휴업 인원 선정 절차 가능. 매월 영업 소요에 따라 승무 인력 규모 산정 나. 초도 근무 개시 라인팀 추첨 국제승원팀,...</p>
+										<ul class="file">
+											<li><a href="#none">1.휴업 시행 관련 (전사) FAQ.pdf</a></li>
+											<li><a href="#none">2.객실승무직 추가 FAQ.pd</a></li>
+										</ul>
+										<p class="depth">BULLETIN<span>NOTICE</span></p>
+									</div>
+									<!-- //result-cont -->
+
+									<div class="result-cont">
+										<p class="subject">'<a href="#none"><span class="accent2">코로나</span>19' 예방 위한 브리핑 장소 한시적 변경</a></p>
+										<p class="cont-info">
+											<span>우승목</span>
+											<span>2019.12.30</span>
+											<span class="edit">수정일 : 2020.0416</span>
+										</p>
+										<p class="cont-txt">객실승무원 휴업 절차 및 근무 인원 선정 안내 1. 휴업 운영 기간 및 대상 가. 기간 : 2020.5월 1일 ~ 10월 31일(1개월 단위 총 6개월 간) 나. 대상 : 휴업월 기준 비행근무 가능 객실승무원 2. 근무/휴업 인원 선정 절차 가능. 매월 영업 소요에 따라 승무 인력 규모 산정 나. 초도 근무 개시 라인팀 추첨 국제승원팀,...</p>
+										<p class="depth">BULLETIN<span>SAFETY</span></p>
+									</div>
+									<!-- //result-cont -->
+
+									<div class="result-cont">
+										<p class="subject"><a href="#none"><span class="accent2">코로나</span>관련 휴가문의</a></p>
+										<p class="cont-info"> 
+											<span>우승목</span>
+											<span>2019.12.30</span>
+											<span class="edit">수정일 : 2020.0416</span>
+										</p>
+										<p class="cont-txt">객실승무원 휴업 절차 및 근무 인원 선정 안내 1. 휴업 운영 기간 및 대상 가. 기간 : 2020.5월 1일 ~ 10월 31일(1개월 단위 총 6개월 간) 나. 대상 : 휴업월 기준 비행근무 가능 객실승무원 2. 근무/휴업 인원 선정 절차 가능. 매월 영업 소요에 따라 승무 인력 규모 산정 나. 초도 근무 개시 라인팀 추첨 국제승원팀,...</p>
+										<p class="depth">BULLETIN<span>SAFETY</span></p>
+									</div>
+									<!-- //result-cont -->
+								</div>
+								<!-- //result-summary -->
+
+								<div class="pagenate">
+									<a href="#none" class="btn-first">처음으로</a>
+									<a href="#none" class="btn-prev">이전페이지</a>
+									<a href="#none">1</a>
+									<a href="#none">2</a>
+									<a href="#none">3</a>
+									<a href="#none">4</a>
+									<a href="#none">5</a>
+									<a href="#none" class="on">6</a>
+									<a href="#none">7</a>
+									<a href="#none">8</a>
+									<a href="#none">9</a>
+									<a href="#none">10</a>
+									<a href="#none" class="last-page">10</a>
+									<span class="total-page">/ 200</span>
+									<a href="#none" class="btn-next">다음페이지</a>
+									<a href="#none" class="btn-last">마지막으로</a>
+								</div>
+								<!-- //pagenate -->	
+							</div>
+							<!-- //category-cont -->
+						</div>
+						<!-- //cont3 -->
+
+						<div id="tab4" class="tab-cont" style="display: none;">
+							<p class="no-data">검색 결과가 없습니다.</p>
+						</div>
+						<!-- //cont4 -->
+
+						<div id="tab5" class="tab-cont" style="display: none;">
+							<p class="no-data">검색 결과가 없습니다.</p>
+						</div>
+						<!-- //cont5 -->
+
+						<div id="tab6" class="tab-cont" style="display: none;">
+							<p class="no-data">검색 결과가 없습니다.</p>
+						</div>
+						<!-- //cont6 -->
+					</div>
+				</div>
+				<!-- //tab-container -->
+			</div>
+			<!-- //content-wrap -->
+		</div>
+		<!-- //container -->
+
+		<div id="footer">
+			<div class="foot-area">
+				<select title="LINK" class="link" onchange="window.open(value,'_blank')">
+					<option value="LINK">LINK</option>
+					<option value="HANWAY">HANWAY</option>
+					<option value="CYBER CAMPUS">CYBER CAMPUS</option>
+					<option value="SKY SAFETY21">SKY SAFETY21</option>
+					<option value="SAFENET">SAFENET</option>
+					<option value="CYBER SKYSHOP">CYBER SKYSHOP</option>
+					<option value="MMS QRS">MMS QRS</option>
+					<option value="KALMAN">KALMAN</option>
+					<option value="SKY NEWS">SKY NEWS</option>
+					<option value="E-CATERING">E-CATERING</option>
+				</select>
+				<ul>
+					<li><a href="#none">HANWAY</a></li>
+					<li><a href="#none">CYBER CAMPUS</a></li>
+					<li><a href="#none">SKY SAFETY21</a></li>
+					<li><a href="#none">SAFENET</a></li>
+					<li><a href="#none">CYBER SKYSHOP</a></li>
+					<li><a href="#none">MMS QRS</a></li>
+					<li><a href="#none">KALMAN</a></li>
+					<li><a href="#none">SKY NEWS</a></li>
+					<li><a href="#none">E-CATERING</a></li>
+				</ul>
+				<select title="자주쓰는항목" class="bookmark" onchange="window.open(value,'_blank')">
+					<option value="자주쓰는항목">자주쓰는항목</option>
+					<option value="http://www.naver.com">네이버</option>
+				</select>
+				<p class="terms">
+					<a href="#none">OFFICE INFO</a><span>|</span>
+					<a href="#none">CONTACT US</a><span>|</span>
+					<a href="#none">시스템이용약관</a>
+				</p>
+				<p class="copy">&copy; 2020 Korean Air. Crew Net All rights reserved.</p>
+			</div>
+		</div>
+		<!-- //footer -->
+
+		<button class="btn-top">top</button>
+
+		<div class="dimmed"></div>
+	</body>
+</html>

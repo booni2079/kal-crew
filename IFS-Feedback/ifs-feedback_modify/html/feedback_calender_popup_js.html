@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifs-feedback</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+
+    <!-- daterangepicker -->
+    <meta name="google-site-verification" content="nERiBNqxg1sFpetHtzwMVydsumihA9YnyytsjfzYEGI" />
+    <meta name="description" content="Javascript date range picker - lightweight, no jQuery. Date Range Picker can be attached to input element to pop up one or more calendars for selecting dates.">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://unpkg.com/lightpick@latest/css/lightpick.css"> -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/lightpick.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="gnb">
+            <div class="left">
+                <div class="logo">
+                    <a href="station.html" target="_self" class="logo__koreanair">
+                        Korean Air
+                    </a>
+                </div>
+                <p class="sub_tit">in-Flight Service Feedback System </p>
+                <ul class="menu">
+                    <li><a href="#" class="station">Station status</a></li>
+                    <li><a href="#" class="feedback -on">Feedback</a></li>
+                    <li><a href="#" class="system">System</a></li>
+                </ul>
+            </div>
+            <p class="nps"><a href="#">NPS 바로가기</a></p>
+        </div>
+        <div class="contents">
+            <div class="admin">
+                <a href="#" class="out">logout</a>
+                <a href="#" class="login">1150380</a>
+            </div>
+            <h1>Feedback</h1>
+
+            <div class="grid -search">
+                <div class="-flex -w100">
+                    <div class="forms -mR20">
+                        <label class="label" for="STN">STN</label>
+                        <select>
+                            <option value="" selected="selected">SFO</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Period">Period</label>
+                        <div class="" style="z-index: 15; position: relative;margin-top: 1rem;">
+                            <input type="text" id="demo-12" class="form-control form-control-sm" value="2022.03.08 - 2022.03.17" style="text-align: center;">
+                        </div>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Resp">Resp</label>
+                        <select>
+                            <option value="" selected="selected">----</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Reply">Reply</label>
+                        <select>
+                            <option value="" selected="selected">----</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Code">Code</label>
+                        <div class="-flex">
+                            <select class="-mR10">
+                                <option value="" selected="selected">----</option>
+                            </select>
+                            <select>
+                                <option value="" selected="selected">----</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forms -mR20 -flex_center">
+                    <label class="label" for="Key word">Key word</label>
+                    <input type="text" class="input">
+                    <a href="#" class="btn_confirm">Search</a>
+                    <p class="-btn">
+                        <a href="#" class="btn_down">Excel</a>
+                        <a href="#" class="btn_down">Interface</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid -table">
+                <div class="-list">
+                    <table>
+                        <colgroup>
+                            <col style="width: 140px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col style="width: 120px;">
+                            <col style="width: 70px;">
+                            <col style="width: 70px;">
+                            <col style="width: 100px;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="-alignL -pdL50">Seq</th>
+                                <th class="-alignL">Subject</th>
+                                <th>Occurred</th>
+                                <th>Reported</th>
+                                <th>STN</th>
+                                <th>Resp</th>
+                                <th>Reply</th>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr class="reply">
+                                <td class="-num"></td>
+                                <td class="-tit"><span><em class="_hidden">Re:</em></span>Re :기내식 이물질 (머리카락)</td>
+                                <td></td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes"></td>
+                                <td class="-no"></td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr class="reply">
+                                <td class="-num"></td>
+                                <td class="-tit"><span><em class="_hidden">Re:</em></span>Re :기내식 이물질 (머리카락)</td>
+                                <td></td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes"></td>
+                                <td class="-no"></td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="paginate">
+                <a href="#" class="prev_all"><span class="_hidden">처음으로</span></a>
+                <a href="#" class="prev_btn"><span class="_hidden">이전</span></a>
+                <a href="#" class="page -on">1</a>
+                <a href="#" class="page">2</a>
+                <a href="#" class="page">3</a>
+                <a href="#" class="page">4</a>
+                <a href="#" class="page">5</a>
+                <a href="#" class="page">6</a>
+                <a href="#" class="page">7</a>
+                <a href="#" class="page">8</a>
+                <a href="#" class="page">9</a>
+                <a href="#" class="page">10</a>
+                <a href="#" class="next_btn"><span class="_hidden">다음</span></a>
+                <a href="#" class="next_all"><span class="_hidden">맨끝으로</span></a>
+            </div>
+        </div>
+        <!-- popup :: [s] -->
+        <div class="dimmed">
+            <div class="popArea">
+            </div>
+        </div>
+        <!-- popup :: [e] -->
+    </div>
+
+    <!-- <script async src="https://buttons.github.io/buttons.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://unpkg.com/lightpick@latest/lightpick.js"></script> -->
+    <script type="text/javascript" src="../js/buttons.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/lightpick.js"></script>
+    <script type="text/javascript" src="../js/demo.js"></script>
+    <script type="text/javascript" src="../js/moment-with-locales.js"></script>
+    <script>
+        /* Korean initialisation for the jQuery calendar extension. */
+        /* Written by DaeKwon Kang (ncrash.dk@gmail.com). */
+        jQuery(function ($) {
+            $.datepicker.regional['ko'] = {
+                closeText: '닫기',
+                prevText: '이전달',
+                nextText: '다음달',
+                currentText: '오늘',
+                monthNames: ['1월(JAN)', '2월(FEB)', '3월(MAR)', '4월(APR)', '5월(MAY)', '6월(JUN)',
+                    '7월(JUL)', '8월(AUG)', '9월(SEP)', '10월(OCT)', '11월(NOV)', '12월(DEC)'],
+                monthNamesShort: ['1월(JAN)', '2월(FEB)', '3월(MAR)', '4월(APR)', '5월(MAY)', '6월(JUN)',
+                    '7월(JUL)', '8월(AUG)', '9월(SEP)', '10월(OCT)', '11월(NOV)', '12월(DEC)'],
+                dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                weekHeader: 'Wk',
+                dateFormat: 'yy-mm-dd',
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: '년'
+            };
+            $.datepicker.setDefaults($.datepicker.regional['ko']);
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('.datepicker').datepicker();
+        })
+    </script>
+
+</body>
+
+</html>

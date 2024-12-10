@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width" />
+<title>작업현황판 | crewnet</title>
+<style type="text/css">
+	* {margin:0; padding:0;}
+	html {overflow-y:scroll;}
+	body {background:#fff; min-width:1024px; color:#000; font:12px/1.4 'Malgun Gothic', Tahoma, Sans-serif;}
+	a {color:#27e; text-decoration:none;}
+	a:focus, a:hover, a:active {text-decoration:underline;}
+	.guide-header {width:100%; position:relative; background:#186686; box-shadow:0 2px 5px 0 #999; font:12px/1.5 'Malgun Gothic', Tahoma, Sans-serif;}
+	.guide-header h1 {padding:.2em; color:#f2f2f2; font-size:24px;}
+	.guide-header h1 strong {font-size:16px;}
+	.guide-header .nav {list-style:none; background:#588f47; border-top:1px solid #164577; padding:.5em .5em .4em; color:#f9f9f9; font-weight:bold; font-size:16px;}
+	.guide-header .nav li {display:inline-block; margin-right:.5em; color:#f2f2f2;}
+	.guide-header .nav li a {color:#f2f2f2;}
+	.guide-header .nav li .on {color:#fff !important; text-shadow:#333 1px 1px 2px; text-decoration:underline;}
+	.guide-header .nav li strong {font-size:120%;}
+	.guide-header .nav li:before {content:'•'; font-weight:normal; font-size:14px; margin-right:.7em;}
+	.guide-header .nav li:first-child:before {content:none !important; margin:0 !important;}
+	.guide-header .nav.nav-subtype {background:#2d5785; font-size:14px;}
+	.guide-header .nav.nav-subtype li:before {content:'|';}
+	.guide-header .navgroup {position:relative;}
+	.guide-header .nav-r {position:absolute; right:0; bottom:8px; margin-top:0; list-style:none; font-weight:bold; font-size:14px;}
+	.guide-header .nav-r li {display:inline; margin-right:0.5em;}
+	.guide-header .nav-r li:before {content:'|'; margin-right:10px; color:#f2f2f2; font-weight:normal;}
+	.guide-header .nav-r li:first-child:before {display:none;}
+	.guide-header .nav-r li a {color:#f2f2f2;}
+	.guide-header .nav-r li a:before {content:'→';}
+	.rule {background:#eeeff3; margin:0 0 2em; padding:1em; color:#4d4d4d;}
+	.rule dt {margin-bottom:.3em; font-size:13px; font-weight:bold;}
+	.rule dd {padding-left:.5em; line-height:1.8;}
+	.rule dd ul {list-style-type:square; margin-left:1.2em;}
+	.title-topsection {margin:1em .8em .3em; font-size:24px; color:#2d5785;}
+	.title-topsection:before {content:'[';}
+	.title-topsection:after {content:']';}
+	.total {margin:1em 1em .5em; padding-left:.3em; font-weight:bold; font-size:14px;}
+	.total .per {font-size:12px;}
+	.guide-body {padding-bottom:1em;}
+	.section {margin:0 1em;}
+	.section + .section {margin-bottom:1em;}
+	.section .title {margin:0; padding:.6em; background:#2d5785; color:#fff; font-weight:bold; font-size:14px; position:relative; margin-top:-1px; *zoom:1; cursor:pointer;}
+	.section .title-toggle {margin:0; padding:.6em; background:#d9dce3; position:relative; *zoom:1;}
+	.section .title-toggle .togglebtn {padding:2px 5px; margin:0; background:#2d5785; border:0; border-radius:3px; color:#fff; font:bold 12px/1.5 'Malgun Gothic', Tahoma, Sans-serif; cursor:pointer;}
+	.section .title.title-depth2 {background:#8c959d; border:0; margin-top:0; cursor:default;}
+	.section table {width:100%; border-collapse:collapse; border-spacing:0; border:0;}
+	.section table caption {display:none;}
+	.section table th, table td {padding:0.8em; border:1px solid #ccc;}
+	.section table th {color:#333; background:#eeeff3; font-size:11px; text-align:center;}
+	.section table td {text-align:left;}
+	.section table td.tit {color:#333; font-weight:bold;}
+	.section table td.file {color:#d4d4d4 !important;}
+	.section table td.date {text-align:left; font-style:italic; white-space:nowrap;}
+	.section table td.date del {display:block; color:#aaa !important;}
+	.section table td.stat {text-align:center;}
+	.section table td.desc, .section table td.note, .section table td.history {font-style:italic; color:#666;}
+	.section table td.author {text-align:center; white-space:nowrap;}
+	.section table td ul {list-style:none; margin:0; padding:0; font-style:italic;}
+	.section table td ul li {margin:2px 0;}
+	.section table tr.tr-bgtype2 td {background:#f4f4f4; color:#666;}
+	.section table tr:hover td {background:#eeeff3;}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+	jQuery.fn.stat = function (options) {
+		var settings = jQuery.extend({
+				total: '.total',
+				toggleBtn: '.togglebtn',
+				title: 'h2.title',
+				content: 'div.content',
+				files: 'tbody tr:not(.tr-bgtype2)',
+				stat: 'td.stat',
+				completed: '●',
+				index: 0,
+				openAll: true
+			}, options),
+			all_sections = this;
+
+		return this.each(function () {
+			var self = this,
+				$self = $(self),
+				title_text = [],
+				completed = 0;
+			self.section_title = $(settings.title, $self);
+			self.content = $(settings.content, $self);
+			self.files = $(settings.files, $self);
+			self.files.each(function () {
+				var stat = $(settings.stat, this);
+				stat.each(function () {
+					var text = $(this).text();
+					if (text && (text === settings.completed)) {
+						completed++;
+					}
+				});
+			});
+			title_text = [self.section_title.text(), ' (',completed,'/',self.files.length,')'];
+			self.section_title.text(title_text.join(''));
+			self.section_title.click(function() {
+				self.content.slideToggle('fast');
+			});
+			$(settings.toggleBtn).text('전체닫기').toggle(function() {
+				$(settings.toggleBtn).text('전체열기');
+				$(settings.content).hide();
+			}, function() {
+				$(settings.toggleBtn).text('전체닫기');
+				$(settings.content).show();
+			});
+
+			//total
+			var completedAll = 0;
+			$(settings.stat).each(function () {
+				var text = $(this).text();
+				if (text && (text == settings.completed)) {
+					completedAll++;
+				}
+			});
+			$(settings.total).html('Total : '+completedAll+'/'+$(settings.files).length+'pages <span class="per">(진행율 '+Math.round(completedAll/$(settings.files).length*100)+'%)</span>');
+
+		});
+	};
+
+	$(document).ready(function() {
+		$('div.section').stat();
+	});
+</script>
+</head>
+<body>
+<div class="guide-header">
+	<h1>:: 대한항공 crewnet <strong>&gt; FILE LIST</strong></h1>
+</div>
+<dl class="rule">
+	<dt>작업현황판 작성 규칙</dt>
+	<dd>
+		<ul>
+			<li>상태표기 :  '△'(작업중대기) , '○'(부분완료) , '●'(완료) 중 알맞은 것으로 표기. <span style="text-decoration:underline;">'●'(완료) 표기부터 개발작업 가능.</span></li>
+			<li>날짜의 형식은 yyyy-mm-dd 으로 하며, HTML 파일 내용이 수정되었을 경우, 최초작성일('●'(완료)일 기준)은 남겨두고 옆에 마지막 수정일자를 표기함. (예) <del>2013-04-26</del> 2013-05-16)</li>
+			<li>'description'란은 화면에 대한 추가적인 설명, 'note'란은 작업자들 간에 서로 알 수 있는 메모(notice)를 기재함.</li>
+		</ul>
+	</dd>
+</dl>
+<div class="guide-body">
+	<p class="total"></p>
+	<div class="section">
+		<div class="title-toggle"><button type="button" class="togglebtn">전체닫기</button></div>
+	</div>
+
+	<!-- 대표 -->
+	<div class="section">
+		<h2 class="title" style="background:#39a1bc;">template</h2>
+		<div class="content">
+			<table border="1">
+				<thead>
+					<tr>
+						<th scope="col" style="width:10%;">1depth</th>
+						<th scope="col" style="width:13%;">2depth</th>
+						<th scope="col" style="width:12%;">3depth</th>
+						<th scope="col" style="width:12%;">4depth</th>
+						<th scope="col" style="width:10%;">file</th>
+						<th scope="col" style="width:4%;" title="△ :대기 / ○ :부분완료 / ● :완료">stat</th>
+						<th scope="col" style="width:8%;" title="yyyy-mm-dd">date</th>
+						<th scope="col" style="width:15%;">description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tit">[리뉴얼] 서브 공통 header/footer</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sub_renewal.html">sub_renewal.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del></del>2023-01-17</td>
+						<td class="desc">2023-01-17 ADD : 서브 공통 UI</td>
+					</tr>
+					<tr>
+						<td class="tit">[리뉴얼] 메인</td>
+						<td>비주얼 이미지 type1</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="main_renewal.html">main_renewal.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del></del>2022-12-12</td>
+						<td class="desc">2022-12-12 ADD : 리뉴얼 메인 업로드 <br>
+							2023-01-17 MOD : 폴더 구조 변경 및 좌우 콘텐츠 여백 수정, footer 디자인 수정사항 반영 등</td>
+					</tr>
+					<tr>
+						<td class="tit">[리뉴얼] 메인-비주얼 이미지 type2</td>
+						<td>비주얼 이미지 type2</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="main_renewal_visual2.html">main_renewal_visual2.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del></del>2022-12-12</td>
+						<td class="desc">2022-12-12 ADD : 리뉴얼 메인 업로드<br>
+							2023-01-17 MOD : 폴더 구조 변경 및 좌우 콘텐츠 여백 수정, footer 디자인 수정사항 반영 등</td>
+					</tr>
+					<tr>
+						<td class="tit">[리뉴얼] 메인-alert</td>
+						<td></td>
+						<td></td>
+						<td>alert popup</td>
+						<td class="file">
+							<a target="_blank" href="main_renewal_alert.html">main_renewal_alert.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del></del>2022-12-12</td>
+						<td class="desc">2022-12-12 ADD : alert<br>
+							2023-01-17 MOD : 폴더 구조 변경 및 좌우 콘텐츠 여백 수정, footer 디자인 수정사항 반영 등</td>
+					</tr>
+					<tr>
+						<td class="tit">메인</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="main.html">main.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-06-24</del><del>2020-06-25</del><del>2020-07-28</del><del>2020-07-31</del><del>2020-12-09</del><del>2021-01-22</del><del>2021-03-10</del><del>2021-04-06</del><del>2021-04-12</del><del>2021-06-14</del><del></del>2021-10-14</td>
+						<td class="desc">2020-06-25 수정 : <br>ul.quick-link &gt; li 추가<br>#container 에 class="main" 삭제<br>gnb영역수정<br>meta tag 추가<br>201209 추가<br />210122 모바일 퀵메뉴 버튼 및 영역 생성<br />GNB 메뉴 구조 변경<br />로고 변경<br />210408 메인 비주얼 교체<br />210412 메인 비주얼 교체 및 문구 삭제<br />ALL FOR CREW 항목 추가<br/>직원찾기 아이콘 추가</td>
+					</tr>
+					<tr>
+						<td class="tit">서브</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sub.html">sub.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-06-24</del><del>2020-07-28</del><del>2020-07-31</del><del>2021-03-10</del>2021-10-14<del></td>
+						<td class="desc">서브 gnb / 타이틀영역<br>gnb영역수정<br>meta tag 추가<br />GNB 메뉴 구조 변경<br />직원찾기 아이콘 추가</td>
+					</tr>
+					<tr>
+						<td class="tit">서브 (서브 내 서브메뉴)</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sub_hasmenu.html">sub_hasmenu.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-05-11</td>
+						<td class="desc">모바일 서브 내 서브메뉴 삽입</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>게시판</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="board_list.html">board_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-09</del><del>2020-07-14</del>2020-12-11</td>
+						<td class="desc">Doc ID삭제/리플의 리플영역수정</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="board_view.html">board_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-09</del>2020-07-14</td>
+						<td class="desc">watermark 적용(기울기 없음)<br>댓글 인터렉션 확인요청</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>popup</td>
+						<td class="file">
+							<a target="_blank" href="board_view_pop.html">board_view_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-02-08</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="board_write.html">board_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-09</del>2020-07-14</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>modify</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="board_modify.html">board_modify.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-09</del>2020-07-14</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>datepicker</td>
+						<td class="file">
+							<a target="_blank" href="datepicker.html">datepicker.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-09</del>2020-07-14</td>
+						<td class="desc">
+							from-to 달력예시화면<br> 디자인 반영된 css작업은 주석처리<br>
+							<a href="https://app.zeplin.io/project/5eba38770775c277e96aa0de/screen/5efd6510ef8f7d84ce736d04" target="_balnk">디자인화면</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>멀티 셀렉트 체크 박스</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="board_list_multiselect.html">board_list_multiselect.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2023-01-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>PC_form 가이드</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="box_list.html">box_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-27</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>테이블</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="table.html">table.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-01-05</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>POPUP</td>
+						<td>alert1</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="etc/alert_pop.html">etc/alert_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-14</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>alert2</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="etc/alert2_pop.html">etc/alert2_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-14</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>loading</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="etc/loading.html">etc/loading.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-15</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>통합검색</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="etc/search.html">etc/search.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-12-09</del>2020-12-21</td>
+						<td class="desc">201221 상세검색 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>에러페이지</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="etc/error.html">etc/error.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-14</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>가이드</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="http://mcrewnettst.koreanair.com/CREWNET/guide/guide.html">guide</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-01-05</td>
+						<td class="desc"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="section">
+		<h2 class="title" style="background:#39a1bc;">FLT DUTY</h2>
+		<div class="content">
+			<table border="1">
+				<thead>
+					<tr>
+						<th scope="col" style="width:10%;">1depth</th>
+						<th scope="col" style="width:13%;">2depth</th>
+						<th scope="col" style="width:12%;">3depth</th>
+						<th scope="col" style="width:12%;">4depth</th>
+						<th scope="col" style="width:10%;">file</th>
+						<th scope="col" style="width:4%;" title="△ :대기 / ○ :부분완료 / ● :완료">stat</th>
+						<th scope="col" style="width:8%;" title="yyyy-mm-dd">date</th>
+						<th scope="col" style="width:15%;">description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tit">FLT DUTY</td>
+						<td>[리뉴얼] BRIEFING SHEET 리스트</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/briefing_sheet_list_renewal.html">briefing_sheet_list_renewal.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">
+							<del>2020-09-08</del>
+						</td>
+						<td class="desc">
+							2023-01-30 ADD : 브리핑시트 리스트
+						</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>[리뉴얼] BRIEFING SHEET</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/briefing_sheet_renewal.html">briefing_sheet_renewal.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">
+							<del>2020-09-08</del>
+						</td>
+						<td class="desc">
+							2023-01-30 ADD : 브리핑시트 리스트
+						</td>
+					</tr>
+					<tr>
+						<td class="tit">FLT DUTY</td>
+						<td>BRIEFING SHEET</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/briefing_sheet.html">briefing_sheet.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">
+							<del>2020-09-08</del>
+							<del>2020-09-09</del>
+							<del>2020-10-13</del>
+							<del>2020-11-23</del>
+							<del>2020-12-14</del>
+							<del>2021-06-09</del>
+							<del>2021-8-19</del>
+							2022-01-25
+						</td>
+						<td class="desc">
+							200909 버튼 추가<br>
+							200909 스크롤 테이블 수정<br>
+							201007<br>
+							201013<br>
+							201123 수정 : scroll-wrap, tutorial 추가<br>
+							201214 컨펌버튼추가<br>
+							프린트 css 추가<br>
+							print.css, forpdf.css 수정변경<br>
+							PAX INFO영역 A/C RTN 추가
+						</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>BRIEFING SHEET doc화면</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/briefing_sheet_doc.html">briefing_sheet_doc.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">
+							2022-02-11
+						</td>
+						<td class="desc">
+							220211 briefingsheet doc 문서사이즈 제작
+						</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>검색 전</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/briefing_sheet_search.html">briefing_sheet_search.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-08</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>Warning popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/warning_pop.html">warning_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-08</del>2021-03-23</td>
+						<td class="desc"><br />팝업 스타일 변경</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>SPCL PAX DATA popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/spcl_pop.html">spcl_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-08</del>2021-04-28</td>
+						<td class="desc">모바일 팝업 내 텍스트 영역 수정</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>CHK-IN PAX DATA popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/chkin_pop.html">chkin_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-08</del>2020-09-09</td>
+						<td class="desc">200909 스크롤 테이블 수정</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>승무원 세관 규정 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/crew_pop.html">crew_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-08</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>비행준비 체크리스트(duty) popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/flt_chk_pop.html">flt_chk_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-13</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>비행준비 체크리스트(extra) popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/flt_chk_extra_pop.html">flt_chk_extra_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-13</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>비행준비 체크리스트 결과 확인 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/chk_result_pop.html">chk_result_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-13</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>PAX INFO popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/pax_info_pop.html">pax_info_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-13</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>음주측정 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/briefing_sheet_pop1.html">briefing_sheet_pop1.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-13</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>비상연락망 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/contact_pop.html">contact_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-13</td>
+						<td class="desc">2021-10-08 메일추가작업 / content.css 수정 / icon_copy.png 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>ALLERGEN INFO popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/allergen_pop.html">allergen_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-18</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>CSR(Cabin Safety Report) 보고항목 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/csr_report_pop.html">csr_report_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-01-12</td>
+						<td class="desc">210112 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>DUTY ASSIGNMENT</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/duty_list.html">duty_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-22</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/duty_write.html">duty_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-22</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>기종별 착석위치</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/seat_pop.html">seat_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-22</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>DAY OFF CHECK</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/dayoff_list.html">dayoff_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-24</del>2021-01-28<</td>
+						<td class="desc">20210112 셀렉트 박스 수정</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>DAY OFF CHECK(admin)</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/dayoff_list_admin.html">dayoff_list_admin.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-13</del><del>2020-10-16</del><del>2020-12-24</del>2021-01-28</td>
+						<td class="desc">201016 추가<br />210112 수정(인풋 클래스 변경)<br />210112 인풋 및 셀렉트 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>day off check popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/dayoff_pop.html">dayoff_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-24</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>day off check page</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/dayoff_check.html">dayoff_check.html</a>
+						</td>
+						<td class="stat">△</td>
+						<td class="date">2020-12-23</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>recipient search popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/search_list_pop.html">search_list_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-16</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>SKD Q&amp;A</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/qna_list.html">qna_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-24</del>2020-12-11</td>
+						<td class="desc">카테고리정렬/Doc ID삭제</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/qna_write.html">qna_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-24</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/qna_view.html">qna_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-24</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>MY SKD</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/myskd.html">myskd.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-11</del><del>2020-10-15</del><del>2020-10-16</del><del>2021-01-26</del><del>2021-02-22</del><del>2021-03-31</del>2021-06-09</td>
+						<td class="desc">201015 버튼추가<br />210126 색상추가, 듀티코드 표출시 세로길이 수정, 캘린더 버튼(데이트피커) 추가<br />210222 데이트피커 위치 수정 및 모바일 간격 수정<br />태블릿/모바일 영역 추가<br />프린트 css 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>조회화면</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/myskd_inquiry.html">myskd_inquiry.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-01-12</td>
+						<td class="desc">210112 추가 -  결과값이 있을때</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>조회화면 - 결과 없을때</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/myskd_inquiry_none.html">myskd_inquiry_none.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-01-12</td>
+						<td class="desc">210112 추가 - 결과값이 없을때</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>MY SKD</td>
+						<td>직원찾기 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="flt/myskd_pop.html">myskd_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"></td>
+						<td class="desc">2021-10-08직원찾기 메일추가 / content.css 추가</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="section">
+		<h2 class="title" style="background:#39a1bc;">BULLETIN</h2>
+		<div class="content">
+			<table border="1">
+				<thead>
+					<tr>
+						<th scope="col" style="width:10%;">1depth</th>
+						<th scope="col" style="width:13%;">2depth</th>
+						<th scope="col" style="width:12%;">3depth</th>
+						<th scope="col" style="width:12%;">4depth</th>
+						<th scope="col" style="width:10%;">file</th>
+						<th scope="col" style="width:4%;" title="△ :대기 / ○ :부분완료 / ● :완료">stat</th>
+						<th scope="col" style="width:8%;" title="yyyy-mm-dd">date</th>
+						<th scope="col" style="width:15%;">description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tit">BULLETIN</td>
+						<td>SAFETY</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/safety_list.html">safety_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-14</del>2020-12-11</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : service, sales, notice, R/S notice, training, focal point(중점강조), 최근주요지시사항, 인사발령<br>카테고리정렬/Doc ID삭제</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/safety_write.html">safety_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-14</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : service, sales, notice, R/S notice, training, focal point(중점강조), 최근주요지시사항, 인사발령</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>modify</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/safety_modify.html">safety_modify.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-14</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : service, sales, notice, R/S notice, training, focal point(중점강조), 최근주요지시사항, 인사발령</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/safety_view.html">safety_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-14</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : service, sales, notice, R/S notice, training, focal point(중점강조), 최근주요지시사항, 인사발령</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>VOICE OF CUSTOMER</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/voc_list.html">voc_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-14</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/voc_view.html">voc_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-14</td>
+						<td class="desc"></td>
+					</tr>					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>list (admin)</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/voc_list_admin.html">voc_list_admin.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-08-28</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view (admin)</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/voc_view_admin.html">voc_view_admin.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-08-28</del>2020-10-13</td>
+						<td class="desc">201013 추가, 201013 class추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>EDUCATION</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_list.html">edu_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-28</del>2020-09-14</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>교육코드관리자</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_code.html">edu_code.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-14</td>
+						<td class="desc">200914 버튼추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>공휴일관리 popup</td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_pop.html">edu_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-14</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>신청</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_app.html">edu_app.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-28</del>2020-09-02</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_write.html">edu_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-28</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>신청현황</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_view.html">edu_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-28</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>결과확인 list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_result_list.html">edu_result_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-28</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>결과확인 view(기내방송평가표)</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_result_view.html">edu_result_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-28</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>EDUCATION 누락 팝업</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="bulletin/edu_check_pop.html">edu_check_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-01-15</td>
+						<td class="desc">210115 추가</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="section">
+		<h2 class="title" style="background:#39a1bc;">REPORT</h2>
+		<div class="content">
+			<table border="1">
+				<thead>
+					<tr>
+						<th scope="col" style="width:10%;">1depth</th>
+						<th scope="col" style="width:13%;">2depth</th>
+						<th scope="col" style="width:12%;">3depth</th>
+						<th scope="col" style="width:12%;">4depth</th>
+						<th scope="col" style="width:10%;">file</th>
+						<th scope="col" style="width:4%;" title="△ :대기 / ○ :부분완료 / ● :완료">stat</th>
+						<th scope="col" style="width:8%;" title="yyyy-mm-dd">date</th>
+						<th scope="col" style="width:15%;">description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tit">REPORT</td>
+						<td>REPORT</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/report_list.html">report_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-01</del><del>2020-09-21</del><del>2020-11-26</del><del>2021-01-26</del>2021-03-02</td>
+						<td class="desc">200921 sesarch-box 항목 추가<br>201124 div.justify-list 삭제<br />210126 케빈,제너럴 탭 추가<br />210302 필터화면 수정</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/report_write.html">report_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-01</td>
+						<td class="desc"></td>
+					</tr>
+					<!-- <tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/report_view.html">report_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-01</del><del>2020-09-21</del>2020-09-23</td>
+						<td class="desc">200923 내용추가</td>
+					</tr> -->
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/report_view01.html">report_view01.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-01</del><del>2020-09-21</del><del>2020-09-23</del>2020-10-29</td>
+						<td class="desc">200923 내용추가<br>201029 수정(탭제거,페이지분리)</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/report_view02.html">report_view02.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-01</del><del>2020-09-21</del><del>2020-09-23</del>2020-10-29</td>
+						<td class="desc">200923 내용추가<br>201029 수정(탭제거,페이지분리)</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>이송/결재 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/report_view_pop1.html">report_view_pop1.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-01</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>추가조치 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/report_view_pop2.html">report_view_pop2.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-01</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>접수 및 등록 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/report_view_pop3.html">report_view_pop3.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-01</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>유관부서 이송 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/publish_pop.html">publish_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-09-23</del>2020-10-07</td>
+						<td class="desc">201007 이메일입력란 추가<br>201007 파일첨부영역 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>담당자/팀 의견 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/action_pop.html">action_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-23</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>종결처리 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/caseclose_pop.html">caseclose_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-09-23</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>SUGGESTION REPORT</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/sugg_list.html">sugg_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-06</del><del>2020-11-26</del>2020-12-11</td>
+						<td class="desc">201124 div.justify-list.suggestion 삭제<br>카테고리정렬</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/sugg_write.html">sugg_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-06</del>2020-11-02</td>
+						<td class="desc">201102 수정, 추가, class추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/sugg_view.html">sugg_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view(admin)</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/sugg_view_admin.html">sugg_view_admin.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>2차결재 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/sugg_view_pop1.html">sugg_view_pop1.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>접수및분류 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/sugg_view_pop2.html">sugg_view_pop2.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>전자우대할인권 발급</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/discount_list.html">discount_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-11</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/discount_write.html">discount_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-11</td>
+						<td class="desc"></td>
+					</tr>
+						<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/discount_view.html">discount_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-11</td>
+						<td class="desc"></td>
+					</tr>
+						<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view(admin)</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/discount_view_admin.html">discount_view_admin.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-11</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>접수및등록 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/discount_reg_pop.html">discount_reg_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-11</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>종결처리 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/discount_close_pop.html">discount_close_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-11</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>SAFENET</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/safenet.html">safenet.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>MEAL SURVEY</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/meal_list.html">meal_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-13</del>2020-11-26</td>
+						<td class="desc">201124 div.justify-list.meal.ta-col3 삭제</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/meal_view.html">meal_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-13</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/meal_write.html">meal_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-13</del>2020-10-30</td>
+						<td class="desc">201030 수정(+,-버튼 -> input)</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>edit</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/meal_edit.html">meal_edit.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-13</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>EVALUATION</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/eva_list.html">eva_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2020-11-26</td>
+						<td class="desc">201125 div.justify-list.eva.ta-col3 삭제</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>기내현장근무평가</td>
+						<td>write</td>
+						<td class="file">
+							<a target="_blank" href="report/eva01_write.html">eva01_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2021-01-26</td>
+						<td class="desc">210126 누락 화면 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>view</td>
+						<td class="file">
+							<a target="_blank" href="report/eva01_view.html">eva01_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2021-01-26</td>
+						<td class="desc">210126 누락 화면 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>현장실습생 평가표</td>
+						<td>write</td>
+						<td class="file">
+							<a target="_blank" href="report/eva02_write.html">eva02_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>view</td>
+						<td class="file">
+							<a target="_blank" href="report/eva02_view.html">eva02_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>QA인증평가</td>
+						<td>write</td>
+						<td class="file">
+							<a target="_blank" href="report/eva03_write.html">eva03_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>view</td>
+						<td class="file">
+							<a target="_blank" href="report/eva03_view.html">eva03_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>라인팀장 대상<br>기내현장근무 평가표</td>
+						<td>write</td>
+						<td class="file">
+							<a target="_blank" href="report/eva04_write.html">eva04_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2020-10-27</td>
+						<td class="desc">문항영역 슬라이드 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>view</td>
+						<td class="file">
+							<a target="_blank" href="report/eva04_view.html">eva04_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2020-10-27</td>
+						<td class="desc">문항영역 슬라이드 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>장거리 비행실습</td>
+						<td>write</td>
+						<td class="file">
+							<a target="_blank" href="report/eva05_write.html">eva05_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2020-10-27</td>
+						<td class="desc">문항영역 슬라이드 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>view</td>
+						<td class="file">
+							<a target="_blank" href="report/eva05_view.html">eva05_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2020-10-27</td>
+						<td class="desc">문항영역 슬라이드 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>단거리 비행실습</td>
+						<td>write</td>
+						<td class="file">
+							<a target="_blank" href="report/eva06_write.html">eva06_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2020-10-27</td>
+						<td class="desc">문항영역 슬라이드 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>view</td>
+						<td class="file">
+							<a target="_blank" href="report/eva06_view.html">eva06_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-20</del>2020-10-27</td>
+						<td class="desc">문항영역 슬라이드 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>평가자지정 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/eva_pop.html">eva_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>기판과부족</td>
+						<td>list</td>
+						<td class="file">
+							<a target="_blank" href="report/sale_list.html">sale_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-22</del>2020-11-26</td>
+						<td class="desc">201125 div.sale-wrap 삭제</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>view</td>
+						<td class="file">
+							<a target="_blank" href="report/sale_view.html">sale_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-22</del>2020-11-06</td>
+						<td class="desc">201106 버튼추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>CHECK LIST</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/chklist_list.html">chklist_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-29</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/chklist_write.html">chklist_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-29</del>2021-01-22</td>
+						<td class="desc">N/A 영역 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td>객실관리자 비행점검표</td>
+						<td class="file">
+							<a target="_blank" href="report/chklist_view01.html">chklist_view01.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-10-29</del>2021-01-22</td>
+						<td class="desc">N/A 영역 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>품질모니터링 요원 점검표</td>
+						<td class="file">
+							<a target="_blank" href="report/chklist_view02.html">chklist_view02.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-10-29</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>고충상담</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/con_list.html">con_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-11-03</del>2021-01-26</td>
+						<td class="desc"><br />고충상담 검색조건 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>list</td>
+						<td>셀렉트가 없을 때</td>
+						<td class="file">
+							<a target="_blank" href="report/con_list_noselect.html">con_list_noselect.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2021-03-19</td>
+						<td class="desc">데이트피커와 필터 영역 거리 조절</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>내용 없을 경우</td>
+						<td class="file">
+							<a target="_blank" href="report/con_list2.html">con_list2.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-03</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/con_write.html">con_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-03</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>작성 시 유의사항 popup</td>
+						<td class="file">
+							<a target="_blank" href="report/notice_pop.html">notice_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-03</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>list (admin)</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/con_list_admin.html">con_list_admin.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-03</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view (admin)</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/con_view.html">con_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-03</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>DUTY-FREE DECLARATION</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/dutyfree_list.html">dutyfree_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>사후관리list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/dutyfree_after_list.html">dutyfree_after_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>list (admin)</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/dutyfree_list_admin.html">dutyfree_list_admin.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>유의사항 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/dutyfree_pop1.html">dutyfree_pop1.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>면세신청변경 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/dutyfree_pop2.html">dutyfree_pop2.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-11-06</del>2020-11-25</td>
+						<td class="desc">201125 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>신청내용 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="report/dutyfree_pop3.html">dutyfree_pop3.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-06</td>
+						<td class="desc"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="section">
+		<h2 class="title" style="background:#39a1bc;">OPEN PLAZA</h2>
+		<div class="content">
+			<table border="1">
+				<thead>
+					<tr>
+						<th scope="col" style="width:10%;">1depth</th>
+						<th scope="col" style="width:13%;">2depth</th>
+						<th scope="col" style="width:12%;">3depth</th>
+						<th scope="col" style="width:12%;">4depth</th>
+						<th scope="col" style="width:10%;">file</th>
+						<th scope="col" style="width:4%;" title="△ :대기 / ○ :부분완료 / ● :완료">stat</th>
+						<th scope="col" style="width:8%;" title="yyyy-mm-dd">date</th>
+						<th scope="col" style="width:15%;">description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tit">OPEN PLAZA</td>
+						<td>BOARD</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/board_list.html">board_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-31</del>2020-08-18</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : R/S BOARD, HEALTH PLUS<br>200818 re-list 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/board_write.html">board_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : R/S BOARD, HEALTH PLUS</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>modify</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/board_modify.html">board_modify.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : R/S BOARD, HEALTH PLUS</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/board_view.html">board_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-31</del><del>2020-08-11</del>2020-08-19</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : R/S BOARD, HEALTH PLUS<br>200811 댓글영역 태그변경<br>200819 입력창 사용자 input 추가, 댓글의 댓글 들여쓰기, 댓글의 댓글의 댓글</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>SKD SWAP</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/swap_list.html">swap_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/swap_write.html">swap_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>modify</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/swap_modify.html">swap_modify.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/swap_view.html">swap_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>MEMBER'S EVENT</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/event_list.html">event_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/event_write.html">event_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc">검색팝업포함(검색결과 없을경우)</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>modify</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/event_modify.html">event_modify.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc">검색팝업포함(검색결과 있을경우)</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>recipient search popup</td>
+						<td class="file">
+							<a target="_blank" href="openplaza/search_pop.html">search_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-31</del>2020-09-01</td>
+						<td class="desc">'event_write.html'의 who 검색버튼 클릭 시 노출되는 팝업<br>200901수정 : p.pop-tit 을 div로 변경 / pop-tit 안에 pop-close 버튼 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/event_view.html">event_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>FLEA MARKET</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/fleamarket_list.html">fleamarket_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : 승우회/고니회, Q&amp;A, COOK방</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/fleamarket_write.html">fleamarket_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : 승우회/고니회, Q&amp;A, COOK방</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>modify</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/fleamarket_modify.html">fleamarket_modify.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : 승우회/고니회, Q&amp;A, COOK방</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/fleamarket_view.html">fleamarket_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"><strong style="color: #0569ff;">공통</strong> : 승우회/고니회, Q&amp;A, COOK방</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>COOK방</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/cook_list.html">cook_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-11</td>
+						<td class="desc">카테고리정렬/Doc ID삭제</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>FAQ</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/faq_list.html">faq_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-07-31</del>2020-12-11</td>
+						<td class="desc">카테고리정렬</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>write</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/faq_write.html">faq_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>modify</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/faq_modify.html">faq_modify.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="openplaza/faq_view.html">faq_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-07-31</td>
+						<td class="desc"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="section">
+		<h2 class="title" style="background:#39a1bc;">DOC MGMT</h2>
+		<div class="content">
+			<table border="1">
+				<thead>
+					<tr>
+						<th scope="col" style="width:10%;">1depth</th>
+						<th scope="col" style="width:13%;">2depth</th>
+						<th scope="col" style="width:12%;">3depth</th>
+						<th scope="col" style="width:12%;">4depth</th>
+						<th scope="col" style="width:10%;">file</th>
+						<th scope="col" style="width:4%;" title="△ :대기 / ○ :부분완료 / ● :완료">stat</th>
+						<th scope="col" style="width:8%;" title="yyyy-mm-dd">date</th>
+						<th scope="col" style="width:15%;">description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tit">DOC MGMT</td>
+						<td>NEW DOCUMENT</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="doc/new_write.html">new_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-06</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>DOCUMENT LIST</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="doc/doc_list.html">doc_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-11-10</del>2020-12-11</td>
+						<td class="desc">카테고리정렬</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="doc/doc_view.html">doc_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-10</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>history popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="doc/doc_pop.html">doc_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-10</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>BRIEFING SHEET MGMT</td>
+						<td>BRIEFING</td>
+						<td>list</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list.html">briefing_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date"><del>2020-11-10</del>2021-03-11</td>
+						<td class="desc">Briefing Link 추가</td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>TPM MGMT</td>
+						<td>list</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list01.html">briefing_list01.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>popup</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list01_pop.html">briefing_list01_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>STATION MGMT</td>
+						<td>list</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list02.html">briefing_list02.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>popup</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list02_pop.html">briefing_list02_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>A/C &amp; HL MGMT</td>
+						<td>list</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list03.html">briefing_list03.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>popup</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list03_pop.html">briefing_list03_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>SERVICE PROCEDURE MGMT</td>
+						<td>list</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list04.html">briefing_list04.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>write</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list04_write.html">briefing_list04_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>FLT MGMT</td>
+						<td>list</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list05.html">briefing_list05.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>popup</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list05_pop.html">briefing_list05_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>REMARK PROCEDURE MGMT</td>
+						<td>list</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list06.html">briefing_list06.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td></td>
+						<td>write</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list06_write.html">briefing_list06_write.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>UPLOAD</td>
+						<td>popup</td>
+						<td class="file">
+							<a target="_blank" href="doc/briefing_list07_pop.html">briefing_list07_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-20</td>
+						<td class="desc"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="section">
+		<h2 class="title" style="background:#39a1bc;">SYS MGMT</h2>
+		<div class="content">
+			<table border="1">
+				<thead>
+					<tr>
+						<th scope="col" style="width:10%;">1depth</th>
+						<th scope="col" style="width:13%;">2depth</th>
+						<th scope="col" style="width:12%;">3depth</th>
+						<th scope="col" style="width:12%;">4depth</th>
+						<th scope="col" style="width:10%;">file</th>
+						<th scope="col" style="width:4%;" title="△ :대기 / ○ :부분완료 / ● :완료">stat</th>
+						<th scope="col" style="width:8%;" title="yyyy-mm-dd">date</th>
+						<th scope="col" style="width:15%;">description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tit">SYS MGMT</td>
+						<td>USER MANAGEMENT</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/user_mgmt.html">user_mgmt.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-11-30</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>MY INFORMATION</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/myinfo.html">myinfo.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-10</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view log popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/viewlog_pop.html">viewlog_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-10</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>주소검색 popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/post_pop.html">post_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-10</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>권한관리</td>
+						<td>list</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/auth_list.html">auth_list.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-02</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/auth_view.html">auth_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-04</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>Document Category MGMT</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/cate_mgmt.html">cate_mgmt.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-02</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>popup</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/cate_pop.html">cate_pop.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-04</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td>System Code MGMT</td>
+						<td></td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/code_mgmt.html">code_mgmt.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-02</td>
+						<td class="desc"></td>
+					</tr>
+					<tr>
+						<td class="tit"></td>
+						<td></td>
+						<td>view</td>
+						<td></td>
+						<td class="file">
+							<a target="_blank" href="sys/code_mgmt_view.html">code_mgmt_view.html</a>
+						</td>
+						<td class="stat">●</td>
+						<td class="date">2020-12-04</td>
+						<td class="desc"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

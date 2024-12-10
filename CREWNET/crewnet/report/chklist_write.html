@@ -1,0 +1,3191 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<title>CHECKLIST WRITE - CREWNET</title>
+		<link rel="stylesheet" href="../assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/content.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+		<script type="text/javascript" src="../assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../assets/script/common.js"></script>
+	</head>
+	<body>
+		<div id="skipNav"><a href="#container">본문내용 바로가기</a></div>
+		<div id="gnb">
+			<div class="gnb-width">
+				<h1>
+					<a href="../main.html" class="logo">CREWNET</a> <!-- 링크 메인페이지로 연결 -->
+					<span>Seoul (KST) 120.5.8 11:28:32</span>
+				</h1>
+				<a href="#none" class="btn-menu" title="모바일/태블릿 메뉴 버튼">메뉴</a>
+				<ul class="nav">
+					<li><a href="#none">FLT DUTY</a></li>
+					<li><a href="#none">BULLETIN</a></li>
+					<li><a href="#none">REPORT</a></li>
+					<li><a href="#none">REQUEST</a></li>
+					<li><a href="#none">OPEN PLAZA</a></li>
+				</ul>
+				<div class="myinfo">
+					<button class="search">검색</button>
+					<a href="#none" class="user">my info</a>
+					<p>안녕하세요! <strong>홍길동님</strong> <br>오늘도 화이팅 :)</p>
+					<div class="tooltip-menu">
+						<p class="txt">안녕하세요! <strong class="accent2">홍길동</strong>님<br>오늘도 화이팅:)</p>
+						<ul>
+							<li><a href="#none" class="info">MY INFO</a></li>
+							<li><a href="#none" class="logout">로그아웃</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="search-wrap">
+				<div class="search-area">
+					<select title="통합검색">
+						<option value="통합검색">통합검색</option>
+						<option value="검색조건1">검색조건1</option>
+						<option value="검색조건2">검색조건2</option>
+					</select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button>검색</button>
+				</div>
+			</div>
+		
+			<button class="menu-close">닫기</button>
+		</div>
+		<!-- //gnb -->
+		
+		<div class="menu-full">
+			<p class="logo"><a href="../main.html">CREWNET</a></p> <!-- 링크 메인페이지로 연결 -->
+			<ul class="depth1">
+				<li>
+					<a href="#none">FLT DUTY</a>
+					<ul class="depth2">
+						<li><a href="#none">MY SKD</a></li>
+						<li><a href="#none">DAY-OFF CHECK</a></li>
+						<li><a href="#none">SKD Q&amp;A</a></li>
+						<li><a href="#none">BRIEFING SHEET</a></li>
+						<li><a href="#none">DUTY ASSIGNMENT</a></li>
+						<li><a href="#none">MY STAFF SKD</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">BULLETIN</a>
+					<ul class="depth2">
+						<li><a href="#none">SAFET</a></li>
+						<li><a href="#none">SERVICE</a></li>
+						<li><a href="#none">SALES</a></li>
+						<li><a href="#none">TRAINING</a></li>
+						<li><a href="#none">NOTICE</a></li>
+						<li><a href="#none">DP NOTICE</a></li>
+						<li><a href="#none">R/S NOTICE</a></li>
+						<li><a href="#none">Voice of Customer</a></li>
+						<li><a href="#none">인사발령</a></li>
+						<li><a href="#none">FOCAL POINT (중점강조)</a></li>
+						<li><a href="#none">최근 주요 지시 공지</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REPORT</a>
+					<ul class="depth2">
+						<li><a href="#none">REPORT</a></li>
+						<li><a href="#none">SAFENET</a></li>
+						<li><a href="#none">MEAL SURVEY</a></li>
+						<li><a href="#none">EVALUATION</a></li>
+						<li><a href="#none">CHECK LIST</a></li>
+						<li><a href="#none">Duty-Free declaration</a></li>
+						<li><a href="#none">기판 과부족 조회</a></li>
+						<li><a href="#none">고충상담</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REQUEST</a>
+					<ul class="depth2">
+						<li><a href="#none">SKD CHANGE</a></li>
+						<li><a href="#none">VACATION REQUEST</a></li>
+						<li><a href="#none">EDUCATION REQUEST</a></li>
+						<li><a href="#none">SKD SWAP</a></li>
+						<li><a href="#none">지급신청</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">OPEN PLAZA</a>
+					<ul class="depth2">
+						<li><a href="#none">BOARD</a></li>
+						<li><a href="#none">R/S BOARD</a></li>
+						<li><a href="#none">MEMBERS' EVENT</a></li>
+						<li><a href="#none">HEALTH PLUS</a></li>
+						<li><a href="#none">FELA MARKET</a></li>
+						<li><a href="#none">승우회/고니회</a></li>
+						<li><a href="#none">Q&amp;A</a></li>
+						<li><a href="#none">COOK방(F&amp;B) CAFE</a></li>
+					</ul>
+				</li>
+			</ul>
+			<button class="btn-close">닫기</button>
+		</div>
+		<!-- //menu-full -->
+
+		<div class="visual title">
+			<h2>CHECKLIST</h2>
+			<button class="btn-print">print</button>
+		</div>
+		<!-- //visual -->
+
+		<div id="container">
+			<div class="content-wrap">
+				<div class="tab-wrap full-tab col2">
+					<!-- tab-menu -->					
+					<ul class="tab-menu">
+						<li rel="tab1"><a href="#none">객실관리자 <span class="block">비행점검표</span></a></li>
+						<li rel="tab2"><a href="#none">품질모니터링 <span class="block">요원 점검표</span></a></li>
+					</ul>					
+					<!--// tab-menu -->
+				
+					<!-- tab-container -->
+					<div class="tab-container">
+						<!-- cont1 -->
+						<div id="tab1" class="tab-cont" style="display: none;">
+							<div class="form-list-wrap">
+								<div class="form-list">
+									<ul>
+										<li>
+											<p class="mo-full">
+												<span class="label">DEP DATE</span>
+												<input type="text" class="calendar" title="현지출발일">
+											</p>
+											<p class="mo-half">
+												<label for="flt1">FLIGHT NO</label>
+												<input type="text" class="mid" id="flt1" value="KE 0159">
+											</p>
+											<p class="mo-half in-search">
+												<label for="dep1">DEP STN</label>
+												<input type="text" class="mid" id="dep1">
+												<button class="btn-search">검색</button>
+											</p>
+										</li>
+										<li>
+											<ul class="sub-list">
+												<li class="full">
+													<p class="mo-half">
+														<label for="ac">A/C VER</label>
+														<input type="text" class="sm" id="ac" value="77WI">
+													</p>
+													<p class="mo-half">
+														<label for="hl">HL NO</label>
+														<input type="text" class="sm" id="hl" value="8006">
+													</p>
+													<p class="mo-full from-to">
+														<span class="label">FROM/TO</span>
+														<input type="text" class="sm" value="ICN" title="FROM">
+														<span class="dash">-</span>
+														<input type="text" class="sm" value="LAX" title="TO">
+													</p>
+													<p class="mo-half">
+														<label for="duty">DUTY CLASS</label>
+														<select id="duty">
+															<option value="fr/cl">FR/CL</option>
+															<option value="Pr/cl">PR/CL</option>
+															<option value="EY/cl">EY/CL</option>
+														</select>
+													</p>
+													<p class="mo-half">
+														<label for="seat">SEAT NO</label>
+														<input type="text" class="sm" id="seat" value="10B">
+													</p>
+												</li>
+												<li class="full">
+													<p class="mo-full from-to">
+														<span class="label">STD/ATD</span>
+														<input type="text" class="sm" value="ICN" title="STD">
+														<span class="dash">-</span>
+														<input type="text" class="sm" value="LAX" title="ATD">
+													</p>
+													<p class="mo-full from-to">
+														<span class="label">STA/ATA</span>
+														<input type="text" class="sm" value="ICN" title="STA">
+														<span class="dash">-</span>
+														<input type="text" class="sm" value="LAX" title="ATA">
+													</p>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<!-- //form-list -->
+							</div>
+							<!-- //form-list-wrap -->
+
+							<div class="caption-wrap">
+								<p class="noti toggle">점검 시 유의사항</p>
+								<ol>
+									<li>1. 점검자는 점검 (평가) 전 전체 점검항목을 미리 Review한 후 점검한다.</li>
+									<li>2. 점검사실이 주변승객에게 노출되지 않도록 최대한 주의한다.</li>
+									<li>3. 점검항목은 5개 Main Category와 각 Main Category별 Sub-category로 구성되어 있다.
+										<ul class="sub-txt">
+											<li>- 안전/보안, 승무원 서비스 평가, 기내 쾌적성, 기내식, 기내방송</li>
+											<li>- 안전/보안의 경우 비행단계별로 구성되어 있으며, 이외 Category는 주제별로 구성</li>
+										</ul>
+									</li>
+									<li>4. 점검결과는 객관식 및 주관식으로 평가한다.
+										<ul class="sub-txt">
+											<li>- 객관식 : 전 항목 필수 작성
+												<ul class="sub-txt">
+													<li>• Pass : 규정 준수, 만족, 우수함</li>
+													<li>• Fail : 규정 미준수, 미흡, 불만족, 개선 필요<br>
+														<span class="accent2">*Fail의 경우, 하단 세부 항목 중 Fail 사유에 해당되는 부분에 체크 필요</span>
+													</li>
+												</ul>
+											</li>
+											<li>- 주관식 (Comments) : 가능한 전 항목에 대해 작성하며, 객관식 평가가 ‘Fail’인 경우, 향후 개선 필요사항 또는 현장에서 즉각 시정 조치한 사항에 대해 세부적으로 명기</li>
+										</ul>
+									</li>
+									<li>5. 관찰이 불가한 항목의 경우 Comments란에 “-“ 별도 표기</li>
+									<li>6. 점검항목에 포함되지 않은 개선 필요사항에 대해서는 6. 기타에 명기하도록 한다.</li>
+								</ol>
+							</div>
+
+							<div class="chkinput-wrap write">
+								<div class="page-info">
+									<ol>
+										<li class="on">1</li>
+										<li>2</li>
+										<li>3</li>
+										<li>4</li>
+										<li>5</li>
+										<li>6</li>
+										<li>7</li>
+									</ol>
+									<p>단계 1/7</p>
+								</div>
+								<!-- //page-info -->
+								
+								<div class="cont-slide">
+									<div class="section-wrap">
+										<h3>01. 안전/보안 (비행단계별 점검)</h3>
+										
+										<p class="stit">1-1. 승객탑승 전</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													1.연기발생 예방을 위한 <span class="accent2">Oven 점검 여부</span>
+													<p class="tooltip">
+														<strong>※ 기내 Oven 점검 방법</strong>
+														<span>ㆍ Oven내 탑재된 Main Dish 포장상태 확인 (지상)</span>
+														<span>ㆍ Meal Tag이 Oven Rack에 부착되어 있는 상태로 Oven내에 방치되어 있는지 여부 확인 (지상)</span>
+														<span>ㆍ Oven Rack에 굳어 붙어있는 음식물은 제거 (비행 중)</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r111p" name="r111" value="p"><label for="r111p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r111f" name="r111" value="f"><label for="r111f">FAIL</label>
+													</li>
+													<li>
+														<input type="radio" id="r111n" name="r111" value="n"><label for="r111n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 1-1. 승객탑승 전 -->
+										
+										<p class="stit">1-2. 승객탑승 시</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.승객 탑승권 날짜/편명 확인</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r121p" name="r121" value="p"><label for="r121p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r121f" name="r121" value="f"><label for="r121f">FAIL</label>
+													</li>
+													<li>
+														<input type="radio" id="r121n" name="r121" value="f"><label for="r121n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													2.승객 휴대수하물 <span class="accent2">기내 반입 가능</span>여부 점검
+													<p class="tooltip">
+														<strong>※ 기내 반입 가능 휴대수하물 규격</strong>
+														<span>ㆍ 사이즈 : 3면의 합이 115㎝ (40×20×55㎝) 이내</span>
+														<span>ㆍ 수  량 : FR/CL & PR/CL 2개, EY 1개<br>(노트북/핸드백/서류가방 중 1개 추가 가능)</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r122p" name="r122" value="p"><label for="r122p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r122f" name="r122" value="f"><label for="r122f">FAIL</label>
+													</li>
+													<li>
+														<input type="radio" id="r122n" name="r122" value="n"><label for="r122n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													3.비상구 열 <span class="accent2">승객 적정성</span> 확인 (출발 약 5분 전에 확인)
+													<p class="tooltip">
+														<strong>※ 비상구 열 착석 가능 승객</strong>
+														<span>ㆍ 비상시 승무원을 도와 비상탈출 업무를 수행하기에 신체적 제약이 없는 15세 이상 승객</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r123p" name="r123" value="p"><label for="r123p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r123f" name="r123" value="f"><label for="r123f">FAIL</label>
+													</li>
+													<li>
+														<input type="radio" id="r123n" name="r123" value="n"><label for="r123n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													4.비상구 열 승객 대상 <span class="accent2">브리핑</span> 실시 여부
+													<p class="tooltip">
+														<strong>※ 비상구 열 승객 대상 브리핑 내용</strong>
+														<span>ㆍ 좌석벨트, Emergency Exits, 구명복, 산소마스크 등 승객 좌석에 비치된 Safety Instruction Card 내용</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r124p" name="r124" value="p"><label for="r124p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r124f" name="r124" value="f"><label for="r124f">FAIL</label>
+													</li>
+													<li>
+														<input type="radio" id="r124f" name="r124" value="n"><label for="r124n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 1-2. 승객탑승 시 -->
+										
+										<p class="stit">1-3. 이륙 전</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.Door Close 준비</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r131p" name="r131" value="p"><label for="r131p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r131f" name="r131" value="f"><label for="r131f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1311"><label for="c1311">Headcount 미실시</label></li>
+															<li><input type="checkbox" id="c1312"><label for="c1312">Overhead Bin 닫힘 상태 미확인</label></li>
+															<li><input type="checkbox" id="c1313"><label for="c1313">휴대수하물 기내 지정된 장소 보관 여부 미확인</label></li>
+															<li><input type="checkbox" id="c1314"><label for="c1314">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r131n" name="r131" value="n"><label for="r131n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													2.<span class="accent2">Door Mode 변경절차</span> 준수
+													<p class="tooltip">
+														<strong>※ Door Mode 변경절차</strong>
+														<span>① STOP, THINK and Arming lever 위치 확인</span>
+														<span>② Door Mode Select Panel Cover를 들어올림</span>
+														<span>③ Arming Lever를 변경하고 상호확인</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r132p" name="r132" value="p"><label for="r132p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r132f" name="r132" value="f"><label for="r132f">FAIL</label>
+													</li>
+													<li>
+														<input type="radio" id="r132n" name="r132" value="n"><label for="r132n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">3.Push Back 준비</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r133p" name="r133"  value="p"><label for="r133p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r133f" name="r133"  value="f"><label for="r133f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1331"><label for="c1331">승객 착석 상태 미확인</label></li>
+															<li><input type="checkbox" id="c1332"><label for="c1332">Cart 지정된 장소 미보관, 고정여부 미확인</label></li>
+															<li><input type="checkbox" id="c1333"><label for="c1333">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r133n" name="r133" value="n"><label for="r133n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">4.이륙 전 안전 점검 실시</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r134p" name="r134" value="p"><label for="r134p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r134f" name="r134" value="f"><label for="r134f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1341"><label for="c1341">Cart 고정 상태 불량</label></li>
+															<li><input type="checkbox" id="c1342"><label for="c1342">서비스 Item (유리잔 등) 미회수</label></li>
+															<li>
+																<input type="checkbox" id="c1343"><label for="c1343"><span class="accent2">승객 이륙 준비상태</span> 미확인</label>
+																<p class="tooltip">
+																	<strong>※ 승객 이륙 준비상태</strong>
+																	<span>ㆍ Seatbelt 착용, 모니터/등받이/테이블 원위치, 창문덮개 개방 등</span>
+																</p>
+															</li>
+															<li><input type="checkbox" id="c1344"><label for="c1344">승객 좌석이탈 시 미제지</label></li>
+															<li><input type="checkbox" id="c1345"><label for="c1345">객실 최후방 최소 1명 Door Side Standby 미실시</label></li>
+															<li><input type="checkbox" id="c1346"><label for="c1346">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r134n" name="r134" value="n"><label for="r134n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">5.승무원 Jumpseat 착석</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r135p" name="r135" value="p"><label for="r135p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r135f" name="r135" value="f"><label for="r135f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1351"><label for="c1351">Seatbelt/Shoulder Harness 미착용</label></li>
+															<li><input type="checkbox" id="c1352"><label for="c1352">안전과 무관한 업무 수행 및 이동</label></li>
+															<li><input type="checkbox" id="c1353"><label for="c1353">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r135n" name="r135" value="n"><label for="r135n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 1-3. 이륙 전 -->
+										
+										<p class="stit">1-4. 비행 중</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.Turbulence 조우시 안전업무 수행</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r141p" name="r141" value="p"><label for="r141p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r141f" name="r141" value="f"><label for="r141f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1411"><label for="c1411">승객 Seatbelt 착용 미확인</label></li>
+															<li><input type="checkbox" id="c1412"><label for="c1412">화장실 내 승객 유무 미확인</label></li>
+															<li><input type="checkbox" id="c1413"><label for="c1413">기내 안내방송 미실시</label></li>
+															<li><input type="checkbox" id="c1414"><label for="c1414">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r141n" name="r141" value="n"><label for="r141n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													2.<span class="accent2">조종실 출입절차</span> 준수
+													<p class="tooltip">
+														<strong>※ 조종실 출입절차</strong>
+														<span>ㆍ 조종실 들어갈 때 : 인터폰 → 노크 → 키패드 조작</span>
+														<span>ㆍ 조종실을 나올 때 : 인터폰 → 렌즈/카메라로 외부 확인</span>
+														<span>♧ 출입시 반드시 다른 승무원 1명이 조종실 입구에 대기</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r142p" name="r142" value="p"><label for="r142p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r142f" name="r142" value="f"><label for="r142f">FAIL</label>
+													</li>
+													<li>
+														<input type="radio" id="r142n" name="r142" value="n"><label for="r142n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">3.수시 보안 점검 실시</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r143p" name="r143" value="p"><label for="r143p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r143f" name="r143" value="f"><label for="r143f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1431"><label for="c1431">매 30분마다 화장실내 비품보관공간 점검 미실시<br>(쓰레기통, 휴지보관함, 세면대 하단 Compartment)</label></li>
+															<li><input type="checkbox" id="c1432"><label for="c1432">조종실/비상구 주변 수상한 행동 승객 감시 미실시</label></li>
+															<li><input type="checkbox" id="c1433"><label for="c1433">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r143n" name="r143" value="n"><label for="r143n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 1-4. 비행 중 -->
+										
+										<p class="stit">1-5. 착륙 전/후</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.Approaching Signal 'On' 시점 안전업무 수행</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r151p" name="r151" value="p"><label for="r151p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r151f" name="r151" value="f"><label for="r151f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1511"><label for="c1511">휴대수하물 보관 상태 미점검</label></li>
+															<li><input type="checkbox" id="c1512"><label for="c1512">Galley내 Cart, 서비스 Item 보관 상태 미점검</label></li>
+															<li><input type="checkbox" id="c1513"><label for="c1513">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r151n" name="r151" value="n"><label for="r151n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.Landing Signal 'On' 시점 안전업무 수행</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r152p" name="r152" value="p"><label for="r152p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r152f" name="r152" value="f"><label for="r152f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1521"><label for="c1521">승객 착석/Seatbelt 착용 미확인</label></li>
+															<li><input type="checkbox" id="c1522"><label for="c1522">Cart 고정 상태 불량</label></li>
+															<li><input type="checkbox" id="c1523"><label for="c1523">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r152n" name="r152" value="n"><label for="r152n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													3.<span class="accent2">Door Mode 변경절차</span> 준수
+													<p class="tooltip">
+														<strong>※ Door Mode 변경절차</strong>
+														<span>① STOP, THINK and Arming lever 위치 확인</span>
+														<span>② Door Mode Select Panel Cover를 들어 올림</span>
+														<span>③ Arming Lever를 변경하고 상호확인</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r153p" name="r153" value="p"><label for="r153p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r153f" name="r153" value="f"><label for="r153f">FAIL</label>
+													</li>
+													<li>
+														<input type="radio" id="r153n" name="r153" value="n"><label for="r153n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">4.도착 후 보안 점검 실시</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r154p" name="r154" value="p"><label for="r154p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r154f" name="r154" value="f"><label for="r154f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1541"><label for="c1541">Left Behind Item 미확인</label></li>
+															<li><input type="checkbox" id="c1542"><label for="c1542">잔류 승객 미확인</label></li>
+															<li><input type="checkbox" id="c1543"><label for="c1543">승객 하기 완료 전 조업사 직원 출입 통제 미흡</label></li>
+															<li><input type="checkbox" id="c1544"><label for="c1544">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r154n" name="r154" value="n"><label for="r154n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">5.객실/운항 합동 De-briefing 실시</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r155p" name="r155" value="p" ><label for="r155p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r155f" name="r155" value="f" ><label for="r155f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c1551"><label for="c1551">객실/운항승무원 간 IRR 정보 미공유<br>(비행 중 발생한 안전/보안 관련 상호 확인 필요사항)</label></li>
+															<li><input type="checkbox" id="c1552"><label for="c1552">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r155n" name="r155" value="n"><label for="r155n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- 1-5. 착륙 전/후 -->
+									</div>
+									<!-- //section-wrap1 -->
+
+									<div class="section-wrap">
+										<h3>02. 승무원 서비스 평가</h3>
+										
+										<p class="stit">2-1. 기내식 서비스</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1. Special Meal 서비스( 총 탑재 개수: <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r211p" name="r211" value="p"><label for="r211p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r211f" name="r211" value="f"><label for="r211f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2111"><label for="c2111">오전달, 누락</label></li>
+															<li><input type="checkbox" id="c2112"><label for="c2112">선호 음료 문의 미실시</label></li>
+															<li><input type="checkbox" id="c2113"><label for="c2113">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r211n" name="r211" value="n"><label for="r211n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.기내식 서비스 자세/절차</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r212p" name="r212" value="p"><label for="r212p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r212f" name="r212" value="f"><label for="r212f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2121"><label for="c2121">서비스 누락</label></li>
+															<li><input type="checkbox" id="c2122"><label for="c2122">서두름, 어수선함 (취식 중 다음 코스 서비스/회수 등)</label></li>
+															<li><input type="checkbox" id="c2123"><label for="c2123">제공품목 미안내, 부주의</label></li>
+															<li><input type="checkbox" id="c2124"><label for="c2124">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r212n" name="r212" value="n"><label for="r212n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">3.제공 식음료 관련 지식 및 소개 능력 (한글/영어)</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r213p" name="r213" value="p"><label for="r213p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r213f" name="r213" value="f"><label for="r213f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2131"><label for="c2131">식음료 관련 기본지식 부족<br>(담당승무원에게 서비스하는 식음료 내용 문의하여 숙지 정도 파악)</label></li>
+															<li><input type="checkbox" id="c2132"><label for="c2132">서비스 식음료 소개 미흡 (Meal, 와인 등)</label></li>
+															<li><input type="checkbox" id="c2133"><label for="c2133">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r213n" name="r213" value="n"><label for="r213n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">4.식음료 회수</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r214p" name="r214" value="p"><label for="r214p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r214f" name="r214" value="f"><label for="r214f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2141"><label for="c2141">취식 완료 여부 미확인</label></li>
+															<li><input type="checkbox" id="c2142"><label for="c2142">취식 만족도, 관련 불만사항 미확인</label></li>
+															<li><input type="checkbox" id="c2143"><label for="c2143">Refill 의향 미확인 (와인, 음료 등)</label></li>
+															<li><input type="checkbox" id="c2144"><label for="c2144">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r214n" name="r214" value="n"><label for="r214n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 2-1. 기내식 서비스 -->
+
+										<p class="stit">2-2. 기타 일반 서비스</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.복장</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r221p" name="r221" value="p"><label for="r221p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r221f" name="r221" value="f"><label for="r221f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2211"><label for="c2211">유니폼 청결 상태 불량 (오염, 얼룩)</label></li>
+															<li><input type="checkbox" id="c2212"><label for="c2212">유니폼 다림질 상태 불량 (구겨짐)</label></li>
+															<li><input type="checkbox" id="c2213"><label for="c2213">낡고 변색된 유니폼 착용</label></li>
+															<li><input type="checkbox" id="c2214"><label for="c2214">규정 부착물 미패용 (명찰, Wing, 견장)</label></li>
+															<li><input type="checkbox" id="c2215"><label for="c2215">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r221n" name="r221" value="n"><label for="r221n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.용모</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r222p" name="r222" value="p"><label for="r222p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r222f" name="r222" value="f"><label for="r222f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2221"><label for="c2221">부자연스럽고 진한 화장</label></li>
+															<li><input type="checkbox" id="c2222"><label for="c2222">깨끗하게 정리되지 않은 손톱</label></li>
+															<li><input type="checkbox" id="c2223"><label for="c2223">단정하지 못한 Hair Style</label></li>
+															<li><input type="checkbox" id="c2224"><label for="c2224">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r222n" name="r222" value="n"><label for="r222n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">3.승대 응대 자세 (표정/태도)</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r223p" name="r223" value="p"><label for="r223p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r223f" name="r223" value="f"><label for="r223f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2231"><label for="c2231">표정이 좋지 않음(무표정, 무뚝뚝하거나 뚱한 표정 등)</label></li>
+															<li><input type="checkbox" id="c2232"><label for="c2232">PAX Call 응대 지연, Order Skip 등</label></li>
+															<li><input type="checkbox" id="c2233"><label for="c2233">승객 Order 사항 접수 시 Memo Pad 미사용</label></li>
+															<li><input type="checkbox" id="c2234"><label for="c2234">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r223n" name="r223" value="n"><label for="r223n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">4.승객 응대 자세 (말투)</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r224p" name="r224" value="p"><label for="r224p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r224f" name="r224" value="f"><label for="r224f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2241"><label for="c2241">말하는 속도가 빠름</label></li>
+															<li><input type="checkbox" id="c2242"><label for="c2242">불분명하거나 얼버무리는 말투 사용</label></li>
+															<li><input type="checkbox" id="c2243"><label for="c2243">정중하고 공손하지 못한 말투 사용</label></li>
+															<li><input type="checkbox" id="c2244"><label for="c2244">사물존칭 사용</label></li>
+															<li><input type="checkbox" id="c2245"><label for="c2245">일사일언/복명복창 미실시</label></li>
+															<li><input type="checkbox" id="c2246"><label for="c2246">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r224n" name="r224" value="n"><label for="r224n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">5.승객 탑승 시 서비스</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r225p" name="r225" value="p"><label for="r225p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r225f" name="r225" value="f"><label for="r225f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2251"><label for="c2251">승객 도움 미제공 (좌석 안내, 의류 보관 등)</label></li>
+															<li><input type="checkbox" id="c2252"><label for="c2252">호칭서비스 미실시 (FR/PR 승객 및 EY/CL High Miler, 주요 인사등)</label></li>
+															<li><input type="checkbox" id="c2253"><label for="c2253">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r225n" name="r225" value="n"><label for="r225n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">6.승객 Rest시 서비스</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r226p" name="r226" value="p"><label for="r226p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r226f" name="r226" value="f"><label for="r226f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2261"><label for="c2261">매 15분마다 Walk-around 미실시</label></li>
+															<li><input type="checkbox" id="c2262"><label for="c2262">Used Item 미회수</label></li>
+															<li><input type="checkbox" id="c2263"><label for="c2263">Class Divider Close 상태 미유지</label></li>
+															<li><input type="checkbox" id="c2264"><label for="c2264">Galley 내 작업시 Galley Curtain Close 상태 미유지</label></li>
+															<li><input type="checkbox" id="c2265"><label for="c2265">Lavatory Curtain Close 상태 미유지</label></li>
+															<li><input type="checkbox" id="c2266"><label for="c2266">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r226n" name="r226" value="n"><label for="r226n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													7.<span class="accent2">Special 승객</span> 서비스 수행도
+													<p class="tooltip">
+														<strong>Special 승객</strong>
+														<span>ㆍ UM, WCHR, FMLY, 유소아 동반승객, 장애인, 노약자 등</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r227p" name="r227" value="p"><label for="r227p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r227f" name="r227" value="f"><label for="r227f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2271"><label for="c2271">개별 브리핑 미실시</label></li>
+															<li><input type="checkbox" id="c2272"><label for="c2272">승무원간 승객 정보 미공유 (승객특별요청사항 등)</label></li>
+															<li><input type="checkbox" id="c2273"><label for="c2273">비행 중 지속적인 불편사항 확인/Care 미실시</label></li>
+															<li><input type="checkbox" id="c2274"><label for="c2274">Bassinet 설치 지연/미설치</label></li>
+															<li><input type="checkbox" id="c2275"><label for="c2275">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r227n" name="r227" value="n"><label for="r227n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 2-2. 기타 일반 서비스 -->
+
+										<p class="stit">2-3. 팀 협업도</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.기내식 서비스 전후 승객정보 공유</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r231p" name="r231" value="p"><label for="r231p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r231f" name="r231" value="f"><label for="r231f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2311"><label for="c2311">Galley Briefing 미실시</label></li>
+															<li><input type="checkbox" id="c2312"><label for="c2312">승객 주문사항 Galley INFO Sheet에 미기재</label></li>
+															<li><input type="checkbox" id="c2313"><label for="c2313">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r231n" name="r231" value="n"><label for="r231n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.승무원간 언행</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r232p" name="r232" value="p"><label for="r232p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r232f" name="r232" value="f"><label for="r232f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c2321"><label for="c2321">반말, 부적절한 호칭 사용</label></li>
+															<li><input type="checkbox" id="c2322"><label for="c2322">Galley 내 잡담</label></li>
+															<li><input type="checkbox" id="c2323"><label for="c2323">고객 가시권 내 동료 직원 지도/지적</label></li>
+															<li><input type="checkbox" id="c2324"><label for="c2324">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r232n" name="r232" value="n"><label for="r232n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 2-3. 팀 협업도 -->
+									</div>
+									<!-- //section-wrap2 -->
+
+									<div class="section-wrap">
+										<h3>03. 기내 쾌적성</h3>
+										
+										<p class="stit">3-1. 기내환경 (청결도, 소음도, 준비상태 등)</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.Aisle, Overhead Bin, 좌석-벽면사이, DFS, Bar, Coatroom</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r311p" name="r311" value="p"><label for="r311p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r311f" name="r311" value="f"><label for="r311f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c3111"><label for="c3111">청소상태 불량 (더러움, 먼지 있음 등)</label></li>
+															<li><input type="checkbox" id="c3112"><label for="c3112">정리정돈 상태 미흡 (DFS, Bar, Coatroom 내부)</label></li>
+															<li><input type="checkbox" id="c3113"><label for="c3113">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r331n" name="r331" value="n"><label for="r331n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.좌석 (Seat, Armrest, Tray Table, Seat pocket 등)</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r312p" name="r312" value="p"><label for="r312p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r312f" name="r312" value="f"><label for="r312f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c3121"><label for="c3121">청소상태 불량 (오염, 얼룩, 찐득거림 등)</label></li>
+															<li><input type="checkbox" id="c3122"><label for="c3122">Seat pocket 상태 불량 (이물질, 안내물 미비치 등)</label></li>
+															<li><input type="checkbox" id="c3123"><label for="c3123">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r312n" name="r312" value="n"><label for="r312n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">3.화장실</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r313p" name="r313" value="p"><label for="r313p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r313f" name="r313" value="f"><label for="r313f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c3131"><label for="c3131">청소상태 불량 (변기/세면기, 바닥, 거울 등)</label></li>
+															<li><input type="checkbox" id="c3132"><label for="c3132">악취 발생</label></li>
+															<li><input type="checkbox" id="c3133"><label for="c3133">화장실용품 비치상태 불량/Refill 미실시</label></li>
+															<li><input type="checkbox" id="c3134"><label for="c3134">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r313n" name="r313" value="n"><label for="r313n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">4.담요, 편의복/베개 (FR/CL)</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r314p" name="r314" value="p"><label for="r314p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r314f" name="r314" value="f"><label for="r314f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c3141"><label for="c3141">냄새남</label></li>
+															<li><input type="checkbox" id="c3142"><label for="c3142">더러움</label></li>
+															<li><input type="checkbox" id="c3143"><label for="c3143">구겨짐</label></li>
+															<li><input type="checkbox" id="c3144"><label for="c3144">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r314n" name="r314" value="n"><label for="r314n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">5.소음 관리</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r315p" name="r315" value="p"><label for="r315p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r315f" name="r315" value="f"><label for="r315f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c3151"><label for="c3151">Galley, Bar 작업 시 소음 발생 (승객 Rest시점)</label></li>
+															<li><input type="checkbox" id="c3152"><label for="c3152">소란 승객 제지 미흡<br>(큰소리로 대화하거나 폭언을 하는 등 주변 승객에게 불쾌감을 주는 승객)</label></li>
+															<li><input type="checkbox" id="c3153"><label for="c3153">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r315n" name="r315" value="n"><label for="r315n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 3-1. 기내환경 (청결도, 소음도, 준비상태 등) -->
+
+										<p class="stit">3-2. 온도/조명</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.적정 온도 유지 (24±1℃)</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r321p" name="r321" value="p"><label for="r321p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r321f" name="r321" value="f"><label for="r321f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c3211"><label for="c3211">적정 온도보다 높음</label></li>
+															<li><input type="checkbox" id="c3212"><label for="c3212">적정 온도보다 낮음</label></li>
+															<li><input type="checkbox" id="c3213"><label for="c3213">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r321n" name="r321" value="n"><label for="r321n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													2.<span class="accent2">적정 조명</span> 유지
+													<p class="tooltip">
+														<strong>※ 시점별 적정 조명 (Full Bright ? Dim ? Night):</strong>
+														<span>ㆍ 승객 탑승시, 도착전, Meal SVC시: Full Bright (단, Meal SVC 시간대에 따라 Dim으로 조절 운영 가능)</span>
+														<span>ㆍ 서비스 전/후: Dim</span>
+														<span>ㆍ 승객 Rest시: Dim 또는 Night</span>
+														<span>ㆍ 기내 판매시: Full Bright (단, 20시 이후 출발편: Dim)</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r322p" name="r322" value="p"><label for="r322p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r322f" name="r322" value="f"><label for="r322f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c3221"><label for="c3221">시점별 적정 조명 미조치</label></li>
+															<li><input type="checkbox" id="c3222"><label for="c3222">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r322n" name="r322" value="n"><label for="r322n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 3-2. 온도/조명 -->
+									</div>
+									<!-- //section-wrap3 -->
+
+									<div class="section-wrap">
+										<h3>04. 기내식 (기내식 취식/점검 CLS : <input type="text" class="sm"> )</h3>
+										
+										<p class="stit">4-1. 기내식 (맛, 양, 품질, 온도, Dish-up 모양 등) * 다중 선택 Menu는 선택한 Menu명 모두 명기 필요</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.Appetizer (취식 Appetizer 종류 : <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r411p" name="r411" value="p"><label for="r411p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r411f" name="r411" value="f"><label for="r411f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4111"><label for="c4111">간이 맞지 않음 (짠맛/단맛/신맛/쓴맛/매운맛)</label></li>
+															<li><input type="checkbox" id="c4112"><label for="c4112">양이 적음/많음</label></li>
+															<li><input type="checkbox" id="c4113"><label for="c4113">냄새가 좋지 않음</label></li>
+															<li><input type="checkbox" id="c4114"><label for="c4114">Dish-up 상태 불량</label></li>
+															<li><input type="checkbox" id="c4115"><label for="c4115">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r411n" name="r411" value="n"><label for="r411n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.Soup (취식 Soup 종류 : <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r412p" name="r412" value="p"><label for="r412p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r412f" name="r412" value="f"><label for="r412f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4121"><label for="c4121">간이 맞지 않음 (짠맛/단맛/신맛/쓴맛/매운맛)</label></li>
+															<li><input type="checkbox" id="c4122"><label for="c4122">양이 적음/많음</label></li>
+															<li><input type="checkbox" id="c4123"><label for="c4123">미지근한 상태로 제공</label></li>
+															<li><input type="checkbox" id="c4124"><label for="c4124">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r412n" name="r412" value="n"><label for="r412n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													3.<span class="accent2">Bread</span> (취식 Bread 종류 : <input type="text" class="sm"> )
+													<p class="tooltip">
+														<strong>※ 상온 상태로 제공 필요한 빵 (Heating 제외 빵)</strong>
+														<span>ㆍDanish, EY/CL Muffin, ‘Do Not Heat’이 표시된 빵<br>(얇게 슬라이스된 빵 : 치즈호두빵, 호박빵 등)</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r413p" name="r413" value="p"><label for="r413p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r413f" name="r413" value="f"><label for="r413f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4131"><label for="c4131">Overheating으로 굳거나 부스러짐</label></li>
+															<li><input type="checkbox" id="c4132"><label for="c4132">차갑거나 따뜻하지 않은 상태로 제공</label></li>
+															<li><input type="checkbox" id="c4133"><label for="c4133">모양이 찌그러지거나 눌린 상태로 제공</label></li>
+															<li><input type="checkbox" id="c4134"><label for="c4134">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r413n" name="r413" value="n"><label for="r413n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">4.Salad (취식 Salad 종류 : <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r414p" name="r414" value="p"><label for="r414p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r414f" name="r414" value="f"><label for="r414f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4141"><label for="c4141">드레싱 간이 맞지 않음 (짠맛/단맛/신맛/쓴맛/매운맛)</label></li>
+															<li><input type="checkbox" id="c4142"><label for="c4142">샐러드 양이 적음/많음</label></li>
+															<li><input type="checkbox" id="c4143"><label for="c4143">드레싱 양이 적음/많음</label></li>
+															<li><input type="checkbox" id="c4144"><label for="c4144">Dish-up 상태 불량</label></li>
+															<li><input type="checkbox" id="c4145"><label for="c4145">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r414n" name="r414" value="n"><label for="r414n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">5.Main Dish (취식 Main Dish 종류 : <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r415p" name="r415" value="p"><label for="r415p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r415f" name="r415" value="f"><label for="r415f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4151"><label for="c4151">간이 맞지 않음 (짠맛/단맛/신맛/쓴맛/매운맛)</label></li>
+															<li><input type="checkbox" id="c4152"><label for="c4152">양이 적음/많음</label></li>
+															<li><input type="checkbox" id="c4153"><label for="c4153">냄새가 좋지 않음</label></li>
+															<li><input type="checkbox" id="c4154"><label for="c4154">식감이 좋지 않음 (질김, 퍽퍽함, 물컹거림 등)</label></li>
+															<li><input type="checkbox" id="c4155"><label for="c4155">차갑거나 미지근한 상태로 제공</label></li>
+															<li><input type="checkbox" id="c4156"><label for="c4156">Dish-up 상태 불량</label></li>
+															<li><input type="checkbox" id="c4157"><label for="c4157">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r415n" name="r415" value="n"><label for="r415n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">
+													6.<span class="accent2">Cheese</span> (취식 Cheese 종류 : <input type="text" class="sm"> )
+													<p class="tooltip">
+														<strong>※ Cheese 종류별 모양/두께 가이드라인</strong>
+														<span>ㆍ 직사각형: 꼼뜨, 에망딸 등, 약 0.3cm</span>
+														<span>ㆍ 세모/네모/사다리꼴 등: 숌, 문스터, 약 0.8cm</span>
+														<span>ㆍ 부채꼴: 생 앙드레, 까망베르, 약 1cm</span>
+														<span>ㆍ 원형: 셍뜨 모르 드 투렌느, 약 0.5cm ~ 1cm</span>
+													</p>
+												</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r416p" name="r416" value="p"><label for="r416p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r416f" name="r416" value="f"><label for="r416f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4161"><label for="c4161">양이 적음/많음</label></li>
+															<li><input type="checkbox" id="c4162"><label for="c4162">Breathing 상태 불량<br>(표면을 눌렀을 때 가벼운 탄력이 느껴지지 않음)</label></li>
+															<li><input type="checkbox" id="c4163"><label for="c4163">Dish-up 상태 불량 (지나치게 얇게 Cutting<br>※, 부스러진 상태로 제공, Cracker/Fruit을 곁들이지 않고 제공)</label></li>
+															<li><input type="checkbox" id="c4164"><label for="c4164">p_item_040106_ck4</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r416n" name="r416" value="n"><label for="r416n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">7.Ice Cream (취식 Ice Cream 종류 : <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r417p" name="r417" value="p"><label for="r417p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r417f" name="r417" value="f"><label for="r417f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4171"><label for="c4171">제공상태 불량 (너무 딱딱함, 녹아있음)</label></li>
+															<li><input type="checkbox" id="c4172"><label for="c4172">Dish-up 상태 불량</label></li>
+															<li><input type="checkbox" id="c4173"><label for="c4173">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r417n" name="r417" value="n"><label for="r417n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">8.Fruit (취식 Fruit 종류 : <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r418p" name="r418" value="p"><label for="r418p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r418f" name="r418" value="f"><label for="r418f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4181"><label for="c4181">양이 적음/많음</label></li>
+															<li><input type="checkbox" id="c4182"><label for="c4182">냄새가 좋지 않음</label></li>
+															<li><input type="checkbox" id="c4183"><label for="c4183">Dish-up 상태 불량</label></li>
+															<li><input type="checkbox" id="c4184"><label for="c4184">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r418n" name="r418" value="n"><label for="r418n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">9.Snack (취식 Snack 종류 : <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r419p" name="r419" value="p"><label for="r419p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r419f" name="r419" value="f"><label for="r419f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4191"><label for="c4191">간이 맞지 않음 (짠맛/단맛/신맛/쓴맛/매운맛)</label></li>
+															<li><input type="checkbox" id="c4192"><label for="c4192">양이 적음/많음</label></li>
+															<li><input type="checkbox" id="c4193"><label for="c4193">차갑거나 미지근한 상태로 제공 (Pizza, Hot Bun 등)</label></li>
+															<li><input type="checkbox" id="c4194"><label for="c4194">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r419n" name="r419" value="n"><label for="r419n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">10.Beverage (취식 Beverage 종류 : <input type="text" class="sm"> )</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r4110p" name="r4110" value="p"><label for="r4110p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r4110f" name="r4110" value="f"><label for="r4110f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c41101"><label for="c41101">너무 뜨겁거나 미지근함 (Hot Beverage)</label></li>
+															<li><input type="checkbox" id="c41102"><label for="c41102">차갑지 않거나 살얼음 상태로 제공 (Cold Beverage)</label></li>
+															<li><input type="checkbox" id="c41103"><label for="c41103">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r4110n" name="r4110" value="n"><label for="r4110n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 4-1. 기내식 -->
+
+										<p class="stit">4-2. 서비스용품 청결도/관리</p>
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.Glassware/Chinaware/Cutlery 등</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r421p" name="r421" value="p"><label for="r421p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r421f" name="r421" value="f"><label for="r421f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4211"><label for="c4211">세척 불량</label></li>
+															<li><input type="checkbox" id="c4212"><label for="c4212">손상됨 (이가 빠지거나 금이 간 상태)</label></li>
+															<li><input type="checkbox" id="c4213"><label for="c4213">냄새남</label></li>
+															<li><input type="checkbox" id="c4214"><label for="c4214">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r421n" name="r421" value="n"><label for="r421n">N/A</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.Tablecloth, Napkins, Hot Towel</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r422p" name="r422" value="p"><label for="r422p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r422f" name="r422" value="f"><label for="r422f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c4221"><label for="c4221">오염, 얼룩</label></li>
+															<li><input type="checkbox" id="c4222"><label for="c4222">냄새가 좋지 않음</label></li>
+															<li><input type="checkbox" id="c4223"><label for="c4223">(Hot Towel) 너무 뜨거움/차가움, 물기 부족/과다</label></li>
+															<li><input type="checkbox" id="c4224"><label for="c4224">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r422n" name="r422" value="n"><label for="r422n">FAIL</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+										<!-- // 4.2 서비스용품 청결도/관리 -->
+									</div>
+									<!-- //section-wrap4 -->
+
+									<div class="section-wrap">
+										<h3>05. 기내방송</h3>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.속도, 억양, 정확도</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r511p" name="r511" value="p"><label for="r511p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r511f" name="r511" value="f"><label for="r511f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c5111"><label for="c5111">(속도) 너무 빠름/느림</label></li>
+															<li><input type="checkbox" id="c5112"><label for="c5112">(억양) 변화가 없거나 부자연스러움</label></li>
+															<li><input type="checkbox" id="c5113"><label for="c5113">(정확도) 발음 불분명/부정확, 더듬거림, 끊어읽기 잦음</label></li>
+															<li><input type="checkbox" id="c5114"><label for="c5114">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r511n" name="r511" value="n"><label for="r511n">FAIL</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.볼륨, 음질</div>
+												<ul class="q-radio">
+													<li>
+														<input type="radio" id="r512p" name="r512" value="p"><label for="r512p">PASS</label>
+													</li>
+													<li>
+														<input type="radio" id="r512f" name="r512" value="f"><label for="r512f">FAIL</label>
+														<ul class="fail-list">
+															<li><input type="checkbox" id="c5121"><label for="c5121">(볼륨) 너무 높음/낮음</label></li>
+															<li><input type="checkbox" id="c5122"><label for="c5122">(음질) 음질 불량 (잡음, 하울링 등)</label></li>
+															<li><input type="checkbox" id="c5123"><label for="c5123">기타</label></li>
+														</ul>
+													</li>
+													<li>
+														<input type="radio" id="r512n" name="r512" value="n"><label for="r512n">FAIL</label>
+													</li>
+												</ul>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+									</div>
+									<!-- //section-wrap5 -->
+
+									<div class="section-wrap">
+										<h3>06. 기타</h3>
+										
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">1.기타 서비스 규정/지침 위반 사항</div>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+
+										<div class="section">
+											<div class="q-wrap">
+												<span class="label">점검항목 및 Check Point</span>
+												<div class="q">2.기타 현장에서 즉시 시정 필요사항</div>
+											</div>
+											<div class="c-wrap">
+												<span class="label">점검결과 (COMMENTS)</span>
+												<textarea placeholder="내용을 입력해주세요"></textarea>
+											</div>
+										</div>
+									</div>
+									<!-- //section-wrap6 -->
+
+									<div class="section-wrap">
+										<h3>06. 총점</h3>
+
+										<div class="section result">
+											<div class="result-box">
+												<p class="txt"><span class="block">평가를</span> <strong>완료</strong>하였습니다.</p>
+												<div class="total">
+													<p class="cnt">총 <strong>52</strong>개</p>
+													<ul>
+														<li>PASS : <strong>51</strong></li>
+														<li>FAIL : <strong>1</strong></li>
+														<li>N/A : <strong>0</strong></li>
+													</ul>
+												</div>
+											</div>
+
+											<div class="comment-wrap">
+												<p class="stit">부분별 점검결과 종합정리</p>
+												<div class="txt-box comment">
+													<textarea placeholder="내용을 입력하세요."></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- //section-wrap7 -->									
+								</div>
+								<!-- //cont-slide -->
+
+								<p class="btn-wrap double">
+									<a href="#none" class="btn border">CANCEL</a>
+									<a href="#none" class="btn blue">SAVE</a>
+								</p>
+							</div>
+							<!-- //chkinput-wrap -->
+						</div>
+
+						<!-- cont2 -->
+						<div id="tab2" class="tab-cont" style="display: none;">
+							<div class="form-list-wrap">
+								<div class="form-list">
+									<ul>
+										<li>
+											<p class="mo-full">
+												<span class="label">DEP DATE</span>
+												<input type="text" class="calendar" title="현지출발일">
+											</p>
+											<p class="mo-half">
+												<label for="flt2">FLIGHT NO</label>
+												<input type="text" class="mid" id="flt2" value="KE 0159">
+											</p>
+											<p class="mo-half in-search">
+												<label for="dep2">DEP STN</label>
+												<input type="text" class="mid" id="dep2">
+												<button class="btn-search">검색</button>
+											</p>
+										</li>
+										<li>
+											<ul class="sub-list">
+												<li class="full">
+													<p class="mo-half">
+														<label for="ac2">A/C VER</label>
+														<input type="text" class="sm" id="ac2" value="77WI">
+													</p>
+													<p class="mo-half">
+														<label for="hl2">HL NO</label>
+														<input type="text" class="sm" id="hl2" value="8006">
+													</p>
+													<p class="mo-full from-to">
+														<span class="label">FROM/TO</span>
+														<input type="text" class="sm" value="ICN" title="FROM">
+														<span class="dash">-</span>
+														<input type="text" class="sm" value="LAX" title="TO">
+													</p>
+													<p class="mo-half">
+														<label for="duty2">DUTY CLASS</label>
+														<select id="duty2">
+															<option value="fr/cl">FR/CL</option>
+															<option value="Pr/cl">PR/CL</option>
+															<option value="EY/cl">EY/CL</option>
+														</select>
+													</p>
+												</li>
+												<li class="full">
+													<p class="ta-full mo-full">
+														<span class="label">COORDINATOR</span>
+														<span class="disabled-txt">객실지원팀 객실지원팀 5급 김상경 (1700403)</span>
+													</p>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<!-- //form-list -->
+							</div>
+							<!-- //form-list-wrap -->
+							
+							<div class="chkQ-wrap">
+								<div class="section">
+									<p class="ref">COM 5-3, 5-4, 5.1.1, 5.1.2</p>
+									<div class="q-wrap">
+										<p class="q">1. 보안점검 절차<span class="ex">예) 항공기 운항 전/후 보안 점검, 탑승권 확인 절차 등</span></p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr11" name="qr1" tabindex="0"><label for="qr11">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr12" name="qr1" tabindex="0"><label for="qr12">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt011" name="chklist_g01">
+												<label for="chklt001">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt012" name="chklist_g01">
+												<label for="chklt002">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt013" name="chklist_g01">
+												<label for="chklt003">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt014" name="chklist_g01">
+												<label for="chklt004">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt015" name="chklist_g01">
+												<label for="chklt005">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt016" name="chklist_g01">
+												<label for="chklt006">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt017" name="chklist_g01">
+												<label for="chklt007">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section1 -->
+
+								<div class="section">
+									<p class="ref">COM 6.1.1, 6.6.1</p>
+									<div class="q-wrap">
+										<p class="q">2. 비상/보안 장비 점검 절차</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr21" name="qr2" tabindex="0"><label for="qr21">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr22" name="qr2" tabindex="0"><label for="qr22">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt021" name="chklist_g02">
+												<label for="chklt021">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt022" name="chklist_g02">
+												<label for="chklt022">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt023" name="chklist_g02">
+												<label for="chklt023">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt024" name="chklist_g02">
+												<label for="chklt024">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt025" name="chklist_g02">
+												<label for="chklt025">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt026" name="chklist_g02">
+												<label for="chklt026">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt027" name="chklist_g02">
+												<label for="chklt027">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section2 -->
+
+								<div class="section">
+									<p class="ref">COM 2.7.3, 2.7.4</p>
+									<div class="q-wrap">
+										<p class="q">3. 승객브리핑 절차(비상구 열 좌석 브리핑, 개별 브리핑 포함)</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr31" name="qr3" tabindex="0"><label for="qr31">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr32" name="qr3" tabindex="0"><label for="qr32">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt031" name="chklist_g03">
+												<label for="chklt031">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt032" name="chklist_g03">
+												<label for="chklt032">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt033" name="chklist_g03">
+												<label for="chklt033">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt034" name="chklist_g03">
+												<label for="chklt034">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt035" name="chklist_g03">
+												<label for="chklt035">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt036" name="chklist_g03">
+												<label for="chklt036">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt037" name="chklist_g03">
+												<label for="chklt037">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section3 -->
+
+								<div class="section">
+									<p class="ref">COM 2.4.5, 2.5.2</p>
+									<div class="q-wrap">
+										<p class="q">4. 휴대수하물 보관 절차</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr41" name="qr4" tabindex="0"><label for="qr41">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr42" name="qr4" tabindex="0"><label for="qr42">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt041" name="chklist_g04">
+												<label for="chklt041">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt042" name="chklist_g04">
+												<label for="chklt042">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt043" name="chklist_g04">
+												<label for="chklt043">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt044" name="chklist_g04">
+												<label for="chklt044">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt045" name="chklist_g04">
+												<label for="chklt045">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt046" name="chklist_g04">
+												<label for="chklt046">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt047" name="chklist_g04">
+												<label for="chklt047">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section4 -->
+
+								<div class="section">
+									<p class="ref">COM 2.6.2</p>
+									<div class="q-wrap">
+										<p class="q">5. Safety Check 절차(Door Mode 변경뿐 아니라 “Pushback 준비 완료” 단계 절차 포함)</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr51" name="qr5" tabindex="0"><label for="qr51">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr52" name="qr5" tabindex="0"><label for="qr52">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt051" name="chklist_g05">
+												<label for="chklt051">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt052" name="chklist_g05">
+												<label for="chklt052">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt053" name="chklist_g05">
+												<label for="chklt053">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt054" name="chklist_g05">
+												<label for="chklt054">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt055" name="chklist_g05">
+												<label for="chklt055">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt056" name="chklist_g05">
+												<label for="chklt056">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt057" name="chklist_g05">
+												<label for="chklt057">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section5 -->
+
+								<div class="section">
+									<p class="ref">COM 2.7.2</p>
+									<div class="q-wrap">
+										<p class="q">6. 이/착륙 및 Taxiing 중 안전 규정 준수</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr61" name="qr6" tabindex="0"><label for="qr61">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr62" name="qr6" tabindex="0"><label for="qr62">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt061" name="chklist_g06">
+												<label for="chklt061">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt062" name="chklist_g06">
+												<label for="chklt062">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt063" name="chklist_g06">
+												<label for="chklt063">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt064" name="chklist_g06">
+												<label for="chklt064">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt065" name="chklist_g06">
+												<label for="chklt065">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt066" name="chklist_g06">
+												<label for="chklt066">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt067" name="chklist_g06">
+												<label for="chklt067">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section6 -->
+
+								<div class="section">
+									<p class="ref">COM 5.4</p>
+									<div class="q-wrap">
+										<p class="q">7. 조종실 출입 절차</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr71" name="qr7" tabindex="0"><label for="qr71">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr72" name="qr7" tabindex="0"><label for="qr72">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt071" name="chklist_g07">
+												<label for="chklt071">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt072" name="chklist_g07">
+												<label for="chklt072">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt073" name="chklist_g07">
+												<label for="chklt073">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt074" name="chklist_g07">
+												<label for="chklt074">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt075" name="chklist_g07">
+												<label for="chklt075">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt076" name="chklist_g07">
+												<label for="chklt076">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt077" name="chklist_g07">
+												<label for="chklt077">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section7 -->
+
+								<div class="section">
+									<p class="ref">COM 2.8.1</p>
+									<div class="q-wrap">
+										<p class="q">8. Turbulence 지침 준수</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr81" name="qr8" tabindex="0"><label for="qr81">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr82" name="qr8" tabindex="0"><label for="qr82">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt081" name="chklist_g08">
+												<label for="chklt081">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt082" name="chklist_g08">
+												<label for="chklt082">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt083" name="chklist_g08">
+												<label for="chklt083">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt084" name="chklist_g08">
+												<label for="chklt084">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt085" name="chklist_g08">
+												<label for="chklt085">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt086" name="chklist_g08">
+												<label for="chklt086">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt087" name="chklist_g08">
+												<label for="chklt087">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section8 -->
+
+								<div class="section">
+									<p class="ref">COM 2.6.3</p>
+									<div class="q-wrap">
+										<p class="q">9. Door Operation 절차</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr91" name="qr9" tabindex="0"><label for="qr91">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr92" name="qr9" tabindex="0"><label for="qr92">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt091" name="chklist_g09">
+												<label for="chklt091">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt092" name="chklist_g09">
+												<label for="chklt092">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt093" name="chklist_g09">
+												<label for="chklt093">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt094" name="chklist_g09">
+												<label for="chklt094">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt095" name="chklist_g09">
+												<label for="chklt095">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt096" name="chklist_g09">
+												<label for="chklt096">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt097" name="chklist_g09">
+												<label for="chklt097">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section9 -->
+
+								<div class="section">
+									<p class="ref">일상 객실 안전 Checklist</p>
+									<div class="q-wrap">
+										<p class="q">10. 승객 및 승무원 부상 관련 절차 준수<span>예) Cart, Carrier Box, 뜨거운 식음료 Handling, Overhead Bin 점검 절차 등</span></p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr101" name="qr10" tabindex="0"><label for="qr101">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr102" name="qr10" tabindex="0"><label for="qr102">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt101" name="chklist_g10">
+												<label for="chklt101">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt1012" name="chklist_g10">
+												<label for="chklt1012">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt1013" name="chklist_g10">
+												<label for="chklt1013">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt1014" name="chklist_g10">
+												<label for="chklt1014">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt1015" name="chklist_g10">
+												<label for="chklt1015">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt1016" name="chklist_g10">
+												<label for="chklt1016">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt1017" name="chklist_g10">
+												<label for="chklt1017">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section10 -->
+
+								<div class="section">
+									<p class="ref">CSM 2.3.3</p>
+									<div class="q-wrap">
+										<p class="q">11. Catering의 서비스 Item 및 기용품 탑재 절차 준수</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr111" name="qr11" tabindex="0"><label for="qr111">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr112" name="qr11" tabindex="0"><label for="qr112">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt111" name="chklist_g11">
+												<label for="chklt111">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt112" name="chklist_g11">
+												<label for="chklt112">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt113" name="chklist_g11">
+												<label for="chklt113">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt114" name="chklist_g11">
+												<label for="chklt114">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt115" name="chklist_g11">
+												<label for="chklt115">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt116" name="chklist_g11">
+												<label for="chklt116">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt117" name="chklist_g11">
+												<label for="chklt117">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section11 -->
+
+								<div class="section">
+									<p class="ref">CSM 3.1</p>
+									<div class="q-wrap">
+										<p class="q">12. 승객 탑승 전 Pre-setting Item 비치 절차 준수(신문 서비스, 지상 Bar 포함)</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr121" name="qr12" tabindex="0"><label for="qr121">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr122" name="qr12" tabindex="0"><label for="qr122">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt121" name="chklist_g12">
+												<label for="chklt121">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt122" name="chklist_g12">
+												<label for="chklt122">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt123" name="chklist_g12">
+												<label for="chklt123">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt124" name="chklist_g12">
+												<label for="chklt124">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt125" name="chklist_g12">
+												<label for="chklt125">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt126" name="chklist_g12">
+												<label for="chklt126">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt127" name="chklist_g12">
+												<label for="chklt127">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section12 -->
+
+								<div class="section">
+									<p class="ref">기내방송 운영절차</p>
+									<div class="q-wrap">
+										<p class="q">13. 방송 절차 준수(방송 모니터링 포함)<br>
+											- Skip 여부(카트판매 종료 안내, ENTRY DOCUMENTS; U.S.A 등)<br>
+											- 제2외국어 방송 지침(특정 국적 10% 이상 탑승 시, R/S Crew의 Irregular 방송 등)
+										</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr131" name="qr13" tabindex="0"><label for="qr131">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr132" name="qr13" tabindex="0"><label for="qr132">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt131" name="chklist_g13">
+												<label for="chklt131">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt132" name="chklist_g13">
+												<label for="chklt132">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt133" name="chklist_g13">
+												<label for="chklt133">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt134" name="chklist_g13">
+												<label for="chklt134">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt135" name="chklist_g13">
+												<label for="chklt135">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt136" name="chklist_g13">
+												<label for="chklt136">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt137" name="chklist_g13">
+												<label for="chklt137">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section13 -->
+
+								<div class="section">
+									<p class="ref">CSM 2.3.6</p>
+									<div class="q-wrap">
+										<p class="q">14. Galley Briefing 절차 준수</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr141" name="qr14" tabindex="0"><label for="qr141">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr142" name="qr14" tabindex="0"><label for="qr142">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt141" name="chklist_g14">
+												<label for="chklt141">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt142" name="chklist_g14">
+												<label for="chklt142">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt143" name="chklist_g14">
+												<label for="chklt143">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt144" name="chklist_g14">
+												<label for="chklt144">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt145" name="chklist_g14">
+												<label for="chklt145">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt146" name="chklist_g14">
+												<label for="chklt146">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt147" name="chklist_g14">
+												<label for="chklt147">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section14 -->
+
+								<div class="section">
+									<p class="ref">CSM 3.2, 3.3, 3.4.3</p>
+									<div class="q-wrap">
+										<p class="q">15. 서비스 Procedure 준수(회수 절차 포함)</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr151" name="qr15" tabindex="0"><label for="qr151">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr152" name="qr15" tabindex="0"><label for="qr152">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt151" name="chklist_g15">
+												<label for="chklt151">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt152" name="chklist_g15">
+												<label for="chklt152">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt153" name="chklist_g15">
+												<label for="chklt153">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt154" name="chklist_g15">
+												<label for="chklt154">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt155" name="chklist_g15">
+												<label for="chklt155">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt156" name="chklist_g15">
+												<label for="chklt156">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt157" name="chklist_g15">
+												<label for="chklt157">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section15 -->
+
+								<div class="section">
+									<p class="ref">CSM 3.2~4</p>
+									<div class="q-wrap">
+										<p class="q">16. Cart 차림 준수</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr161" name="qr16" tabindex="0"><label for="qr161">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr162" name="qr16" tabindex="0"><label for="qr162">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt161" name="chklist_g16">
+												<label for="chklt161">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt162" name="chklist_g16">
+												<label for="chklt162">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt163" name="chklist_g16">
+												<label for="chklt163">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt164" name="chklist_g16">
+												<label for="chklt164">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt165" name="chklist_g16">
+												<label for="chklt165">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt166" name="chklist_g16">
+												<label for="chklt166">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt167" name="chklist_g16">
+												<label for="chklt167">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section16 -->
+
+								<div class="section">
+									<p class="ref">CSM 2.3</p>
+									<div class="q-wrap">
+										<p class="q">17. 화장실 점검 절차 준수</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr171" name="qr17" tabindex="0"><label for="qr171">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr172" name="qr17" tabindex="0"><label for="qr172">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt171" name="chklist_g17">
+												<label for="chklt171">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt172" name="chklist_g17">
+												<label for="chklt172">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt173" name="chklist_g17">
+												<label for="chklt173">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt174" name="chklist_g17">
+												<label for="chklt174">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt175" name="chklist_g17">
+												<label for="chklt175">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt176" name="chklist_g17">
+												<label for="chklt176">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt177" name="chklist_g17">
+												<label for="chklt177">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section17 -->
+
+								<div class="section">
+									<p class="ref">CSM 3.1.2</p>
+									<div class="q-wrap">
+										<p class="q">18. 승객에게 제공되는 식음료의 온도 적절성 준수</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr181" name="qr18" tabindex="0"><label for="qr181">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr182" name="qr18" tabindex="0"><label for="qr182">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt181" name="chklist_g18">
+												<label for="chklt181">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt182" name="chklist_g18">
+												<label for="chklt182">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt183" name="chklist_g18">
+												<label for="chklt183">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt184" name="chklist_g18">
+												<label for="chklt184">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt185" name="chklist_g18">
+												<label for="chklt185">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt186" name="chklist_g18">
+												<label for="chklt186">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt187" name="chklist_g18">
+												<label for="chklt187">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section18 -->
+
+								<div class="section">
+									<p class="ref">CSM 3.1.7</p>
+									<div class="q-wrap">
+										<p class="q">19. 객실 용품 하기 절차 준수</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr191" name="qr19" tabindex="0"><label for="qr191">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr192" name="qr19" tabindex="0"><label for="qr192">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt191" name="chklist_g19">
+												<label for="chklt191">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt192" name="chklist_g19">
+												<label for="chklt192">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt193" name="chklist_g19">
+												<label for="chklt193">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt194" name="chklist_g19">
+												<label for="chklt194">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt195" name="chklist_g19">
+												<label for="chklt195">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt196" name="chklist_g19">
+												<label for="chklt196">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt197" name="chklist_g19">
+												<label for="chklt197">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section19 -->
+
+								<div class="section">
+									<p class="ref">CSM 2.3.1</p>
+									<div class="q-wrap">
+										<p class="q">20. 기종 특성에 대한 숙지 및 기자재 활용 여부(Landscape Camera, Mood Light, IFE System 등 포함)</p>
+										<ul class="chk-input">
+											<li>
+												<input type="radio" id="qr201" name="qr20" tabindex="0"><label for="qr201">충족</label>
+											</li>
+											<li>
+												<input type="radio" id="qr202" name="qr20" tabindex="0"><label for="qr202">미충족</label>
+											</li>
+										</ul>
+									</div>
+									<!-- //q-wrap -->
+									<!-- 210122 new check list-->
+									<div class="checklist">
+										<div class="-flex">
+											<div class="-select__box">
+												<input type="checkbox" id="chklt201" name="chklist_g20">
+												<label for="chklt201">내부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt202" name="chklist_g20">
+												<label for="chklt202">외부적인 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt203" name="chklist_g20">
+												<label for="chklt203">탑재/설비 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt204" name="chklist_g20">
+												<label for="chklt204">시간적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt205" name="chklist_g20">
+												<label for="chklt205">서비스 규정과 상충</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt206" name="chklist_g20">
+												<label for="chklt206">기종적 요인</label>
+											</div>
+											<div class="-select__box">
+												<input type="checkbox" id="chklt207" name="chklist_g20">
+												<label for="chklt207">기타</label>
+											</div>
+										</div>
+									</div>
+									<!--// 210122 new check list-->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section20 -->
+
+								<div class="section">
+									<!-- <p class="ref"></p> -->
+									<div class="q-wrap">
+										<p class="q">21. 기타 사항</p>
+									</div>
+									<!-- //q-wrap -->
+									<div class="remark">
+										<p class="label">comments</p>
+										<textarea class="remark-text" placeholder="내용을 입력해주세요. 내용이 없는 경우 빈칸으로 두셔도 됩니다."></textarea>
+									</div>
+								</div>
+								<!-- //section20 -->
+							</div>
+							<!-- //chkQ-wrap -->
+
+							<div class="tbl-wrap">
+								<table class="board-write">
+									<caption>내용</caption>
+									<colgroup>
+										<col style="width: 25%;">
+										<col style="width: auto;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">Attach Files</th>
+											<td>
+												<!-- 파일이 첨부되어있지 않은 상태 -->
+												<div class="attach-files">
+
+													<div class="btn-file">
+														<label for="upload" class="file-label">파일선택</label>
+														<input type="file" id="upload" class="file-upload">
+													</div>
+													<!-- //btn-file -->
+												</div>
+												<!-- //attach-files -->
+												<!-- //파일이 첨부되어있지 않은 상태 -->
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">Attach Files</th>
+											<td>
+												<div class="attach-files">
+													<div class="btn-file">
+														<label for="upload2" class="file-label">파일선택</label>
+														<input type="file" id="upload2" class="file-upload">
+													</div>
+													<!-- //btn-file -->
+
+													<div class="file-wrap">
+														<div class="input-file">
+															<input type="text" readonly="readonly" value="notice1.pdf" class="file-name">
+															<button class="btn-del">delete</button> <!-- 첨부된 파일 삭제 -->
+														</div>
+													</div>
+													<!-- //file-wrap -->
+													<!-- //파일을 1개 첨부했을 경우 -->
+												</div>
+												<!-- //attach-files -->
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">Attach Files</th>
+											<td>
+												<div class="attach-files">
+													<div class="btn-file">
+														<label for="upload3" class="file-label">파일선택</label>
+														<input type="file" id="upload3" class="file-upload">
+													</div>
+													<!-- //btn-file -->
+
+													<div class="file-wrap">
+														<div class="input-file">
+															<!-- <input type="text" readonly="readonly" value="notice1.pdf" class="file-name"> -->
+															<p class="file-name">notice1.pdf</p> <!-- input이 필요없을 경우 p태그도 사용가능 -->
+															<button class="btn-del">delete</button> <!-- 첨부된 파일 삭제 -->
+														</div>
+
+														<div class="input-file">
+															<input type="text" readonly="readonly" value="notice2.pdf" class="file-name">
+															<button class="btn-del">delete</button> <!-- 첨부된 파일 삭제 -->
+														</div>
+													</div>
+													<!-- //file-wrap -->
+													<!-- //파일을 2개 첨부했을 경우 -->
+												</div>
+												<!-- //attach-files -->
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<p class="btn-wrap double">
+								<a href="#none" class="btn border">CANCEL</a>
+								<a href="#none" class="btn blue">SAVE</a>
+							</p>
+						</div>
+					</div>
+					<!--// tab-container -->
+				</div>
+				
+			</div>
+			<!-- //content-wrap -->
+		</div>
+		<!-- //container -->
+
+		<div id="footer">
+			<div class="foot-area">
+				<select title="LINK" class="link" onchange="window.open(value,'_blank')">
+					<option value="LINK">LINK</option>
+					<option value="HANWAY">HANWAY</option>
+					<option value="CYBER CAMPUS">CYBER CAMPUS</option>
+					<option value="SKY SAFETY21">SKY SAFETY21</option>
+					<option value="SAFENET">SAFENET</option>
+					<option value="CYBER SKYSHOP">CYBER SKYSHOP</option>
+					<option value="MMS QRS">MMS QRS</option>
+					<option value="KALMAN">KALMAN</option>
+					<option value="SKY NEWS">SKY NEWS</option>
+					<option value="E-CATERING">E-CATERING</option>
+				</select>
+				<ul>
+					<li><a href="#none">HANWAY</a></li>
+					<li><a href="#none">CYBER CAMPUS</a></li>
+					<li><a href="#none">SKY SAFETY21</a></li>
+					<li><a href="#none">SAFENET</a></li>
+					<li><a href="#none">CYBER SKYSHOP</a></li>
+					<li><a href="#none">MMS QRS</a></li>
+					<li><a href="#none">KALMAN</a></li>
+					<li><a href="#none">SKY NEWS</a></li>
+					<li><a href="#none">E-CATERING</a></li>
+				</ul>
+				<select title="자주쓰는항목" class="bookmark" onchange="window.open(value,'_blank')">
+					<option value="자주쓰는항목">자주쓰는항목</option>
+					<option value="http://www.naver.com">네이버</option>
+				</select>
+				<p class="terms">
+					<a href="#none">OFFICE INFO</a><span>|</span>
+					<a href="#none">CONTACT US</a><span>|</span>
+					<a href="#none">시스템이용약관</a>
+				</p>
+				<p class="copy">&copy; 2020 Korean Air. Crew Net All rights reserved.</p>
+			</div>
+		</div>
+		<!-- //footer -->
+
+		<button class="btn-top">top</button>
+
+		<div class="dimmed"></div>
+	</body>
+</html>

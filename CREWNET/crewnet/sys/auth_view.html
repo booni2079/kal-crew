@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<title>권한관리 VIEW - CREWNET</title>
+		<link rel="stylesheet" href="../assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/content.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+		<script type="text/javascript" src="../assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../assets/script/common.js"></script>
+	</head>
+	<body class="sys"> <!-- sys mgmg 일 경우 class="sys" 추가 -->
+		<div id="skipNav"><a href="#container">본문내용 바로가기</a></div>
+		<div id="gnb">
+			<div class="gnb-width">
+				<h1>
+					<a href="../main.html" class="logo">CREWNET</a> <!-- 링크 메인페이지로 연결 -->
+					<span>Seoul (KST) 120.5.8 11:28:32</span>
+				</h1>
+				<a href="#none" class="btn-menu" title="모바일/태블릿 메뉴 버튼">메뉴</a>
+				<ul class="nav">
+					<li><a href="#none">FLT DUTY</a></li>
+					<li><a href="#none">BULLETIN</a></li>
+					<li><a href="#none">REPORT</a></li>
+					<li><a href="#none">REQUEST</a></li>
+					<li><a href="#none">OPEN PLAZA</a></li>
+				</ul>
+				<div class="myinfo">
+					<button class="search">검색</button>
+					<a href="#none" class="user">my info</a>
+					<p>안녕하세요! <strong>홍길동님</strong> <br>오늘도 화이팅 :)</p>
+					<div class="tooltip-menu">
+						<p class="txt">안녕하세요! <strong class="accent2">홍길동</strong>님<br>오늘도 화이팅:)</p>
+						<ul>
+							<li><a href="#none" class="info">MY INFO</a></li>
+							<li><a href="#none" class="logout">로그아웃</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="search-wrap">
+				<div class="search-area">
+					<select title="통합검색">
+						<option value="통합검색">통합검색</option>
+						<option value="검색조건1">검색조건1</option>
+						<option value="검색조건2">검색조건2</option>
+					</select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button>검색</button>
+				</div>
+			</div>
+		
+			<button class="menu-close">닫기</button>
+		</div>
+		<!-- //gnb -->
+		
+		<div class="menu-full">
+			<p class="logo"><a href="../main.html">CREWNET</a></p> <!-- 링크 메인페이지로 연결 -->
+			<ul class="depth1">
+				<li>
+					<a href="#none">FLT DUTY</a>
+					<ul class="depth2">
+						<li><a href="#none">MY SKD</a></li>
+						<li><a href="#none">DAY-OFF CHECK</a></li>
+						<li><a href="#none">SKD Q&amp;A</a></li>
+						<li><a href="#none">BRIEFING SHEET</a></li>
+						<li><a href="#none">DUTY ASSIGNMENT</a></li>
+						<li><a href="#none">MY STAFF SKD</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">BULLETIN</a>
+					<ul class="depth2">
+						<li><a href="#none">SAFET</a></li>
+						<li><a href="#none">SERVICE</a></li>
+						<li><a href="#none">SALES</a></li>
+						<li><a href="#none">TRAINING</a></li>
+						<li><a href="#none">NOTICE</a></li>
+						<li><a href="#none">DP NOTICE</a></li>
+						<li><a href="#none">R/S NOTICE</a></li>
+						<li><a href="#none">Voice of Customer</a></li>
+						<li><a href="#none">인사발령</a></li>
+						<li><a href="#none">FOCAL POINT (중점강조)</a></li>
+						<li><a href="#none">최근 주요 지시 공지</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REPORT</a>
+					<ul class="depth2">
+						<li><a href="#none">REPORT</a></li>
+						<li><a href="#none">SAFENET</a></li>
+						<li><a href="#none">MEAL SURVEY</a></li>
+						<li><a href="#none">EVALUATION</a></li>
+						<li><a href="#none">CHECK LIST</a></li>
+						<li><a href="#none">Duty-Free declaration</a></li>
+						<li><a href="#none">기판 과부족 조회</a></li>
+						<li><a href="#none">고충상담</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REQUEST</a>
+					<ul class="depth2">
+						<li><a href="#none">SKD CHANGE</a></li>
+						<li><a href="#none">VACATION REQUEST</a></li>
+						<li><a href="#none">EDUCATION REQUEST</a></li>
+						<li><a href="#none">SKD SWAP</a></li>
+						<li><a href="#none">지급신청</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">OPEN PLAZA</a>
+					<ul class="depth2">
+						<li><a href="#none">BOARD</a></li>
+						<li><a href="#none">R/S BOARD</a></li>
+						<li><a href="#none">MEMBERS' EVENT</a></li>
+						<li><a href="#none">HEALTH PLUS</a></li>
+						<li><a href="#none">FELA MARKET</a></li>
+						<li><a href="#none">승우회/고니회</a></li>
+						<li><a href="#none">Q&amp;A</a></li>
+						<li><a href="#none">COOK방(F&amp;B) CAFE</a></li>
+					</ul>
+				</li>
+			</ul>
+			<button class="btn-close">닫기</button>
+		</div>
+		<!-- //menu-full -->
+
+		<div class="visual title">
+			<h2>권한관리</h2>
+			<button class="btn-print">print</button>
+		</div>
+		<!-- //visual -->
+
+		<div id="container">
+			<div class="content-wrap">
+				<p class="form-tit">기본정보</p>
+				<div class="form-list-wrap">
+					<ul class="form-tbl write">
+						<li>
+							<label for="id">ID</label>
+							<p><input type="text" id="id" value="0008212"></p>
+						</li>
+						<li>
+							<label for="code">부서코드</label>
+							<p><input type="text" id="code"></p>
+						</li>
+						<li>
+							<label for="name">성명</label>
+							<p><input type="text" id="name" value="이종혁"></p>
+						</li>
+						<li>
+							<label for="tel">TEL NO</label>
+							<p><input type="text" id="tel" placeholder='"-" 제외하고 입력'></p>
+						</li>
+						<li>
+							<label for="en">영문명</label>
+							<p><input type="text" id="en"></p>
+						</li>
+						<li>
+							<label for="email">E-MAIL</label>
+							<p><input type="text" id="email" value="KIMSANGKYUNG@KOREANAIR.COM"></p>
+						</li>
+					</ul>
+					<!-- //form-tbl -->
+				</div>
+
+				<div class="tbl-wrap auth-list">
+					<table>
+						<caption>권한관리</caption>
+						<colgroup>
+							<col style="width: 305px;">
+							<col style="width: auto;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="depth1">FLT DUTY</th>
+								<td>
+									<div>
+										<p class="depth2">BRIEFING SHEET</p>
+										<ul>
+											<li><input type="checkbox" id="111"><label for="111">없음</label></li>
+											<li><input type="checkbox" id="112"><label for="112">조회</label></li>
+											<li><input type="checkbox" id="113"><label for="113">입력</label></li>
+											<li><input type="checkbox" id="114"><label for="114">관리</label></li>
+											<li><input type="checkbox" id="115"><label for="115">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">DUTY ASSIGNMENT</p>
+										<ul>
+											<li><input type="checkbox" id="121"><label for="121">없음</label></li>
+											<li><input type="checkbox" id="122"><label for="122">조회</label></li>
+											<li><input type="checkbox" id="123"><label for="123">입력</label></li>
+											<li><input type="checkbox" id="124"><label for="124">관리</label></li>
+											<li><input type="checkbox" id="125"><label for="125">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">DAYOFF CHECK</p>
+										<ul>
+											<li><input type="checkbox" id="131"><label for="131">없음</label></li>
+											<li><input type="checkbox" id="132"><label for="132">조회</label></li>
+											<li><input type="checkbox" id="133"><label for="133">입력</label></li>
+											<li><input type="checkbox" id="134"><label for="134">관리</label></li>
+											<li><input type="checkbox" id="135"><label for="135">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">SKD Q&amp;A</p>
+										<ul>
+											<li><input type="checkbox" id="141"><label for="141">없음</label></li>
+											<li><input type="checkbox" id="142"><label for="142">조회</label></li>
+											<li><input type="checkbox" id="143"><label for="143">입력</label></li>
+											<li><input type="checkbox" id="144"><label for="144">관리</label></li>
+											<li><input type="checkbox" id="145"><label for="145">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">MY SKD</p>
+										<ul>
+											<li><input type="checkbox" id="151"><label for="151">없음</label></li>
+											<li><input type="checkbox" id="152"><label for="152">조회</label></li>
+											<li><input type="checkbox" id="153"><label for="153">입력</label></li>
+											<li><input type="checkbox" id="154"><label for="154">관리</label></li>
+											<li><input type="checkbox" id="155"><label for="155">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">MY STAFF SKD</p>
+										<ul>
+											<li><input type="checkbox" id="161"><label for="161">없음</label></li>
+											<li><input type="checkbox" id="162"><label for="162">조회</label></li>
+											<li><input type="checkbox" id="163"><label for="163">입력</label></li>
+											<li><input type="checkbox" id="164"><label for="164">관리</label></li>
+											<li><input type="checkbox" id="165"><label for="165">전체</label></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="depth1">BULLETIN</th>
+								<td>
+									<div>
+										<p class="depth2">SAFETY</p>
+										<ul>
+											<li><input type="checkbox" id="211"><label for="211">없음</label></li>
+											<li><input type="checkbox" id="212"><label for="212">조회</label></li>
+											<li><input type="checkbox" id="213"><label for="213">입력</label></li>
+											<li><input type="checkbox" id="214"><label for="214">관리</label></li>
+											<li><input type="checkbox" id="215"><label for="215">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">SERVICE</p>
+										<ul>
+											<li><input type="checkbox" id="221"><label for="221">없음</label></li>
+											<li><input type="checkbox" id="222"><label for="222">조회</label></li>
+											<li><input type="checkbox" id="223"><label for="223">입력</label></li>
+											<li><input type="checkbox" id="224"><label for="224">관리</label></li>
+											<li><input type="checkbox" id="225"><label for="225">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">SALES</p>
+										<ul>
+											<li><input type="checkbox" id="231"><label for="231">없음</label></li>
+											<li><input type="checkbox" id="232"><label for="232">조회</label></li>
+											<li><input type="checkbox" id="233"><label for="233">입력</label></li>
+											<li><input type="checkbox" id="234"><label for="234">관리</label></li>
+											<li><input type="checkbox" id="235"><label for="235">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">NOTICE</p>
+										<ul>
+											<li><input type="checkbox" id="241"><label for="241">없음</label></li>
+											<li><input type="checkbox" id="242"><label for="242">조회</label></li>
+											<li><input type="checkbox" id="243"><label for="243">입력</label></li>
+											<li><input type="checkbox" id="244"><label for="244">관리</label></li>
+											<li><input type="checkbox" id="245"><label for="245">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">R/S NOTICE</p>
+										<ul>
+											<li><input type="checkbox" id="251"><label for="251">없음</label></li>
+											<li><input type="checkbox" id="252"><label for="252">조회</label></li>
+											<li><input type="checkbox" id="253"><label for="253">입력</label></li>
+											<li><input type="checkbox" id="254"><label for="254">관리</label></li>
+											<li><input type="checkbox" id="255"><label for="255">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">TRAINING</p>
+										<ul>
+											<li><input type="checkbox" id="261"><label for="261">없음</label></li>
+											<li><input type="checkbox" id="262"><label for="262">조회</label></li>
+											<li><input type="checkbox" id="263"><label for="263">입력</label></li>
+											<li><input type="checkbox" id="264"><label for="264">관리</label></li>
+											<li><input type="checkbox" id="265"><label for="265">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">VOICE OF CUSTOMER</p>
+										<ul>
+											<li><input type="checkbox" id="271"><label for="271">없음</label></li>
+											<li><input type="checkbox" id="272"><label for="272">조회</label></li>
+											<li><input type="checkbox" id="273"><label for="273">입력</label></li>
+											<li><input type="checkbox" id="274"><label for="274">관리</label></li>
+											<li><input type="checkbox" id="275"><label for="275">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">ROCAL POINT</p>
+										<ul>
+											<li><input type="checkbox" id="281"><label for="281">없음</label></li>
+											<li><input type="checkbox" id="282"><label for="282">조회</label></li>
+											<li><input type="checkbox" id="283"><label for="283">입력</label></li>
+											<li><input type="checkbox" id="284"><label for="284">관리</label></li>
+											<li><input type="checkbox" id="285"><label for="285">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">최근 주요 지시사항</p>
+										<ul>
+											<li><input type="checkbox" id="291"><label for="291">없음</label></li>
+											<li><input type="checkbox" id="292"><label for="292">조회</label></li>
+											<li><input type="checkbox" id="293"><label for="293">입력</label></li>
+											<li><input type="checkbox" id="294"><label for="294">관리</label></li>
+											<li><input type="checkbox" id="295"><label for="295">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">인사발령</p>
+										<ul>
+											<li><input type="checkbox" id="2101"><label for="2101">없음</label></li>
+											<li><input type="checkbox" id="2102"><label for="2102">조회</label></li>
+											<li><input type="checkbox" id="2103"><label for="2103">입력</label></li>
+											<li><input type="checkbox" id="2104"><label for="2104">관리</label></li>
+											<li><input type="checkbox" id="2105"><label for="2105">전체</label></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="depth1">REPORT</th>
+								<td>
+									<div>
+										<p class="depth2">REPORT</p>
+										<ul>
+											<li><input type="checkbox" id="311"><label for="311">없음</label></li>
+											<li><input type="checkbox" id="312"><label for="312">조회</label></li>
+											<li><input type="checkbox" id="313"><label for="313">입력</label></li>
+											<li><input type="checkbox" id="314"><label for="314">관리</label></li>
+											<li><input type="checkbox" id="315"><label for="315">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">SAFENET</p>
+										<ul>
+											<li><input type="checkbox" id="321"><label for="321">없음</label></li>
+											<li><input type="checkbox" id="322"><label for="322">조회</label></li>
+											<li><input type="checkbox" id="323"><label for="323">입력</label></li>
+											<li><input type="checkbox" id="324"><label for="324">관리</label></li>
+											<li><input type="checkbox" id="325"><label for="325">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">MEAL SURVEY</p>
+										<ul>
+											<li><input type="checkbox" id="331"><label for="331">없음</label></li>
+											<li><input type="checkbox" id="332"><label for="332">조회</label></li>
+											<li><input type="checkbox" id="333"><label for="333">입력</label></li>
+											<li><input type="checkbox" id="334"><label for="334">관리</label></li>
+											<li><input type="checkbox" id="335"><label for="335">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">EVALUATION</p>
+										<ul>
+											<li><input type="checkbox" id="341"><label for="341">없음</label></li>
+											<li><input type="checkbox" id="342"><label for="342">조회</label></li>
+											<li><input type="checkbox" id="343"><label for="343">입력</label></li>
+											<li><input type="checkbox" id="344"><label for="344">관리</label></li>
+											<li><input type="checkbox" id="345"><label for="345">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">기판과부족 조회</p>
+										<ul>
+											<li><input type="checkbox" id="351"><label for="351">없음</label></li>
+											<li><input type="checkbox" id="352"><label for="352">조회</label></li>
+											<li><input type="checkbox" id="353"><label for="353">입력</label></li>
+											<li><input type="checkbox" id="354"><label for="354">관리</label></li>
+											<li><input type="checkbox" id="355"><label for="355">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">CHECK LIST</p>
+										<ul>
+											<li><input type="checkbox" id="361"><label for="361">없음</label></li>
+											<li><input type="checkbox" id="362"><label for="362">조회</label></li>
+											<li><input type="checkbox" id="363"><label for="363">입력</label></li>
+											<li><input type="checkbox" id="364"><label for="364">관리</label></li>
+											<li><input type="checkbox" id="365"><label for="365">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">고충상담</p>
+										<ul>
+											<li><input type="checkbox" id="371"><label for="371">없음</label></li>
+											<li><input type="checkbox" id="372"><label for="372">조회</label></li>
+											<li><input type="checkbox" id="373"><label for="373">입력</label></li>
+											<li><input type="checkbox" id="374"><label for="374">관리</label></li>
+											<li><input type="checkbox" id="375"><label for="375">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">DUTY FREE DECLARATION</p>
+										<ul>
+											<li><input type="checkbox" id="381"><label for="381">없음</label></li>
+											<li><input type="checkbox" id="382"><label for="382">조회</label></li>
+											<li><input type="checkbox" id="383"><label for="383">입력</label></li>
+											<li><input type="checkbox" id="384"><label for="384">관리</label></li>
+											<li><input type="checkbox" id="385"><label for="385">전체</label></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="depth1">REQUEST</th>
+								<td>
+									<div>
+										<p class="depth2">SKD CHANGE</p>
+										<ul>
+											<li><input type="checkbox" id="411"><label for="411">없음</label></li>
+											<li><input type="checkbox" id="412"><label for="412">조회</label></li>
+											<li><input type="checkbox" id="413"><label for="413">입력</label></li>
+											<li><input type="checkbox" id="414"><label for="414">관리</label></li>
+											<li><input type="checkbox" id="415"><label for="415">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">VACATION REQUEST</p>
+										<ul>
+											<li><input type="checkbox" id="421"><label for="421">없음</label></li>
+											<li><input type="checkbox" id="422"><label for="422">조회</label></li>
+											<li><input type="checkbox" id="423"><label for="423">입력</label></li>
+											<li><input type="checkbox" id="424"><label for="424">관리</label></li>
+											<li><input type="checkbox" id="425"><label for="425">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">SKD SWAP REQUEST</p>
+										<ul>
+											<li><input type="checkbox" id="431"><label for="431">없음</label></li>
+											<li><input type="checkbox" id="432"><label for="432">조회</label></li>
+											<li><input type="checkbox" id="433"><label for="433">입력</label></li>
+											<li><input type="checkbox" id="434"><label for="434">관리</label></li>
+											<li><input type="checkbox" id="435"><label for="435">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">EDUCATION REQUEST</p>
+										<ul>
+											<li><input type="checkbox" id="441"><label for="441">없음</label></li>
+											<li><input type="checkbox" id="442"><label for="442">조회</label></li>
+											<li><input type="checkbox" id="443"><label for="443">입력</label></li>
+											<li><input type="checkbox" id="444"><label for="444">관리</label></li>
+											<li><input type="checkbox" id="445"><label for="445">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">지급신청</p>
+										<ul>
+											<li><input type="checkbox" id="451"><label for="451">없음</label></li>
+											<li><input type="checkbox" id="452"><label for="452">조회</label></li>
+											<li><input type="checkbox" id="453"><label for="453">입력</label></li>
+											<li><input type="checkbox" id="454"><label for="454">관리</label></li>
+											<li><input type="checkbox" id="455"><label for="455">전체</label></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="depth1">OPEN PLAZA</th>
+								<td>
+									<div>
+										<p class="depth2">BOARD</p>
+										<ul>
+											<li><input type="checkbox" id="511"><label for="511">없음</label></li>
+											<li><input type="checkbox" id="512"><label for="512">조회</label></li>
+											<li><input type="checkbox" id="513"><label for="513">입력</label></li>
+											<li><input type="checkbox" id="514"><label for="514">관리</label></li>
+											<li><input type="checkbox" id="515"><label for="515">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">R/S BOARD</p>
+										<ul>
+											<li><input type="checkbox" id="521"><label for="521">없음</label></li>
+											<li><input type="checkbox" id="522"><label for="522">조회</label></li>
+											<li><input type="checkbox" id="523"><label for="523">입력</label></li>
+											<li><input type="checkbox" id="524"><label for="524">관리</label></li>
+											<li><input type="checkbox" id="525"><label for="525">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">MEMBER'S EVENT</p>
+										<ul>
+											<li><input type="checkbox" id="531"><label for="531">없음</label></li>
+											<li><input type="checkbox" id="532"><label for="532">조회</label></li>
+											<li><input type="checkbox" id="533"><label for="533">입력</label></li>
+											<li><input type="checkbox" id="534"><label for="534">관리</label></li>
+											<li><input type="checkbox" id="535"><label for="535">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">HEALTH PLUS</p>
+										<ul>
+											<li><input type="checkbox" id="541"><label for="541">없음</label></li>
+											<li><input type="checkbox" id="542"><label for="542">조회</label></li>
+											<li><input type="checkbox" id="543"><label for="543">입력</label></li>
+											<li><input type="checkbox" id="544"><label for="544">관리</label></li>
+											<li><input type="checkbox" id="545"><label for="545">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">FLEA MARKET</p>
+										<ul>
+											<li><input type="checkbox" id="551"><label for="551">없음</label></li>
+											<li><input type="checkbox" id="552"><label for="552">조회</label></li>
+											<li><input type="checkbox" id="553"><label for="553">입력</label></li>
+											<li><input type="checkbox" id="554"><label for="554">관리</label></li>
+											<li><input type="checkbox" id="555"><label for="555">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">승우회/고니회</p>
+										<ul>
+											<li><input type="checkbox" id="561"><label for="561">없음</label></li>
+											<li><input type="checkbox" id="562"><label for="562">조회</label></li>
+											<li><input type="checkbox" id="563"><label for="563">입력</label></li>
+											<li><input type="checkbox" id="564"><label for="564">관리</label></li>
+											<li><input type="checkbox" id="565"><label for="565">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">Q&amp;A</p>
+										<ul>
+											<li><input type="checkbox" id="571"><label for="571">없음</label></li>
+											<li><input type="checkbox" id="572"><label for="572">조회</label></li>
+											<li><input type="checkbox" id="573"><label for="573">입력</label></li>
+											<li><input type="checkbox" id="574"><label for="574">관리</label></li>
+											<li><input type="checkbox" id="575"><label for="575">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">FAQ</p>
+										<ul>
+											<li><input type="checkbox" id="581"><label for="581">없음</label></li>
+											<li><input type="checkbox" id="582"><label for="582">조회</label></li>
+											<li><input type="checkbox" id="583"><label for="583">입력</label></li>
+											<li><input type="checkbox" id="584"><label for="584">관리</label></li>
+											<li><input type="checkbox" id="585"><label for="585">전체</label></li>
+										</ul>
+									</div>
+									<div>
+										<p class="depth2">COOK</p>
+										<ul>
+											<li><input type="checkbox" id="591"><label for="591">없음</label></li>
+											<li><input type="checkbox" id="592"><label for="592">조회</label></li>
+											<li><input type="checkbox" id="593"><label for="593">입력</label></li>
+											<li><input type="checkbox" id="594"><label for="594">관리</label></li>
+											<li><input type="checkbox" id="595"><label for="595">전체</label></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<p class="btn-wrap double">
+					<a href="#none" class="btn border">DELETE</a>
+					<a href="#none" class="btn blue">SAVE</a>
+				</p>
+			</div>
+			<!-- //content-wrap -->
+		</div>
+		<!-- //container -->
+
+		<div id="footer">
+			<div class="foot-area">
+				<select title="LINK" class="link" onchange="window.open(value,'_blank')">
+					<option value="LINK">LINK</option>
+					<option value="HANWAY">HANWAY</option>
+					<option value="CYBER CAMPUS">CYBER CAMPUS</option>
+					<option value="SKY SAFETY21">SKY SAFETY21</option>
+					<option value="SAFENET">SAFENET</option>
+					<option value="CYBER SKYSHOP">CYBER SKYSHOP</option>
+					<option value="MMS QRS">MMS QRS</option>
+					<option value="KALMAN">KALMAN</option>
+					<option value="SKY NEWS">SKY NEWS</option>
+					<option value="E-CATERING">E-CATERING</option>
+				</select>
+				<ul>
+					<li><a href="#none">HANWAY</a></li>
+					<li><a href="#none">CYBER CAMPUS</a></li>
+					<li><a href="#none">SKY SAFETY21</a></li>
+					<li><a href="#none">SAFENET</a></li>
+					<li><a href="#none">CYBER SKYSHOP</a></li>
+					<li><a href="#none">MMS QRS</a></li>
+					<li><a href="#none">KALMAN</a></li>
+					<li><a href="#none">SKY NEWS</a></li>
+					<li><a href="#none">E-CATERING</a></li>
+				</ul>
+				<select title="자주쓰는항목" class="bookmark" onchange="window.open(value,'_blank')">
+					<option value="자주쓰는항목">자주쓰는항목</option>
+					<option value="http://www.naver.com">네이버</option>
+				</select>
+				<p class="terms">
+					<a href="#none">OFFICE INFO</a><span>|</span>
+					<a href="#none">CONTACT US</a><span>|</span>
+					<a href="#none">시스템이용약관</a>
+				</p>
+				<p class="copy">&copy; 2020 Korean Air. Crew Net All rights reserved.</p>
+			</div>
+		</div>
+		<!-- //footer -->
+
+		<button class="btn-top">top</button>
+
+		<div class="dimmed"></div>
+	</body>
+</html>

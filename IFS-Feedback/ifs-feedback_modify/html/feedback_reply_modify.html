@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifs-feedback_reply_MOD</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!--GNB-->
+        <div class="gnb improvement"><!--MOD 202208-COS시연회 관련 : 원본유지 및 수정사항 반영을 위해 class="improvement" 추가-->
+            <div class="left">
+                <div class="logo">
+                    <a href="station.html" target="_self" class="logo__koreanair">
+                        Korean Air
+                    </a>
+                </div>
+                <p class="sub_tit">in-Flight Service Feedback System </p>
+                <!--MOD 202208-COS시연회 관련 : 아이콘형태시 툴팁 추가 및 3번째 메뉴명 수정 등-->
+                <ul class="menu">
+                    <li><a href="#" class="station">Station status</a><div class="hover-text">Station status</div></li>
+                    <li><a href="#" class="feedback -on">Feedback</a><div class="hover-text">Feedback</div></li>
+                    <li><a href="#" class="register">Register</a><div class="hover-text">Register</div></li>
+                </ul>
+                <!--//MOD 202208-COS시연회 관련 : 아이콘형태시 툴팁 추가 및 3번째 메뉴명 수정 등-->
+            </div>
+            <!--MOD 202208-COS시연회 관련 : html구조 변경, 링크값 삽입, 퀵메뉴item추가-->
+            <ul class="quick-menu">
+                <li><a href="https://ssbiprdap.koreanair.com/#/workbooks/524/views" target="_blank" title="새창으로 이동" class="report">IFS부 Audit Report 바로가기</a><div class="hover-text">IFS부 Audit Report 바로가기</div></li>
+                <li><a href="https://sites.google.com/d/1Chc3M5wgvnuF4Y6Pt828NN4-zNYzb_S8/p/1qE4oSR7RhjC3AxMHQRiCCLOKa0NWIy3Y/edit" target="_blank" title="새창으로 이동" class="nps">NPS 바로가기</a><div class="hover-text">NPS 바로가기</div></li>
+            </ul>
+            <button class="menu-simplify-btn" type="button"><span class="arrow">메뉴영역 접기/펼치기 버튼</span></button><!--MOD 202208-COS시연회 관련 : 펼치기닫기버튼 추가-->
+            <!--//MOD 202208-COS시연회 관련 : html구조 변경, 링크값 삽입, 퀵메뉴item추가-->
+        </div>
+         <!--//GNB-->
+
+        <!--main-->
+        <div class="contents improvement"><!--MOD 202208-COS시연회 관련 : 원본유지 및 수정사항 반영을 위해 class="improvement" 추가-->
+            <div class="admin">
+                <a href="#" class="out">logout</a>
+                <a href="#" class="login">1150380</a>
+            </div>
+            <h1>Feedback</h1>
+
+            <!--search-->
+            <div class="grid -search btn_none"><!--MOD 202208-COS시연회 관련 : 버튼 없을경우 높이값 조절을 위해 class="btn_none" 추가-->
+                <div class="-flex">
+                    <div class="forms multiselect -md"><!--MOD 202208-COS시연회 관련 : width값 조정을 위해 class="multiselect" 추가-->
+                        <label class="label" for="stn">Station</label>
+                        <select id="stn" name="stn" multiple="multiple" disabled="disabled">
+                            <option value="">(전체)</option>
+                            <option value="">ICN</option>
+                            <option value="" selected>SFO</option>
+                            <option value="">TAE</option>
+                            <option value="">PUS</option>
+                            <option value="">GMP</option>
+                            <option value="">KUV</option>
+                            <option value="">CJU</option>
+                            <option value="">MWX</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Occurred">Occurred</label>
+                        <input type="text" class="input -mT10 bgNone -lg" placeholder="2021.01.01" disabled="disabled">
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Resp">Responsibility</label>
+                        <select class="-xs" disabled="disabled">
+                            <option value="" selected="selected">----</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Reply">Reply</label>
+                        <select class="-xs" disabled="disabled">
+                            <option value="" selected="selected">----</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Code">Code</label>
+                        <div class="-flex">
+                            <select class="-mR10 -xl" disabled="disabled">
+                                <option value="" selected="selected">----</option>
+                            </select>
+                            <select class="-xl" disabled="disabled">
+                                <option value="" selected="selected">----</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="FLT">FLT</label>
+                        <select class="-xs" disabled="disabled">
+                            <option value="" selected="selected"># 0026</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Sector">Sector</label>
+                        <select class="-md" disabled="disabled">
+                            <option value="" selected="selected">SFO-INC</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="CLS">CLS</label>
+                        <select class="-xs" disabled="disabled">
+                            <option value="" selected="selected">PR</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="SEAT_NO">Seat</label>
+                        <input type="text" class="input -mT10 bgNone -md" disabled="disabled">
+                    </div>
+                </div>
+            </div>
+            <!--//search-->
+
+            <!-- feedback_reply :: [s] -->
+            <div class="grid">
+                <div class="-flex -w100 -reply">
+                    <div class="forms  -flex_center -mT0">
+                        <label class="label" for="Subject">Subject</label>
+                        <input type="text" class="hg46" placeholder="기내식 이물질 발생 (껍질류)">
+                    </div>
+
+                    <div class="forms  -flex_center">
+                        <label class="label" for="Date">Date</label>
+                        <input type="text" class="hg46" placeholder="2022.02.17" disabled="disabled">
+                    </div>
+                    <div class="forms  -flex_center">
+                        <label class="label" for="Contents">Contents</label>
+                    <textarea class="test">
+위 표제와 관련하여 아래와 같이 보고합니다.
+
+1. 승객 인적사항
+- 좌석번호 : 8D
+- 이름 : CHA / MIN KYOUG (한국국적 여성)
+
+2. 발생경위 및 조치사항
+- PR/ CL 첫번째 전채요리(조개관자)에서 이물질이 발견되어(껍질종류) 승객이 이야기함.
+- 승무원은 새로운 것으로 교체를 권했으나 승객은 괜찮다 함.
+- 추후 사무장(본인)이 승객에게 사과함
+- 승객은 별다른 특이사항 없었음
+
+3. 인천 도착후 이물질 인계함
+- 인천 직원 이름 : 정병석
+                        </textarea>
+                    </div>
+                    <div class="-reply_btn">
+                        <p class="-btn_view">
+                            <a href="#" class="btn_down">View Photo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- feedback_reply :: [e] -->
+
+            <!-- button :: [s] -->
+            <div class="btnContainer">
+                <a href="#" class="btn_gray_lg -mR10">Back</a>
+                <a href="#" class="btn_blue_lg">Save</a>
+            </div>
+            <!-- button :: [e] -->
+
+        </div>
+        <!--//main-->
+    </div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="../js/jquery.multi-select.js"></script><!--MOD 202208-COS시연회 관련 : multiSelect 추가-->
+    
+    <!--MOD 202208-COS시연회 관련 추가-->
+    <script>
+        //GNB메뉴 아이콘화
+        $(".gnb .menu-simplify-btn").on("click", function(){
+            $(this).parents(".wrap").toggleClass("simplify");
+        });
+
+        //datepicker option
+        $.datepicker.setDefaults({
+            dateFormat: 'yy.mm.dd',
+            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            // monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            // dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            // dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            showMonthAfterYear: true,
+            yearSuffix: '년',
+            showButtonPanel: true,
+            currentText: 'Today',
+            closeText: '확인',
+        });
+
+        $(function(){
+            $('#stn').multiSelect();//multiSelect
+            $('#dateFrom, #dateTo').datepicker();//jq-ui datepicker
+        });
+
+        //top button
+        function goToTop() {
+            $('.btn_top').on('click',function(){
+                    $('html, body').stop().animate({ scrollTop: 0 }, 200, 'easeInOutQuad');
+            });
+        }
+        $(window).scroll(function(){
+            var scrollT = $(window).scrollTop(),
+            scrollArea = $( document ).height();
+            if ((scrollT + $( window ).height() ) >= scrollArea-160) {
+                    $('.btn_top').fadeIn(200);
+            } else {
+                $('.btn_top').fadeOut(200);
+            }
+            goToTop();
+	    });
+    </script>
+
+</body>
+
+</html>

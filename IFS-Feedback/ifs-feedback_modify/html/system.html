@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifs-feedback</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="gnb">
+            <div class="left">
+                <div class="logo">
+                    <a href="station.html" target="_self" class="logo__koreanair">
+                        Korean Air
+                    </a>
+                </div>
+                <p class="sub_tit">in-Flight Service Feedback System </p>
+                <ul class="menu">
+                    <li><a href="#" class="station">Station status</a></li>
+                    <li><a href="#" class="feedback">Feedback</a></li>
+                    <li><a href="#" class="system -on">System</a></li>
+                </ul>
+            </div>
+            <p class="nps"><a href="#">NPS 바로가기</a></p>
+        </div>
+        <div class="contents">
+            <div class="admin">
+                <a href="#" class="out">logout</a>
+                <a href="#" class="login">1150380</a>
+            </div>
+            <h1>System</h1>
+
+            <div class="grid -search -systemWrap -w75">
+                <div class="-flex -w100">
+                    <div class="forms -mR20">
+                        <label class="label" for="사용자 ID">사용자 ID</label>
+                        <div class="-flex_center -mT10">
+                            <input type="text" class="-system_input" placeholder="1150**">
+                            <a href="#" class="btn_search">Search</a>
+                        </div>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="소속">소속</label>
+                        <select>
+                            <option value="" selected="selected">KE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="-flex -w100">
+                    <div class="forms -mT30">
+                        <label class="label" for="이름">이름</label>
+                        <div class="-flex_center -mT10">
+                            <input type="text" class="input" placeholder="홍길동">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="-flex -w100">
+                    <div class="forms -mT30">
+                        <label class="label" for="Station Code">Station Code</label>
+                        <div class="-flex_center -mT10">
+                            <input type="text" class="input" placeholder="3 letter 입력 (현행 동일)">
+                        </div>
+                    </div>
+                </div>
+                <div class="-flex -w100">
+                    <div class="forms -mT30">
+                        <label class="label" for="E-Mail">E-Mail</label>
+                        <div class="-flex_center -mT10">
+                            <input type="text" class="input" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- button :: [s] -->
+            <div class="btnContainer -w75">
+                <a href="#" class="btn_gray_lg -mR10">사용자 삭제</a>
+                <a href="#" class="btn_blue_lg">Save</a>
+            </div>
+            <!-- button :: [e] -->
+        </div>
+    </div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var dateFormat = "mm/dd/yy",
+                from = $("#from")
+                    .datepicker({
+                        defaultDate: "+1w",
+                        changeMonth: true,
+                        numberOfMonths: 2
+                    })
+                    .on("change", function () {
+                        to.datepicker("option", "minDate", getDate(this));
+                    }),
+                to = $("#to").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 2
+                })
+                    .on("change", function () {
+                        from.datepicker("option", "maxDate", getDate(this));
+                    });
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+
+                return date;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

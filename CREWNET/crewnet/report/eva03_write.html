@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<title>EVALUATION WRITE - CREWNET</title>
+		<link rel="stylesheet" href="../assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/content.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+		<script type="text/javascript" src="../assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../assets/script/common.js"></script>
+	</head>
+	<body>
+		<div id="skipNav"><a href="#container">본문내용 바로가기</a></div>
+		<div id="gnb">
+			<div class="gnb-width">
+				<h1>
+					<a href="../main.html" class="logo">CREWNET</a> <!-- 링크 메인페이지로 연결 -->
+					<span>Seoul (KST) 120.5.8 11:28:32</span>
+				</h1>
+				<a href="#none" class="btn-menu" title="모바일/태블릿 메뉴 버튼">메뉴</a>
+				<ul class="nav">
+					<li><a href="#none">FLT DUTY</a></li>
+					<li><a href="#none">BULLETIN</a></li>
+					<li><a href="#none">REPORT</a></li>
+					<li><a href="#none">REQUEST</a></li>
+					<li><a href="#none">OPEN PLAZA</a></li>
+				</ul>
+				<div class="myinfo">
+					<button class="search">검색</button>
+					<a href="#none" class="user">my info</a>
+					<p>안녕하세요! <strong>홍길동님</strong> <br>오늘도 화이팅 :)</p>
+					<div class="tooltip-menu">
+						<p class="txt">안녕하세요! <strong class="accent2">홍길동</strong>님<br>오늘도 화이팅:)</p>
+						<ul>
+							<li><a href="#none" class="info">MY INFO</a></li>
+							<li><a href="#none" class="logout">로그아웃</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="search-wrap">
+				<div class="search-area">
+					<select title="통합검색">
+						<option value="통합검색">통합검색</option>
+						<option value="검색조건1">검색조건1</option>
+						<option value="검색조건2">검색조건2</option>
+					</select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button>검색</button>
+				</div>
+			</div>
+		
+			<button class="menu-close">닫기</button>
+		</div>
+		<!-- //gnb -->
+		
+		<div class="menu-full">
+			<p class="logo"><a href="../main.html">CREWNET</a></p> <!-- 링크 메인페이지로 연결 -->
+			<ul class="depth1">
+				<li>
+					<a href="#none">FLT DUTY</a>
+					<ul class="depth2">
+						<li><a href="#none">MY SKD</a></li>
+						<li><a href="#none">DAY-OFF CHECK</a></li>
+						<li><a href="#none">SKD Q&amp;A</a></li>
+						<li><a href="#none">BRIEFING SHEET</a></li>
+						<li><a href="#none">DUTY ASSIGNMENT</a></li>
+						<li><a href="#none">MY STAFF SKD</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">BULLETIN</a>
+					<ul class="depth2">
+						<li><a href="#none">SAFET</a></li>
+						<li><a href="#none">SERVICE</a></li>
+						<li><a href="#none">SALES</a></li>
+						<li><a href="#none">TRAINING</a></li>
+						<li><a href="#none">NOTICE</a></li>
+						<li><a href="#none">DP NOTICE</a></li>
+						<li><a href="#none">R/S NOTICE</a></li>
+						<li><a href="#none">Voice of Customer</a></li>
+						<li><a href="#none">인사발령</a></li>
+						<li><a href="#none">FOCAL POINT (중점강조)</a></li>
+						<li><a href="#none">최근 주요 지시 공지</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REPORT</a>
+					<ul class="depth2">
+						<li><a href="#none">REPORT</a></li>
+						<li><a href="#none">SAFENET</a></li>
+						<li><a href="#none">MEAL SURVEY</a></li>
+						<li><a href="#none">EVALUATION</a></li>
+						<li><a href="#none">CHECK LIST</a></li>
+						<li><a href="#none">Duty-Free declaration</a></li>
+						<li><a href="#none">기판 과부족 조회</a></li>
+						<li><a href="#none">고충상담</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REQUEST</a>
+					<ul class="depth2">
+						<li><a href="#none">SKD CHANGE</a></li>
+						<li><a href="#none">VACATION REQUEST</a></li>
+						<li><a href="#none">EDUCATION REQUEST</a></li>
+						<li><a href="#none">SKD SWAP</a></li>
+						<li><a href="#none">지급신청</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">OPEN PLAZA</a>
+					<ul class="depth2">
+						<li><a href="#none">BOARD</a></li>
+						<li><a href="#none">R/S BOARD</a></li>
+						<li><a href="#none">MEMBERS' EVENT</a></li>
+						<li><a href="#none">HEALTH PLUS</a></li>
+						<li><a href="#none">FELA MARKET</a></li>
+						<li><a href="#none">승우회/고니회</a></li>
+						<li><a href="#none">Q&amp;A</a></li>
+						<li><a href="#none">COOK방(F&amp;B) CAFE</a></li>
+					</ul>
+				</li>
+			</ul>
+			<button class="btn-close">닫기</button>
+		</div>
+		<!-- //menu-full -->
+
+		<div class="visual title">
+			<h2>EVALUATION</h2>
+			<button class="btn-print">print</button>
+		</div>
+		<!-- //visual -->
+
+		<div id="container">
+			<div class="content-wrap">
+				<div class="tbl-top">
+					<h3 class="tit">QA인증평가</h3>
+					<p class="tbl-btn">
+						<button class="btn icon">지정하기</button>
+					</p>
+				</div>
+				<!-- //tbl-top -->
+
+				<ul class="box-list col3">
+					<li>
+						<div>
+							<strong>편명</strong>
+							<p>
+								<span>KE</span>
+								<strong>0159</strong>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>Dep Date</strong>
+							<p>
+								<span>2020.02.03</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>구간</strong>
+							<p>
+								<span>ICN - HGH</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>피평가자고유번호</strong>
+							<p>
+								<span>0112</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>피평가자 성명</strong>
+							<p>
+								<span>KANG MIN JUNG</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>피평가자팀번호</strong>
+							<p>
+								<span>1026</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>평가자고유번호</strong>
+							<p>
+								<span>0112</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>평가자성명</strong>
+							<p>
+								<span>KANG MIN JUNG</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>평가자팀번호</strong>
+							<p>
+								<span>1026</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+				<!-- //box-list -->
+
+				<div class="eva-wrap case2">
+					<div class="section">
+						<p class="stit">01. 용모복장(10)</p>
+						<div class="q-wrap">
+							<ul class="q bul-list">
+								<li>적합한 화장, HAIR-DO, UNIFORM 및 ACCESSORIES를 착용하여 비행근무시 KE 객실승무원으로서의 올바른 이미지를 표출할 수 있다.</li>
+							</ul>
+							<ul class="eva-input star">
+								<li><input type="radio" id="q11" name="radio1"><label for="q11">1</label></li>
+								<li><input type="radio" id="q12" name="radio1"><label for="q12">2</label></li>
+								<li><input type="radio" id="q13" name="radio1"><label for="q13">3</label></li>
+								<li><input type="radio" id="q14" name="radio1"><label for="q14">4</label></li>
+								<li><input type="radio" id="q15" name="radio1"><label for="q15">5</label></li>
+								<li><input type="radio" id="q16" name="radio1"><label for="q16">6</label></li>
+								<li><input type="radio" id="q17" name="radio1"><label for="q17">7</label></li>
+								<li><input type="radio" id="q18" name="radio1"><label for="q18">8</label></li>
+								<li><input type="radio" id="q19" name="radio1"><label for="q19">9</label></li>
+								<li><input type="radio" id="q110" name="radio1"><label for="q110">10</label></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<div class="section">
+						<p class="stit">02. 비행준비(10)</p>
+						<div class="q-wrap">
+							<ul class="q bul-list">
+								<li>비행 필수 휴대품 소지 및 FLT INFO 와 안전/서비스관련 업무를 숙지하여 비행근무에 최선을 다할 수 있다.</li>
+							</ul>
+							<ul class="eva-input star">
+								<li><input type="radio" id="q21" name="radio2"><label for="q21">1</label></li>
+								<li><input type="radio" id="q22" name="radio2"><label for="q22">2</label></li>
+								<li><input type="radio" id="q23" name="radio2"><label for="q23">3</label></li>
+								<li><input type="radio" id="q24" name="radio2"><label for="q24">4</label></li>
+								<li><input type="radio" id="q25" name="radio2"><label for="q25">5</label></li>
+								<li><input type="radio" id="q26" name="radio2"><label for="q26">6</label></li>
+								<li><input type="radio" id="q27" name="radio2"><label for="q27">7</label></li>
+								<li><input type="radio" id="q28" name="radio2"><label for="q28">8</label></li>
+								<li><input type="radio" id="q29" name="radio2"><label for="q29">9</label></li>
+								<li><input type="radio" id="q210" name="radio2"><label for="q210">10</label></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<div class="section">
+						<p class="stit">03. PRE-FLT CHK(10)</p>
+						<div class="q-wrap">
+							<ul class="q bul-list">
+								<li>CHECKLIST에 의한 비상/보안장비 점검을 실시하여 안전한 기내 환경을 유지할 수 있다.</li>
+								<li>SVC ITEM 및 기내 설비 시설 점검을 실시하여 서비스 IRR 발생을 사전에 예방할 수 있다.</li>
+							</ul>
+							<ul class="eva-input star">
+								<li><input type="radio" id="q31" name="radio3"><label for="q31">1</label></li>
+								<li><input type="radio" id="q32" name="radio3"><label for="q32">2</label></li>
+								<li><input type="radio" id="q33" name="radio3"><label for="q33">3</label></li>
+								<li><input type="radio" id="q34" name="radio3"><label for="q34">4</label></li>
+								<li><input type="radio" id="q35" name="radio3"><label for="q35">5</label></li>
+								<li><input type="radio" id="q36" name="radio3"><label for="q36">6</label></li>
+								<li><input type="radio" id="q37" name="radio3"><label for="q37">7</label></li>
+								<li><input type="radio" id="q38" name="radio3"><label for="q38">8</label></li>
+								<li><input type="radio" id="q39" name="radio3"><label for="q39">9</label></li>
+								<li><input type="radio" id="q310" name="radio3"><label for="q310">10</label></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<div class="section">
+						<p class="stit">04. 이륙준비(10)</p>
+						<div class="q-wrap">
+							<ul class="q bul-list">
+								<li>단정한 복장을 갖추고 DOOR 근처나 AISLE에 대기하여 좌석 안내시 밝은 표정 및 적극적인 승객환영을 할 수 있다</li>
+								<li>SLIDE MODE 변경을 객실사무장의 신호에 맞춰 정확하게 실시할 수 있다.</li>
+								<li>승무원의 실연에 의한 DEMO 방법을 완벽하게 숙지 및 정확한 동작을 실연할 수 있다.</li>
+								<li>좌석벨트 점검, 유동물 고정 상태 점검 및 30SECOND REVIEW를 실시하여 만약에 발생 할 수 있는 상황을 예방하고 대처할 수 있다.</li>
+							</ul>
+							<ul class="eva-input star">
+								<li><input type="radio" id="q41" name="radio4"><label for="q41">1</label></li>
+								<li><input type="radio" id="q42" name="radio4"><label for="q42">2</label></li>
+								<li><input type="radio" id="q43" name="radio4"><label for="q43">3</label></li>
+								<li><input type="radio" id="q44" name="radio4"><label for="q44">4</label></li>
+								<li><input type="radio" id="q45" name="radio4"><label for="q45">5</label></li>
+								<li><input type="radio" id="q46" name="radio4"><label for="q46">6</label></li>
+								<li><input type="radio" id="q47" name="radio4"><label for="q47">7</label></li>
+								<li><input type="radio" id="q48" name="radio4"><label for="q48">8</label></li>
+								<li><input type="radio" id="q49" name="radio4"><label for="q49">9</label></li>
+								<li><input type="radio" id="q410" name="radio4"><label for="q410">10</label></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<div class="section">
+						<p class="stit">05. IN-FLT SVC(20)</p>
+						<div class="q-wrap">
+							<ul class="q bul-list">
+								<li>SVC 표준 동작, 눈높이 서비스/대화를 실시하여 명품 서비스를 구현할 수 있다.</li>
+								<li>객실/화장실/GLY 청결상태 유지 및 정리정돈을 통하여 쾌적한 기내환경을 조성할 수 있다.</li>
+								<li>WALK AROUND 및 PAX CARE를 승객 휴면시 실시하여 객실의 안전을 유지하고 쾌적성을 배려하며 승객의 욕구를 충족시킬 수 있다.</li>
+								<li>풍부한 업무 지식과 적극적인 태도로 담당 업무를 완벽하게 수행할 수 있다.</li>
+							</ul>
+							<ul class="eva-input star">
+								<li><input type="radio" id="q51" name="radio5"><label for="q51">1</label></li>
+								<li><input type="radio" id="q52" name="radio5"><label for="q52">2</label></li>
+								<li><input type="radio" id="q53" name="radio5"><label for="q53">3</label></li>
+								<li><input type="radio" id="q54" name="radio5"><label for="q54">4</label></li>
+								<li><input type="radio" id="q55" name="radio5"><label for="q55">5</label></li>
+								<li><input type="radio" id="q56" name="radio5"><label for="q56">6</label></li>
+								<li><input type="radio" id="q57" name="radio5"><label for="q57">7</label></li>
+								<li><input type="radio" id="q58" name="radio5"><label for="q58">8</label></li>
+								<li><input type="radio" id="q59" name="radio5"><label for="q59">9</label></li>
+								<li><input type="radio" id="q510" name="radio5"><label for="q510">10</label></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<div class="section">
+						<p class="stit">06. 착륙준비(10)</p>
+						<div class="q-wrap">
+							<ul class="q bul-list">
+								<li>유동물 고정,승객 좌석 BELT 점검 및 좌석 점검을 실시하여 만약에 발생 할 수 있는 상황을 예방할 수 있다.</li>
+							</ul>
+							<ul class="eva-input star">
+								<li><input type="radio" id="q61" name="radio6"><label for="q61">1</label></li>
+								<li><input type="radio" id="q62" name="radio6"><label for="q62">2</label></li>
+								<li><input type="radio" id="q63" name="radio6"><label for="q63">3</label></li>
+								<li><input type="radio" id="q64" name="radio6"><label for="q64">4</label></li>
+								<li><input type="radio" id="q65" name="radio6"><label for="q65">5</label></li>
+								<li><input type="radio" id="q66" name="radio6"><label for="q66">6</label></li>
+								<li><input type="radio" id="q67" name="radio6"><label for="q67">7</label></li>
+								<li><input type="radio" id="q68" name="radio6"><label for="q68">8</label></li>
+								<li><input type="radio" id="q69" name="radio6"><label for="q69">9</label></li>
+								<li><input type="radio" id="q610" name="radio6"><label for="q610">10</label></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<div class="section">
+						<p class="stit">07. 착륙후업무(10)</p>
+						<div class="q-wrap">
+							<ul class="q bul-list">
+								<li>보안점검 및 유실물 점검/처리를 실시하여 착륙 후 업무에 만전을 기할 수 있다.</li>
+							</ul>
+							<ul class="eva-input star">
+								<li><input type="radio" id="q71" name="radio7"><label for="q71">1</label></li>
+								<li><input type="radio" id="q72" name="radio7"><label for="q72">2</label></li>
+								<li><input type="radio" id="q73" name="radio7"><label for="q73">3</label></li>
+								<li><input type="radio" id="q74" name="radio7"><label for="q74">4</label></li>
+								<li><input type="radio" id="q75" name="radio7"><label for="q75">5</label></li>
+								<li><input type="radio" id="q76" name="radio7"><label for="q76">6</label></li>
+								<li><input type="radio" id="q77" name="radio7"><label for="q77">7</label></li>
+								<li><input type="radio" id="q78" name="radio7"><label for="q78">8</label></li>
+								<li><input type="radio" id="q79" name="radio7"><label for="q79">9</label></li>
+								<li><input type="radio" id="q710" name="radio7"><label for="q710">10</label></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<div class="section">
+						<p class="stit">08. 기본자세(20)</p>
+						<div class="q-wrap">
+							<ul class="q bul-list">
+								<li>표정, 동작의 세련도, 바른 인사, 업무에 대한 적극성 등 객실승무원으로서 요구되는 조건을 갖춤으로써 승객의 NEEDS를 충족할 수 있다.</li>
+								<li>동료 승무원과의 COMMUNICATION 유지 및 협력하는 자세를 갖춤으로서 밝은 비행 근무 분위기를 조성할 수 있다</li>
+							</ul>
+							<ul class="eva-input star">
+								<li><input type="radio" id="q81" name="radio8"><label for="q81">1</label></li>
+								<li><input type="radio" id="q82" name="radio8"><label for="q82">2</label></li>
+								<li><input type="radio" id="q83" name="radio8"><label for="q83">3</label></li>
+								<li><input type="radio" id="q84" name="radio8"><label for="q84">4</label></li>
+								<li><input type="radio" id="q85" name="radio8"><label for="q85">5</label></li>
+								<li><input type="radio" id="q86" name="radio8"><label for="q86">6</label></li>
+								<li><input type="radio" id="q87" name="radio8"><label for="q87">7</label></li>
+								<li><input type="radio" id="q88" name="radio8"><label for="q88">8</label></li>
+								<li><input type="radio" id="q89" name="radio8"><label for="q89">9</label></li>
+								<li><input type="radio" id="q810" name="radio8"><label for="q810">10</label></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<div class="remark">
+						<span class="label">특기사항</span>
+						<textarea class="remark-text autosize" placeholder='특기사항을 입력해주세요. 특기사항이 없는 경우 빈칸으로 두셔도 됩니다.(점".", "없음", "상동", "N/L" 등 불필요)'></textarea>
+					</div>
+				</div>
+
+				<p class="btn-wrap double">
+					<a href="#none" class="btn border">CANCEL</a>
+					<a href="#none" class="btn blue">SAVE</a>
+				</p>
+			</div>
+			<!-- //content-wrap -->
+		</div>
+		<!-- //container -->
+
+		<div id="footer">
+			<div class="foot-area">
+				<select title="LINK" class="link" onchange="window.open(value,'_blank')">
+					<option value="LINK">LINK</option>
+					<option value="HANWAY">HANWAY</option>
+					<option value="CYBER CAMPUS">CYBER CAMPUS</option>
+					<option value="SKY SAFETY21">SKY SAFETY21</option>
+					<option value="SAFENET">SAFENET</option>
+					<option value="CYBER SKYSHOP">CYBER SKYSHOP</option>
+					<option value="MMS QRS">MMS QRS</option>
+					<option value="KALMAN">KALMAN</option>
+					<option value="SKY NEWS">SKY NEWS</option>
+					<option value="E-CATERING">E-CATERING</option>
+				</select>
+				<ul>
+					<li><a href="#none">HANWAY</a></li>
+					<li><a href="#none">CYBER CAMPUS</a></li>
+					<li><a href="#none">SKY SAFETY21</a></li>
+					<li><a href="#none">SAFENET</a></li>
+					<li><a href="#none">CYBER SKYSHOP</a></li>
+					<li><a href="#none">MMS QRS</a></li>
+					<li><a href="#none">KALMAN</a></li>
+					<li><a href="#none">SKY NEWS</a></li>
+					<li><a href="#none">E-CATERING</a></li>
+				</ul>
+				<select title="자주쓰는항목" class="bookmark" onchange="window.open(value,'_blank')">
+					<option value="자주쓰는항목">자주쓰는항목</option>
+					<option value="http://www.naver.com">네이버</option>
+				</select>
+				<p class="terms">
+					<a href="#none">OFFICE INFO</a><span>|</span>
+					<a href="#none">CONTACT US</a><span>|</span>
+					<a href="#none">시스템이용약관</a>
+				</p>
+				<p class="copy">&copy; 2020 Korean Air. Crew Net All rights reserved.</p>
+			</div>
+		</div>
+		<!-- //footer -->
+
+		<button class="btn-top">top</button>
+
+		<div class="dimmed"></div>
+	</body>
+</html>

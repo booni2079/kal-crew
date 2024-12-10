@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifs-feedback</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="gnb">
+            <div class="left">
+                <div class="logo">
+                    <a href="station.html" target="_self" class="logo__koreanair">
+                        Korean Air
+                    </a>
+                </div>
+                <p class="sub_tit">in-Flight Service Feedback System </p>
+                <ul class="menu">
+                    <li><a href="#" class="station">Station status</a></li>
+                    <li><a href="#" class="feedback -on">Feedback</a></li>
+                    <li><a href="#" class="system">System</a></li>
+                </ul>
+            </div>
+            <p class="nps"><a href="#">NPS 바로가기</a></p>
+        </div>
+        <div class="contents">
+            <div class="admin">
+                <a href="#" class="out">logout</a>
+                <a href="#" class="login">1150380</a>
+            </div>
+            <h1>Feedback</h1>
+
+            <div class="grid -search">
+                <div class="-flex -w100">
+                    <div class="forms -mR20">
+                        <label class="label" for="STN">STN</label>
+                        <select disabled="disabled">
+                            <option value="" selected="selected">SFO</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Occurred">Occurred</label>
+                        <input type="text" class="input -mT10 bgNone -w100" placeholder="2021.01.01" disabled="disabled">
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Resp">Resp</label>
+                        <select disabled="disabled">
+                            <option value="" selected="selected">Y</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Reply">Reply</label>
+                        <select disabled="disabled">
+                            <option value="" selected="selected">N</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Code">Code</label>
+                        <div class="-flex">
+                            <select class="-mR10" disabled="disabled">
+                                <option value="" selected="selected">A. 이물질</option>
+                            </select>
+                            <select disabled="disabled">
+                                <option value="" selected="selected">d. 돌맹이/모래</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="-flex -w100 -mT20">
+                    <div class="forms -mR20">
+                        <label class="label" for="FLT">FLT</label>
+                        <select disabled="disabled">
+                            <option value="" selected="selected"># 0026</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Sector">Sector</label>
+                        <select disabled="disabled">
+                            <option value="" selected="selected">SFO-INC</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="CLS">CLS</label>
+                        <select disabled="disabled">
+                            <option value="" selected="selected">PR</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                    </div>
+                    <div class="forms">
+                    </div>
+                </div>
+            </div>
+
+            <!-- feedback_reply :: [s] -->
+            <div class="grid">
+                <div class="-flex -w100 -reply">
+                    <div class="forms  -flex_center -mT0">
+                        <label class="label" for="Subject">Subject</label>
+                        <input type="text" class="hg46" placeholder="기내식 이물질 발생 (껍질류)">
+                    </div>
+
+                    <div class="forms  -flex_center">
+                        <label class="label" for="Date">Date</label>
+                        <input type="text" class="hg46" placeholder="2022.02.17" disabled="disabled">
+                    </div>
+                    <div class="forms  -flex_center">
+                        <label class="label" for="Contents">Contents</label>
+                    <textarea class="test">
+위 표제와 관련하여 아래와 같이 보고합니다.
+
+1. 승객 인적사항
+- 좌석번호 : 8D
+- 이름 : CHA / MIN KYOUG (한국국적 여성)
+
+2. 발생경위 및 조치사항
+- PR/ CL 첫번째 전채요리(조개관자)에서 이물질이 발견되어(껍질종류) 승객이 이야기함.
+- 승무원은 새로운 것으로 교체를 권했으나 승객은 괜찮다 함.
+- 추후 사무장(본인)이 승객에게 사과함
+- 승객은 별다른 특이사항 없었음
+
+3. 인천 도착후 이물질 인계함
+- 인천 직원 이름 : 정병석
+                        </textarea>
+                    </div>
+                    <div class="-reply_btn">
+                        <p class="-btn_view">
+                            <a href="#" class="btn_down">View Photo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- feedback_reply :: [e] -->
+
+            <!-- button :: [s] -->
+            <div class="btnContainer">
+                <a href="#" class="btn_blue_lg">Save</a>
+            </div>
+            <!-- button :: [e] -->
+
+        </div>
+    </div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var dateFormat = "mm/dd/yy",
+                from = $("#from")
+                    .datepicker({
+                        defaultDate: "+1w",
+                        changeMonth: true,
+                        numberOfMonths: 2
+                    })
+                    .on("change", function () {
+                        to.datepicker("option", "minDate", getDate(this));
+                    }),
+                to = $("#to").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 2
+                })
+                    .on("change", function () {
+                        from.datepicker("option", "maxDate", getDate(this));
+                    });
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+
+                return date;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

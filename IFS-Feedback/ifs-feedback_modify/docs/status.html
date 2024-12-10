@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IFS-Feedback 퍼블리싱 현황판</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" data-description="정보구조도 스타일" href="css/index.css" />
+    <style>
+        .totalBox{position:fixed;right:250px;top:6px;z-index:1000;}
+        .totalBox p{float:left;width:100px; }
+        .전체::before{content:'전체 : ';color:red;vertical-align:bottom;}
+        .전::before{content:'작업전 : ';color:gray;vertical-align:bottom;}
+        .작::before{content:'작업중 : ';color:blue ;vertical-align:bottom;}
+        .검::before{content:'검수중 : ';color:#f8c657;vertical-align:bottom;}
+        .완료::before{content:'완료 : ';color:green;vertical-align:bottom;}
+        .퍼센트::before{content:'진행률 : ';color:green;vertical-align:bottom;}
+        p.msg {position:relative; color:#333; font-style:normal; text-align:left; }
+        .add:before {content:"ADD"; padding:0 5px; background:lightgreen; color:rgb(4, 131, 42); border-radius:2px; }
+        .mod:before {content:"MOD"; padding:0 5px; background:red; color:#fff; border-radius:2px;  }
+        .desc:before {content:"DESC"; padding:0 5px; background:skyblue; color:#fff; border-radius:2px;  }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="project-name">IFS-Feedback</div>
+        <div class="document-name">퍼블리싱 현황판</div>
+    </div>
+
+    <div class="contents">
+        <div class="section">
+            <div class="table">
+                <div class="title">
+                    <div>Level<sup>1</sup></div>
+                    <div>Level<sup>2</sup></div>
+                    <div>Level<sup>3</sup></div>
+                    <div>Level<sup>4</sup></div>
+                    <div>File Name</div>
+                    <div>Author</div>
+                    <div>Progress</div>
+                    <div>Memo</div>
+                </div>
+                <a href="../html/station.html">
+                    <div>station satatus</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>station</div>
+                    <div>조현주</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/feedback_modify.html">
+                    <div>Feedback</div>
+                    <div>list</div>
+                    <div></div>
+                    <div></div>
+                    <div>feedback_modify</div>
+                    <div>이영분</div>
+                    <div><i progress="완료"></i></div>
+                    <div>
+                        <p class="msg add">
+                            [개편] 2022-08-19<br>
+                            좌측 GNB영역 메뉴추가/변경 및 UI수정, 영역접기 기능 추가<br>
+                            콘텐츠 전체적인 여백 수정<br>
+                            search box 영역 컴포넌트 크기 및 여백 수정, 정렬방식 및 버튼 디자인 변경 등 전반적인 수정<br>
+                            datepicker Range->single 형태로 분리 및 UI 변경<br>
+                            search box 영역내 multiselect 컴포넌트 추가<br>
+                            TOP버튼 추가<br>
+                            board list 상단 10개씩 보기 select 추가<br>
+                            board list 컬럼 분리 및 img 컬럼 추가<br>
+                        </p>
+                    </div>
+                </a>
+                <a href="../html/feedback.html">
+                    <div>Feedback</div>
+                    <div>list</div>
+                    <div></div>
+                    <div></div>
+                    <div>Feedback</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div>calendar UI 추가</div>
+                </a>
+
+                <a href="../html/feedback_Datepicker.html">
+                    <div></div>
+                    <div></div>
+                    <div>pop</div>
+                    <div>calendar-2022-04-08</div>
+                    <div>feedback_Datepicker</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div>calendar 구간선택 UI</div>
+                </a>
+                <a href="../html/feedback_popup01.html">
+                    <div></div>
+                    <div></div>
+                    <div>pop</div>
+                    <div>interface-1step</div>
+                    <div>feedback_popup01</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/feedback_popup02.html">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>interface-2step</div>
+                    <div>feedback_popup02</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/feedback_view_modify.html">
+                    <div>Feedback</div>
+                    <div>detail</div>
+                    <div></div>
+                    <div></div>
+                    <div>feedback_view_modify</div>
+                    <div>이영분</div>
+                    <div><i progress="완료"></i></div>
+                    <div>
+                        <p class="msg add">
+                            [개편] 2022-08-19<br>
+                            좌측 GNB 영역 수정(메뉴추가/변경 및 UI수정, 영역접기 기능 추가)<br>
+                            콘텐츠 전체적인 여백 수정<br>
+                            search box 영역 컴포넌트 크기 및 여백 수정, 정렬방식 및 버튼 디자인 변경 등 전반적인 수정<br>
+                            search box 영역내 multiselect 컴포넌트 추가<br>
+                            board 하단 Back 버튼 추가<br>
+                            TOP버튼 추가<br>
+                        </p>
+                    </div>
+                </a>
+                <a href="../html/feedback_view.html">
+                    <div></div>
+                    <div>detail</div>
+                    <div></div>
+                    <div></div>
+                    <div>feedback_view</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/feedback_view_popup.html">
+                    <div></div>
+                    <div></div>
+                    <div>reply</div>
+                    <div></div>
+                    <div>feedback_view_popup</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/feedback_update.html">
+                    <div></div>
+                    <div>edit</div>
+                    <div></div>
+                    <div></div>
+                    <div>feedback_update</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/feedback_reply_modify.html">
+                    <div>Feedback</div>
+                    <div></div>
+                    <div>reply</div>
+                    <div></div>
+                    <div>feedback_reply_modify</div>
+                    <div>이영분</div>
+                    <div><i progress="완료"></i></div>
+                    <div>
+                        <p class="msg add">
+                            [개편] 2022-08-19<br>
+                            좌측 GNB 영역 수정(메뉴추가/변경 및 UI수정, 영역접기 기능 추가)<br>
+                            콘텐츠 전체적인 여백 수정<br>
+                            search box 영역 컴포넌트 크기 및 여백 수정, 정렬방식 및 버튼 디자인 변경 등 전반적인 수정<br>
+                            search box 영역내 multiselect 컴포넌트 추가<br>
+                            board 하단 Back 버튼 추가<br>
+                        </p>
+                    </div>
+                </a>
+                <a href="../html/feedback_reply.html">
+                    <div></div>
+                    <div></div>
+                    <div>reply</div>
+                    <div></div>
+                    <div>feedback_reply</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/system_modify.html">
+                    <div>Register</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>system_modify</div>
+                    <div>이영분</div>
+                    <div><i progress="완료"></i></div>
+                    <div>
+                        <p class="msg add">
+                            [개편] 2022-08-19<br>
+                            좌측 GNB 영역 수정(메뉴추가/변경 및 UI수정, 영역접기 기능 추가)<br>
+                            콘텐츠 전체적인 여백 수정<br>
+                            페이지 타이틀명 수정<br>
+                        </p>
+                    </div>
+                </a>
+                <a href="../html/system.html">
+                    <div>system</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>system</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/system_popup.html">
+                    <div></div>
+                    <div>pop</div>
+                    <div>confirm</div>
+                    <div></div>
+                    <div>system_popup</div>
+                    <div>이은영</div>
+                    <div><i progress="완료"></i></div>
+                    <div></div>
+                </a>
+                <a href="../html/login.html">
+                    <div>login</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>login</div>
+                    <div>남인</div>
+                    <div><i progress="검수중"></i></div>
+                    <div></div>
+                </a>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="function">
+        <button type="button" class="function__top">TOP</button>
+    </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function(){
+            var 작 = $('i[progress="작업중"]').length;
+            var 검 = $('i[progress="검수중"]').length;
+            var 전 = $('i[progress=""]').length;
+            var 완료 = $('i[progress="완료"]').length;
+            var 전체 = 작 + 검 + 전 + 완료;
+            var 퍼센트 = 완료 / 전체 * 100;;
+            var floor = Math.floor(퍼센트);
+
+            $('.전체').text(전체);
+            $('.전').text(전);
+            $('.작').text(작);
+            $('.검').text(검);
+            $('.완료').text(완료);
+            $('.퍼센트').text(floor + '%');
+        });
+    </script>
+</body>
+</html>

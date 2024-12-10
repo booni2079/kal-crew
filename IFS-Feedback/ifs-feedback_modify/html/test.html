@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[TEST] ifs-feedback_MOD</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="../css/common.css"> -->
+    <!-- <link rel="stylesheet" href="../css/jquery-ui.css"> -->
+    <style>
+.multi-select-menuitems input[type="checkbox"] {-webkit-appearance:none; -moz-appearance:none; appearance:none; background:#fff; border-radius:2px; cursor:pointer; height:22px; outline:0; width:22px; border:1px solid #CACACA;}
+.multi-select-menuitems input[type="checkbox"]::after {border:solid #fff; border-width:0 2px 2px 0; content:''; display:none; height:40%; left:40%; position:relative; top:20%; transform:rotate(45deg); width:15%;}
+.multi-select-menuitems input[type="checkbox"]:checked {background:#00256C; border-color:#00256C;}
+.multi-select-menuitems input[type="checkbox"]:checked::after {display:block;}
+.multi-select-button:focus, .multi-select-menuitems input[type="checkbox"]:focus {outline:0; border:1px solid #00256C;}
+
+/*툴팁 ex1*/
+.up-arrow {
+    display: inline-block;
+    position: relative;
+    border: 1px solid #777777;
+    text-decoration: none;
+    border-radius: 2px;
+    padding: 20px;
+    margin-top: 50px;
+}
+.up-arrow:before {
+    content: '';
+    display: block;  
+    position: absolute;
+    left: 140px;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: black;
+}
+
+.up-arrow:after {
+    content: '';
+    display: block;  
+    position: absolute;
+    left: 141px;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-bottom-color: white;
+}
+
+/*툴팁 ex2*/
+.tooltip {
+  position: relative;
+  display: block;
+  margin-left:200px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;       /* 이벤트가 없으면 툴팁 영역을 숨김 */
+  width: 120px;             /* 툴팁 영역의 넓이를 설정 */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;       /* 절대 위치를 사용 */
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;      /* hover 이벤트 발생시 영역을 보여줌 */
+}
+
+.tooltip .tooltip-left {
+  top: -5px;                /* 영역의 위치를 -5 만큼 위로 이동 */
+  right: 105%;              /* 왼쪽에 생성해야하므로 영역을 오른쪽에서 105% 이동 */
+}
+
+.tooltip .tooltip-left::after {
+  top: 50%;                 /* 사각형 영역이 중앙에 오도록 위치 */
+  left: 100%;               /* 왼쪽에서 100% 위치에 오도록 위치 */
+  margin-top: -5px;
+
+  /* 사각형의 테두리에서 왼쪽만 노출 */
+  border-color: transparent transparent transparent black;
+  
+}
+.tooltip .tooltiptext::after {
+  content: " ";             /* 정사각형 영역 사용 */
+  position: absolute;       /* 절대 위치 사용 */
+  border-style: solid;
+  border-width: 5px;        /* 테두리 넓이를 5px 로 설정 */
+}
+
+/*툴팁 ex3*/
+.task-tooltip {
+  background-color: #eef3fd;
+  border: #7689fd solid 1px;
+  border-radius: 5px;
+  color: #505bf0;
+  font-size: 12px;
+  font-weight: 500;
+  height: auto;
+  letter-spacing: -0.25px;
+  margin:50px;
+  padding: 5px 11px;
+  position: relative;
+  width: fit-content;
+  z-index: 100;
+}
+
+.task-tooltip::after {
+  border-color: #eef3fd transparent;
+  border-style: solid;
+  border-width: 0 6px 8px 6.5px;
+  content: '';
+  display: block;
+  left: 75px;
+  position: absolute;
+  top: -7px;
+  width: 0;
+  z-index: 1;
+}
+
+.task-tooltip::before {
+  border-color: #7689fd transparent;
+  border-style: solid;
+  border-width: 0 6px 8px 6.5px;
+  content: '';
+  display: block;
+  left: 75px;
+  position: absolute;
+  top: -8px;
+  width: 0;
+  z-index: 0;
+}
+
+    </style>
+</head>
+
+<body>
+    <div href="#" class="up-arrow">Button with Up Arrow</div>
+
+
+    <div class="tooltip">Hover Me (LEFT)
+        <span class="tooltiptext tooltip-left">왼쪽 툴팁</span>
+      </div>
+      
+
+      <div class="task-tooltip">
+        새발자는 오늘도 뚠뚠.. 모두들 화이팅입니다.
+      </div>
+
+
+
+
+    <div class="wrap">
+        <!--GNB-->
+        <div class="gnb modify"><!--MOD 202208-COS시연회 관련 : 원본유지 및 수정사항 반영을 위해 class="modify" 추가-->
+            <div class="left">
+                <div class="logo">
+                    <a href="station.html" target="_self" class="logo__koreanair">
+                        Korean Air
+                    </a>
+                </div>
+                <p class="sub_tit">in-Flight Service Feedback System </p>
+                <ul class="menu">
+                    <li><a href="#" class="station">Station status</a></li>
+                    <li><a href="#" class="feedback -on">Feedback</a></li>
+                    <li><a href="#" class="register">Register</a></li><!--MOD 202208-COS시연회 관련 : 메뉴명 수정-->
+                </ul>
+            </div>
+            <p class="quick-menu"><!--MOD 202208-COS시연회 관련 : class명 추가/변경, 메뉴item추가-->
+                <a href="#" class="report">IFS부 Audit Report 바로가기 </a>
+                <a href="#" class="nps">NPS 바로가기</a>
+            </p>
+            <button class="menu-simplify-btn" type="button"><span class="arrow">메뉴영역 접기/펼치기 버튼</span></button><!--MOD 202208-COS시연회 관련 : 펼치기닫기버튼 추가-->
+        </div>
+         <!--//GNB-->
+
+         <!--main-->
+        <div class="contents modify"><!--MOD 202208-COS시연회 관련 : 원본유지 및 수정사항 반영을 위해 class="modify" 추가-->
+            <div class="admin">
+                <a href="#" class="out">logout</a>
+                <a href="#" class="login">1150380</a>
+            </div>
+            <h1>Feedback</h1>
+
+            <!--search-->
+            <div class="grid -search">
+                <div class="-flex -w100">
+                    <div class="forms -mR20">
+                        <label class="label" for="stn">multiSelect</label>
+                        <select id="stn" name="stn" multiple>
+                            <option value="">ICN</option>
+                            <option value="">SFO</option>
+                            <option value="">TAE</option>
+                            <option value="">PUS</option>
+                            <option value="">GMP</option>
+                            <option value="">KUV</option>
+                            <option value="">CJU</option>
+                            <option value="">MWX</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="STN">STN</label>
+                        <select>
+                            <option value="" selected="selected">----</option>
+                            <option value="">SFO</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Period">Period</label>
+                        <div class="date_picker">
+                            <input type="text" id="from" name="from" class="date">
+                            <label for="to">-</label>
+                            <input type="text" id="to" name="to" class="date">
+                        </div>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Resp">Resp</label>
+                        <select>
+                            <option value="" selected="selected">----</option>
+                            <option value="">Yes</option>
+                            <option value="">No</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Reply">Reply</label>
+                        <select>
+                            <option value="" selected="selected">----</option>
+                            <option value="">Yes</option>
+                            <option value="">No</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Code">Code</label>
+                        <div class="-flex">
+                            <select class="-mR10">
+                                <option value="" selected="selected">----</option>
+                                <option value="">option-1</option>
+                                <option value="">option-2</option>
+                            </select>
+                            <select>
+                                <option value="" selected="selected">----</option>
+                                <option value="">option-1</option>
+                                <option value="">option-2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forms -mR20 -flex_center">
+                    <label class="label" for="Key word">Key word</label>
+                    <input type="text" class="input">
+                    <a href="#" class="btn_confirm">Search</a>
+                    <p class="-btn">
+                        <a href="#" class="btn_down">Excel</a>
+                        <a href="#" class="btn_down">Interface</a>
+                    </p>
+                </div>
+            </div>
+            <!--//search-->
+
+            <!--grid-->
+            <div class="grid -table">
+                <div class="-list">
+                    <table>
+                        <colgroup>
+                            <col style="width: 140px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col style="width: 120px;">
+                            <col style="width: 70px;">
+                            <col style="width: 70px;">
+                            <col style="width: 100px;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="-alignL -pdL50">Seq</th>
+                                <th class="-alignL">Subject</th>
+                                <th>Occurred</th>
+                                <th>Reported</th>
+                                <th>STN</th>
+                                <th>Resp</th>
+                                <th>Reply</th>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr class="reply">
+                                <td class="-num"></td>
+                                <td class="-tit"><span><em class="_hidden">Re:</em></span>Re :기내식 이물질 (머리카락)</td>
+                                <td></td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes"></td>
+                                <td class="-no"></td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr class="reply">
+                                <td class="-num"></td>
+                                <td class="-tit"><span><em class="_hidden">Re:</em></span>Re :기내식 이물질 (머리카락)</td>
+                                <td></td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes"></td>
+                                <td class="-no"></td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--//grid-->
+
+            <div class="paginate">
+                <a href="#" class="prev_all"><span class="_hidden">처음으로</span></a>
+                <a href="#" class="prev_btn"><span class="_hidden">이전</span></a>
+                <a href="#" class="page -on">1</a>
+                <a href="#" class="page">2</a>
+                <a href="#" class="page">3</a>
+                <a href="#" class="page">4</a>
+                <a href="#" class="page">5</a>
+                <a href="#" class="page">6</a>
+                <a href="#" class="page">7</a>
+                <a href="#" class="page">8</a>
+                <a href="#" class="page">9</a>
+                <a href="#" class="page">10</a>
+                <a href="#" class="next_btn"><span class="_hidden">다음</span></a>
+                <a href="#" class="next_all"><span class="_hidden">맨끝으로</span></a>
+            </div>
+        </div>
+        <!--//main-->
+    </div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="../js/jquery.multi-select.js"></script>
+
+    <script>
+        $(function () {
+            var dateFormat = "mm/dd/yy",
+                from = $("#from")
+                    .datepicker({
+                        defaultDate: "+1w",
+                        changeMonth: true,
+                        numberOfMonths: 2
+                    })
+                    .on("change", function () {
+                        to.datepicker("option", "minDate", getDate(this));
+                    }),
+                to = $("#to").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 2
+                })
+                    .on("change", function () {
+                        from.datepicker("option", "maxDate", getDate(this));
+                    });
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+
+                return date;
+            }
+        });
+    </script>
+
+    <script>
+        //GNB메뉴 아이콘화
+        $(".gnb .menu-simplify-btn").on("click", function(){
+            $(this).parents(".wrap").toggleClass("simplify");
+        });
+
+        //multiSelect
+        $(function(){
+            $('#stn').multiSelect();
+        });
+    </script>
+
+</body>
+
+</html>

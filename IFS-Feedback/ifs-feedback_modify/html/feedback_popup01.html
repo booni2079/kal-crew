@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifs-feedback</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="gnb">
+            <div class="left">
+                <div class="logo">
+                    <a href="station.html" target="_self" class="logo__koreanair">
+                        Korean Air
+                    </a>
+                </div>
+                <p class="sub_tit">in-Flight Service Feedback System </p>
+                <ul class="menu">
+                    <li><a href="#" class="station">Station status</a></li>
+                    <li><a href="#" class="feedback -on">Feedback</a></li>
+                    <li><a href="#" class="system">System</a></li>
+                </ul>
+            </div>
+            <p class="nps"><a href="#">NPS 바로가기</a></p>
+        </div>
+        <div class="contents">
+            <div class="admin">
+                <a href="#" class="out">logout</a>
+                <a href="#" class="login">1150380</a>
+            </div>
+            <h1>Feedback</h1>
+
+            <div class="grid -search">
+                <div class="-flex -w100">
+                    <div class="forms -mR20">
+                        <label class="label" for="STN">STN</label>
+                        <select>
+                            <option value="" selected="selected">SFO</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Period">Period</label>
+                        <div class="date_picker">
+                            <input type="text" id="from" name="from" class="date">
+                            <label for="to">-</label>
+                            <input type="text" id="to" name="to" class="date">
+                        </div>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Resp">Resp</label>
+                        <select>
+                            <option value="" selected="selected">----</option>
+                        </select>
+                    </div>
+                    <div class="forms -mR20">
+                        <label class="label" for="Reply">Reply</label>
+                        <select>
+                            <option value="" selected="selected">----</option>
+                        </select>
+                    </div>
+                    <div class="forms">
+                        <label class="label" for="Code">Code</label>
+                        <div class="-flex">
+                            <select class="-mR10">
+                                <option value="" selected="selected">----</option>
+                            </select>
+                            <select>
+                                <option value="" selected="selected">----</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forms -mR20 -flex_center">
+                    <label class="label" for="Key word">Key word</label>
+                    <input type="text" class="input">
+                    <a href="#" class="btn_confirm">Search</a>
+                    <p class="-btn">
+                        <a href="#" class="btn_down">Excel</a>
+                        <a href="#" class="btn_down">Interface</a>
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="grid -table">
+                <div class="-list">
+                    <table>
+                        <colgroup>
+                            <col style="width: 140px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col style="width: 120px;">
+                            <col style="width: 70px;">
+                            <col style="width: 70px;">
+                            <col style="width: 100px;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="-alignL -pdL50">Seq</th>
+                                <th class="-alignL">Subject</th>
+                                <th>Occurred</th>
+                                <th>Reported</th>
+                                <th>STN</th>
+                                <th>Resp</th>
+                                <th>Reply</th>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr class="reply">
+                                <td class="-num"></td>
+                                <td class="-tit"><span><em class="_hidden">Re:</em></span>Re :기내식 이물질 (머리카락)</td>
+                                <td></td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes"></td>
+                                <td class="-no"></td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr class="reply">
+                                <td class="-num"></td>
+                                <td class="-tit"><span><em class="_hidden">Re:</em></span>Re :기내식 이물질 (머리카락)</td>
+                                <td></td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes"></td>
+                                <td class="-no"></td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                            <tr>
+                                <td class="-num">63535</td>
+                                <td class="-tit"><span>F02. 0032 EV</span>기내식 이물질 (머리카락)</td>
+                                <td>20210505</td>
+                                <td>20220105</td>
+                                <td>INC</td>
+                                <td class="-yes">Y</td>
+                                <td class="-no">N</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="paginate">
+                <a href="#" class="prev_all"><span class="_hidden">처음으로</span></a>
+                <a href="#" class="prev_btn"><span class="_hidden">이전</span></a>
+                <a href="#" class="page -on">1</a>
+                <a href="#" class="page">2</a>
+                <a href="#" class="page">3</a>
+                <a href="#" class="page">4</a>
+                <a href="#" class="page">5</a>
+                <a href="#" class="page">6</a>
+                <a href="#" class="page">7</a>
+                <a href="#" class="page">8</a>
+                <a href="#" class="page">9</a>
+                <a href="#" class="page">10</a>
+                <a href="#" class="next_btn"><span class="_hidden">다음</span></a>
+                <a href="#" class="next_all"><span class="_hidden">맨끝으로</span></a>
+            </div>
+        </div>
+        <!-- popup :: [s] -->
+        <div class="dimmed">
+            <div class="popArea">
+                <div class="popwrap sizeFull hg20">
+                    <a type="button" class="btn_pop_close posR">창닫기</a>
+                    <div class="popBox forms">
+                        <input type="text" placeholder="2021.01.01">
+                        <a href="#" class="btn_blue_md">Save</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- popup :: [e] -->
+    </div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var dateFormat = "mm/dd/yy",
+                from = $("#from")
+                    .datepicker({
+                        defaultDate: "+1w",
+                        changeMonth: true,
+                        numberOfMonths: 2
+                    })
+                    .on("change", function () {
+                        to.datepicker("option", "minDate", getDate(this));
+                    }),
+                to = $("#to").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 2
+                })
+                    .on("change", function () {
+                        from.datepicker("option", "maxDate", getDate(this));
+                    });
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+
+                return date;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

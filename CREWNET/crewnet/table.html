@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<meta name="format-detection" content="telephone=no"> <!-- 200713 추가 -->
+		<title>TABLE</title>
+		<link rel="stylesheet" href="assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="assets/css/common.css">
+		<link rel="stylesheet" href="assets/css/content.css">
+		<link rel="stylesheet" href="assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="assets/vendor/slick/slick-theme.css">
+		<script type="text/javascript" src="assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="assets/script/common.js"></script>
+		<script>
+		$(document).ready(function() {
+			$('tbody').scroll(function(e) { //detect a scroll event on the tbody
+				/*
+				Setting the thead left value to the negative valule of tbody.scrollLeft will make it track the movement
+				of the tbody element. Setting an elements left value to that of the tbody.scrollLeft left makes it maintain 			it's relative position at the left of the table.    
+				*/
+				$('thead').css("left", -$("tbody").scrollLeft()); //fix the thead relative to the body scrolling
+				$('thead th:nth-child(1)').css("left", $("tbody").scrollLeft()); //fix the first cell of the header
+				$('tbody td:nth-child(1)').css("left", $("tbody").scrollLeft()); //fix the first column of tdbody
+			});
+		});
+		</script>
+		<style>
+			.scroll-fixed table {
+				position: relative;
+				width: 700px;
+				background-color: #aaa;
+				overflow: hidden;
+				border-collapse: collapse;
+			}
+
+			/*thead*/
+			.scroll-fixed thead {
+				position: relative;
+				display: block; /*seperates the header from the body allowing it to be positioned*/
+				width: 700px;
+				overflow: visible;
+			}
+
+			.scroll-fixed thead th {
+				background-color: #99a;
+				min-width: 120px;
+				height: 32px;
+				border: 1px solid #222;
+			}
+
+			.scroll-fixed thead th:nth-child(1) {/*first cell in the header*/
+				position: relative;
+				display: block; /*seperates the first cell in the header from the header*/
+				background-color: #88b;
+			}
+
+
+			/*tbody*/
+			.scroll-fixed tbody {
+				position: relative;
+				display: block; /*seperates the tbody from the header*/
+				width: 700px;
+				height: 239px;
+				overflow: scroll;
+			}
+
+			.scroll-fixed tbody td {
+				background-color: #bbc;
+				min-width: 120px;
+				border: 1px solid #222;
+			}
+
+			.scroll-fixed tbody tr td:nth-child(1) {  /*the first cell in each tr*/
+				position: relative;
+				display: block; /*seperates the first column from the tbody*/
+				height: 40px;
+				background-color: #99a;
+			}
+		</style>
+	</head>
+	<body>
+
+	<div id="container" style="height: 1000px;">
+		
+
+		<div class="content-wrap">
+				<p style="margin-bottom: 20px;">flt/dayoff_list.html</p>
+				<div class="tbl-info">
+					<p>총 잔여 사용가능일수 : <span class="number">8</span><span class="unit">일</span></p>
+					<p class="date">연차휴가기산일 : 2017-02-06</p>
+				</div>
+				<div class="tbl-wrap">
+					<table class="tbl-y h-fixed">
+						<caption>DAY-OFF CHECK LIST</caption>
+						<colgroup>
+							<col style="width: 12%;">
+							<col style="width: 21%;">
+							<col style="width: 7%;">
+							<col style="width: auto;" class="mo-hide">
+							<col style="width: 9%;" class="mo-hide">
+							<col style="width: 25%;" class="mo-hide">
+							<col style="width: 8%;" class="mo-hide">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">발생일자</th>
+								<th scope="col">부여일</th>
+								<th scope="col">사용일</th>
+								<th scope="col" class="mo-hide">수당일</th>
+								<th scope="col" class="mo-hide">사용가능일</th>
+								<th scope="col" class="mo-hide">유효일자</th>
+								<th scope="col" class="mo-hide">명령차수</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2019.02.06</td>
+								<td>16</td>
+								<td><button class="btn-dayoff on">8</button></td>
+								<td class="mo-hide">0</td>
+								<td class="mo-hide">08</td>
+								<td class="mo-hide">2019.12.06</td>
+								<td class="mo-hide">0</td>
+							</tr>
+							<tr>
+								<td>2018.02.06</td>
+								<td>16</td>
+								<td><button class="btn-dayoff">8</button></td>
+								<td class="mo-hide">0</td>
+								<td class="mo-hide">08</td>
+								<td class="mo-hide">2019.12.06</td>
+								<td class="mo-hide">0</td>
+							</tr>
+							<tr>
+								<td>2017.02.06</td>
+								<td>16</td>
+								<td><button class="btn-dayoff">8</button></td>
+								<td class="mo-hide">0</td>
+								<td class="mo-hide">08</td>
+								<td class="mo-hide">2019.12.06</td>
+								<td class="mo-hide">0</td>
+							</tr>
+							<tr>
+								<td>2016.02.06</td>
+								<td>16</td>
+								<td><button class="btn-dayoff">8</button></td>
+								<td class="mo-hide">0</td>
+								<td class="mo-hide">08</td>
+								<td class="mo-hide">2019.12.06</td>
+								<td class="mo-hide">0</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //tbl-wrap -->
+				
+				<br><br>
+				
+				<p style="margin-bottom: 20px;">bulletin/edu_result_list.html</p>
+				<h3 class="tit">방송 평가 결과 확인</h3>
+				<div class="tbl-wrap">
+					<table class="board-list edu-list"> <!-- EDUCATION list 에 class="edu-list" 추가 -->
+						<caption>EDUCATION LIST</caption>
+						<colgroup>
+							<col style="width: 9%;">
+							<col style="width: auto;">
+							<col style="width: 20%;">
+							<col style="width: 20%;">
+							<col style="width: 19%;">
+							<col style="width: 13%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">NO</th>
+								<th scope="col">평가종류</th>
+								<th scope="col">고유번호</th>
+								<th scope="col">직급</th>
+								<th scope="col">성명</th>
+								<th scope="col">상태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="mo-hide">10</td>
+								<td class="edu-type center">방송평가</td>
+								<td class="mo-first">1359466</td> <!-- mobild화면에서 줄 맨처음 항목일경우 class="mo-first" 추가 -->
+								<td>객실승무4급</td>
+								<td>이혜미</td>
+								<td class="status"><span class="finish">평가완료</span></td>
+							</tr>
+							<tr>
+								<td class="mo-hide">9</td>
+								<td class="edu-type center">방송평가</td>
+								<td class="mo-first">1359466</td>
+								<td>객실승무4급</td>
+								<td>이혜미</td>
+								<td class="status"><span class="finish">평가완료</span></td>
+							</tr>
+							<tr>
+								<td class="mo-hide">8</td>
+								<td class="edu-type center">방송평가</td>
+								<td class="mo-first">1359466</td>
+								<td>객실승무4급</td>
+								<td>이혜미</td>
+								<td class="status"><span class="finish">평가완료</span></td>
+							</tr>
+							<tr>
+								<td class="mo-hide">7</td>
+								<td class="edu-type center">방송평가</td>
+								<td class="mo-first">1359466</td>
+								<td>객실승무4급</td>
+								<td>이혜미</td>
+								<td class="status"><span class="finish">평가완료</span></td>
+							</tr>
+							<tr>
+								<td class="mo-hide">6</td>
+								<td class="edu-type center">방송평가</td>
+								<td class="mo-first">1359466</td>
+								<td>객실승무4급</td>
+								<td>이혜미</td>
+								<td class="status"><span class="finish">평가완료</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //tbl-wrap -->
+				
+				<div class="pagenate">
+					<a href="#none" class="btn-first">처음으로</a>
+					<a href="#none" class="btn-prev">이전페이지</a>
+					<a href="#none">1</a>
+					<a href="#none">2</a>
+					<a href="#none">3</a>
+					<a href="#none">4</a>
+					<a href="#none">5</a>
+					<a href="#none" class="on">6</a>
+					<a href="#none">7</a>
+					<a href="#none">8</a>
+					<a href="#none">9</a>
+					<a href="#none" class="last-page">10</a>
+					<span class="total-page">/ 200</span>
+					<a href="#none" class="btn-next">다음페이지</a>
+					<a href="#none" class="btn-last">마지막으로</a>
+				</div>
+				<!-- //pagenate -->			
+
+				<br><br>
+
+				<p style="margin-bottom: 20px;">bulletin/edu_view.html</p>
+				<div class="tbl-top">
+					<h3 class="tit">교육/시험신청 현황</h3>
+					<p class="tbl-btn">
+						<button class="btn icon">MODIFY</button>
+					</p>
+				</div>
+				<p class="tbl-desc">Request Date : 2020.04.07 21:39:17 </p>
+				<div class="tbl-wrap">
+					<table class="board-view tbl-x th-bg">
+						<caption>EDUCATION VIEW</caption>
+						<colgroup>
+							<col style="width: 23%;">
+							<col style="width: auto;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">작성자</th>
+								<td> 국제승원12팀 1220 인턴객실승무원 김수정 (1862906)</td>
+							</tr>
+							<tr>
+								<th scope="row">교육종류</th>
+								<td>[OC] 2020년 4월 기내방송 녹음평가</td>
+							</tr>
+							<tr>
+								<th scope="row">교육장소</th>
+								<td>KOC C동 6층 방송연습실</td>
+							</tr>
+							<tr>
+								<th scope="row">교육차수</th>
+								<td>08:30 ~ 16:30</td>
+							</tr>
+							<tr>
+								<th scope="row">신청일</th>
+								<td>2020.04.09</td>
+							</tr>
+							<tr>
+								<th scope="row">기타사항</th>
+								<td>
+									<div class="editor-view"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //tbl-wrap -->
+				<p class="btn-wrap">
+					<a href="#none" class="btn blue">CONFIRM</a>
+				</p>
+
+				<br><br>
+
+				<p style="margin-bottom: 20px;">bulletin/voc_list_admin.html</p>
+				<div class="tbl-wrap">
+					<div class="tbl-both">
+						<div class="left">
+							<span class="all-check mo"><input type="checkbox" id="allM"><label for="allM"></label></span> <!-- 모바일에서만 보이는 전체체크 -->
+							<p class="count">총 <strong>5506</strong>건</p>
+						</div>
+						<div class="right">
+							<button class="btn icon green btn-excel">EXCEL</button>
+							<select class="sort" title="검색갯수 선택">
+								<option value="10개씩">10개씩</option>
+							</select>
+						</div>
+					</div>
+					<table class="board-list voc-list"> <!-- VOICE OF CUSTOMER 게시판에만 class="voc-list" 추가 -->
+						<caption>VOICE OF CUSTOMER LIST</caption>
+						<colgroup>
+							<col style="width: 19%;" class="control-no">
+							<col style="width: auto;">
+							<col style="width: 9.7%;">
+							<col style="width: 7%;">
+							<col style="width: 9%;">
+							<col style="width: 6%;">
+							<col style="width: 7%;">
+							<col style="width: 9.7%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="check"><span class="all-check"><input type="checkbox" id="all"><label for="all"></label></span> Control No</th>
+								<th scope="col">Subject</th>
+								<th scope="col">Employee ID</th>
+								<th scope="col">name</th>
+								<th scope="col">Date</th>
+								<th scope="col">FLT</th>
+								<th scope="col">DELETE</th>
+								<th scope="col">STATUS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="check"><input type="checkbox" id="list1"><label for="list1"></label> V202004290094</td>
+								<td class="subject"><a href="#none">1월 22일 강서노인복지회관 배식 봉사인원모집</a></td>
+								<td>1751330</td>
+								<td>김현진</td>
+								<td>2019.12.27</td>
+								<td class="flt">0001</td>
+								<td class="mo-hide">N</td>
+								<td class="mo-hide"><span class="status accept">접수</span></td>
+							</tr>
+							<tr>
+								<td class="check"><input type="checkbox" id="list2"><label for="list2"></label> V202004290094</td>
+								<td class="subject"><a href="#none">1월 22일 강서노인복지회관 배식 봉사인원모집</a></td>
+								<td>1751330</td>
+								<td>김현진</td>
+								<td>2019.12.27</td>
+								<td class="flt">0001</td>
+								<td class="mo-hide">N</td>
+								<td class="mo-hide"><span class="status accept">접수</span></td>
+							</tr>
+							<tr>
+								<td class="check"><input type="checkbox" id="list3"><label for="list3"></label> V202004290094</td>
+								<td class="subject"><a href="#none">1월 22일 강서노인복지회관 배식 봉사인원모집</a></td>
+								<td>1751330</td>
+								<td>김현진</td>
+								<td>2019.12.27</td>
+								<td class="flt">0001</td>
+								<td class="mo-hide">N</td>
+								<td class="mo-hide"><span class="status complete">완료</span></td>
+							</tr>
+							<tr>
+								<td class="check"><input type="checkbox" id="list4"><label for="list4"></label> V202004290094</td>
+								<td class="subject"><a href="#none">1월 22일 강서노인복지회관 배식 봉사인원모집</a></td>
+								<td>1751330</td>
+								<td>김현진</td>
+								<td>2019.12.27</td>
+								<td class="flt">0001</td>
+								<td class="mo-hide">N</td>
+								<td class="mo-hide"><span class="status complete">완료</span></td>
+							</tr>
+							<tr>
+								<td class="check"><input type="checkbox" id="list5"><label for="list5"></label> V202004290094</td>
+								<td class="subject"><a href="#none">1월 22일 강서노인복지회관 배식 봉사인원모집</a></td>
+								<td>1751330</td>
+								<td>김현진</td>
+								<td>2019.12.27</td>
+								<td class="flt">0001</td>
+								<td class="mo-hide">N</td>
+								<td class="mo-hide"><span class="status complete">완료</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //tbl-wrap -->
+
+				<!-- <button class="list-more"><span>더보기(10/200)</span></button> -->
+
+				<div class="pagenate">
+					<a href="#none" class="btn-first">처음으로</a>
+					<a href="#none" class="btn-prev">이전페이지</a>
+					<a href="#none">1</a>
+					<a href="#none">2</a>
+					<a href="#none">3</a>
+					<a href="#none">4</a>
+					<a href="#none">5</a>
+					<a href="#none" class="on">6</a>
+					<a href="#none">7</a>
+					<a href="#none">8</a>
+					<a href="#none">9</a>
+					<a href="#none">10</a>
+					<a href="#none" class="last-page">10</a>
+					<span class="total-page">/ 200</span>
+					<a href="#none" class="btn-next">다음페이지</a>
+					<a href="#none" class="btn-last">마지막으로</a>
+				</div>
+				<!-- //pagenate -->	
+				
+				<p class="btn-wrap bottom-btn double">
+					<a href="#none" class="btn border">DELETE</a>
+					<a href="#none" class="btn blue">CONFIRM</a>
+				</p>
+
+				<br><br>
+				
+				<p style="margin-bottom: 20px;">flt/myskd.html</p>
+				<div class="tbl-wrap half">
+					<table class="tbl-toggle">
+						<caption>actual flight times</caption>
+						<colgroup>
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">latest 30 days</th>
+								<th scope="col">current month</th>
+								<th scope="col">ratest 90 days</th>
+								<th scope="col">ratest 1 year</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-label="latest 30 days">79:36</td>
+								<td data-label="current month">79:36</td>
+								<td data-label="ratest 90 days">301:16</td>
+								<td data-label="ratest 1 year">718:07</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tbl-toggle">
+						<caption>deadhead times</caption>
+						<colgroup>
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">latest 30 days</th>
+								<th scope="col">current month</th>
+								<th scope="col">ratest 90 days</th>
+								<th scope="col">ratest 1 year</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-label="latest 30 days">79:36</td>
+								<td data-label="current month">79:36</td>
+								<td data-label="ratest 90 days">301:16</td>
+								<td data-label="ratest 1 year">718:07</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //tbl-wrap -->
+
+				<br><br>
+				
+				<p style="margin-bottom: 20px;">flt/briefing_sheet.html.html</p>
+				<div class="scroll-wrap">
+					<div class="tbl-wrap wide">
+						<table class="tbl-duty">
+							<caption>DUTY ASSIGNMENT</caption>
+							<colgroup>
+								<col style="width: 86px;">
+								<col style="width: 68px;">
+								<col style="width: 68px;">
+								<col style="width: 128px;">
+								<col style="width: 50px;">
+								<col style="width: 86px;">
+								<col style="width: 68px;">
+								<col style="width: 68px;">
+								<col style="width: 128px;">
+								<col style="width: 50px;">
+								<col style="width: 86px;">
+								<col style="width: 68px;">
+								<col style="width: 68px;">
+								<col style="width: 128px;">
+								<col style="width: 50px;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">DUTY</th>
+									<th scope="col">RANK</th>
+									<th scope="col">TEAM</th>
+									<th scope="col">NAME</th>
+									<th scope="col">J/S</th>
+									<th scope="col">DUTY</th>
+									<th scope="col">RANK</th>
+									<th scope="col">TEAM</th>
+									<th scope="col">NAME</th>
+									<th scope="col">J/S</th>
+									<th scope="col">DUTY</th>
+									<th scope="col">RANK</th>
+									<th scope="col">TEAM</th>
+									<th scope="col">NAME</th>
+									<th scope="col">J/S</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="duty">FAL</td>
+									<td>AP19</td>
+									<td>0728</td>
+									<td class="name">SIM YUN JU<br>심윤주</td>
+									<td>R1</td>
+									<td class="duty">FAG</td>
+									<td>AP19</td>
+									<td>0728</td>
+									<td class="name">SIM YUN JU<br>심윤주</td>
+									<td>R1</td>
+									<td class="duty"></td>
+									<td></td>
+									<td></td>
+									<td class="name"></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="duty">CBL</td>
+									<td>AP19</td>
+									<td>0728</td>
+									<td class="name">OH SEONG MIN<br>오성민</td>
+									<td>R1</td>
+									<td class="duty">CBG</td>
+									<td>AP19</td>
+									<td>0728</td>
+									<td class="name">SIM YUN JU<br>심윤주</td>
+									<td>R1</td>
+									<td class="duty"></td>
+									<td></td>
+									<td></td>
+									<td class="name"></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="duty">YCL</td>
+									<td>AP19</td>
+									<td>0728</td>
+									<td class="name">LEE NAH RAE<br>이나래</td>
+									<td>R1</td>
+									<td class="duty">FAG</td>
+									<td>AP19</td>
+									<td>0728</td>
+									<td class="name">SIM YUN JU<br>심윤주</td>
+									<td>R1</td>
+									<td class="duty"></td>
+									<td></td>
+									<td></td>
+									<td class="name"></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="duty"></td>
+									<td></td>
+									<td></td>
+									<td class="name"></td>
+									<td>R1</td>
+									<td class="duty">YDG</td>
+									<td>AP19</td>
+									<td>0728</td>
+									<td class="name">SIM YUN JU<br>심윤주</td>
+									<td>R1</td>
+									<td class="duty">YDR</td>
+									<td>AP19</td>
+									<td>0728</td>
+									<td class="name">KIM DO YEON<br>김도연</td>
+									<td>R1</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tutorial">
+						<p><span class="accent2">좌우로 스크롤</span>하여<br>표를 확인하세요.</p>
+					</div>
+				</div>
+				<!-- //scroll-wrap -->
+
+				<br><br>
+				<p class="btn-wrap alignR">
+					<button class="btn icon">RESET</button>
+					<button class="btn icon">기종별 필수 착석 위치</button>
+				</p>
+
+				<br><br>
+				<p class="btn-wrap alignL">
+					<button class="btn icon">비행 준비상태 확인</button>
+					<button class="btn icon">스트레칭</button>
+					<button class="btn icon">승무원 세관규정</button>
+					<button class="btn icon">음주측정 CHECK</button>
+					<button class="btn icon">비행 준비 체크리스트 결과 확인</button>
+					<button class="btn icon">비상연락망</button>
+				</p>
+
+				<br><br>
+				<div class="tbl-wrap">
+					<table class="tbl-x type2">
+						<caption>항공안전법</caption>
+						<colgroup>
+							<col style="width: 20%">
+							<col style="width: auto;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">항공기 사고</th>
+								<td>
+									<ul class="bul-list">
+										<li>운항 중 사람의 사망,중상 또는 행방불명</li>
+										<li>항공기의 중대한 손상/파손 또는 구조상의 결함 등의 발생</li>
+										<li>항공기 위치를 확인할 수 없거나 항공기에 접근이 불가능한 경우</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">항공기준 사고</th>
+								<td>
+									<ul class="bul-list">
+										<li>운항승무원이 비상용 산소 또는 산소마스크를 사용해야 하는 상황이 발생한 경우</li>
+										<li>객실이나 화물칸에서 화재,연기가 발생한 경우(소화기 사용 진압 포함)</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">항공 안전장애</th>
+								<td>
+									<ul class="bul-list">
+										<li>
+											<p>운항 중 다음 어느 하나에 해당하는 경미한 화재 또는 연기가 발생한 경우</p>
+											<ol class="sub-list">
+												<li>1) 항공기 구성품 또는 부품의 고장으로 인하여 조종실 또는 객실에 연기,증기,중독성 유해가스가 발생한 경우</li>
+												<li>2) 객실 조리기구,설비 또는 휴대전화기 등 탑승자의 물품에서 경미한 화재,연기가 발생한 경우</li>
+												<li>3) 화재경보시스템이 작동한 경우<br>단, 스프레이 분사, 수증기 등의 요인으로 작동된 것으로 확인된 경우는 제외</li>
+											</ol>
+										</li>
+										<li>비상탈출을 위한 시스템, 탈출용 장비가 고장, 결함 또는 비정상적으로 전개한 경우</li>
+										<li>운항 중 화재 경보 시스템이 오 작동 한 경우</li>
+										<li>운항 중 여압 조절 실패(감압), 비상 장비 누락, 비 정상적 Door Operation 등 객실 안전 우려 상황이 발생한 경우</li>
+										<li>난기류 등 기상 요인 및 항공기의 급격한 자세 변경 등 조종 요인에 의해 객실승무원이 부상을 당하여 업무 수행이 곤란한 경우</li>
+										<li>운항 관련 직무를 수행하는 객실승무원의 신체, 정신건강 또는 심리상태 등의 사유로 객실승무원의 교체 또는 하기(下機)를 위해 출발지 공항으로 회항하거나 목적지가 아닌 공항에 착륙하는 경우</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<br><br>
+				<p style="margin-bottom: 20px;">flt/duty_list.html</p>
+				<div class="form-list-wrap">
+					<ul class="form-tbl view">
+						<li>
+							<span class="label">DEP DATE</span>
+							<p></p>
+						</li>
+						<li>
+							<span class="label">FLT NO (KE)</span>
+							<p>0011</p>
+						</li>
+						<li>
+							<span class="label">STD</span>
+							<p></p>
+						</li>
+						<li>
+							<span class="label">FLT TIME</span>
+							<p></p>
+						</li>
+						<li>
+							<span class="label">CBN BRFG TIME</span>
+							<p></p>
+						</li>
+						<li>
+							<span class="label">JOINT BRFG TIME</span>
+							<p></p>
+						</li>
+						<li>
+							<span class="label">BRFG ROOM</span>
+							<p></p>
+						</li>
+						<li>
+							<span class="label">HL NO</span>
+							<p>HL8006</p>
+						</li>
+						<li>
+							<span class="label">A/C VER</span>
+							<p>77WI</p>
+						</li>
+						<li>
+							<span class="label">기판전담 FLT</span>
+							<p>NO</p>
+						</li>
+						<li>
+							<span class="label">SEAT CONFIG</span>
+							<p></p>
+						</li>
+						<li>
+							<span class="label">RESERVATION</span>
+							<p>2 / 15 / 69</p>
+						</li>
+						<li class="ta-full">
+							<span class="label">DUTY PURSER</span>
+							<p>0814팀 박혁주 (SP11 / 9606306 / PARK HYUKJOO)</p>
+						</li>
+						<li class="ta-full">
+							<span class="label">DUTY CONFIRM</span>
+							<p>202006081817; 202006090911;</p>
+						</li>
+						<li class="full mo-hide">
+							<span class="label">NATIONALITY</span>
+							<div>
+								<ul class="nation">
+									<li>
+										<strong>KOR</strong>
+										<span>09</span>
+									</li>
+									<li>
+										<strong>JPN</strong>
+										<span>01</span>
+									</li>
+									<li>
+										<strong>CHN</strong>
+										<span>01</span>
+									</li>
+									<li>
+										<strong>USA</strong>
+										<span>19</span>
+									</li>
+									<li>
+										<strong>EUR</strong>
+										<span>0</span>
+									</li>
+									<li>
+										<strong>SEA</strong>
+										<span>0</span>
+									</li>
+									<li>
+										<strong>MEA</strong>
+										<span>0</span>
+									</li>
+									<li>
+										<strong>OCN</strong>
+										<span>0</span>
+									</li>
+									<li>
+										<strong>CIS</strong>
+										<span>0</span>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<br><br>
+				<div class="form-list-wrap">
+					<p style="margin-bottom: 20px;">report_view01.html</p>
+					<ul class="form-tbl view">
+						<li>
+							<span class="label">문서번호</span>
+							<p>c-88-00510</p>
+						</li>
+						<li>
+							<span class="label">상태</span>
+							<p>작성</p>
+						</li>
+						<li>
+							<span class="label">작성자</span>
+							<p>객실지원팀 5급 김상경</p>
+						</li>
+						<li>
+							<span class="label">작성일</span>
+							<p>2020.07.06</p>
+						</li>
+					</ul>
+
+					<br><br>
+					<p style="margin-bottom: 20px;">report/report_write.html</p>
+					<ul class="form-tbl write">
+						<li>
+							<label for="num1">문서번호</label>
+							<p><input type="text" readonly="readonly" id="num1" value="c-88-00510"></p>
+						</li>
+						<li>
+							<label for="status1">상태</label>
+							<p><input type="text" readonly="readonly" id="status1" value="작성"></p>
+						</li>
+						<li>
+							<label for="writer1">작성자</label>
+							<p><input type="text" readonly="readonly" id="writer1" value="객실지원팀"></p>
+						</li>
+						<li>
+							<label for="date1">작성일</label>
+							<p><input type="text" readonly="readonly" id="date1" value="2020.07.06"></p>
+						</li>
+					</ul>
+				</div>
+				
+				<br><br>
+				<p style="margin-bottom: 20px;">flt/briefing_sheet.html.html</p>
+				<div class="tbl-wrap">
+					<table class="tbl-basic line">
+						<caption>Station Mgmt list</caption>
+						<colgroup>
+							<col style="width: 7%;">
+							<col style="width: 8%;">
+							<col style="width: 7%;">
+							<col style="width: auto;">
+							<col style="width: 18%;">
+							<col style="width: 13%;">
+							<col style="width: 9%;">
+							<col style="width: 13%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="check"><span class="all-check"><input type="checkbox" id="all"><label for="all"></label></span></th>
+								<th scope="col">Route</th>
+								<th scope="col">STN</th>
+								<th scope="col">Airport</th>
+								<th scope="col">City</th>
+								<th scope="col">City code</th>
+								<th scope="col">Nation</th>
+								<th scope="col">Updated</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="check"><input type="checkbox" id="list1"><label for="list1"></label></td>
+								<td data-label="Route">CHM</td>
+								<td data-label="STN">PNG</td>
+								<td data-label="Airport" class="alignL">Shanghai Pudong International Airport</td>
+								<td data-label="City">SHANGHAI</td>
+								<td data-label="City code">SHANGHAI</td>
+								<td data-label="Nation">CHINA</td>
+								<td data-label="Updated">2018.11.01</td>
+							</tr>
+							<tr>
+								<td class="check"><input type="checkbox" id="list2"><label for="list2"></label></td>
+								<td data-label="Route">CHM</td>
+								<td data-label="STN">PNG</td>
+								<td data-label="Airport" class="alignL">Shanghai Pudong International Airport</td>
+								<td data-label="City">SHANGHAI</td>
+								<td data-label="City code">SHANGHAI</td>
+								<td data-label="Nation">CHINA</td>
+								<td data-label="Updated">2018.11.01</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<br><br>
+				<p style="margin-bottom: 20px;">doc/doc_list.html</p>
+				<div class="tbl-wrap ta-wide">
+					<table class="tbl-basic doc-list">
+						<caption>SAFETY LIST</caption>
+						<colgroup>
+							<col style="width: 410px;">
+							<col style="width: 90px;">
+							<col style="width: 120px;">
+							<col style="width: 100px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 140px;">
+							<col style="width: 90px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">Subject</th>
+								<th scope="col">name</th>
+								<th scope="col">team</th>
+								<th scope="col">Date</th>
+								<th scope="col">Type</th>
+								<th scope="col">Bltn</th>
+								<th scope="col">sent</th>
+								<th scope="col">Doc NO</th>
+								<th scope="col">Read</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="subject"><a href="#none"><span class="cate">기내탑재</span>2020년 1월 항공보안 alert level 발령 2020년 1월 항공보안 alert level 발령 2020년 1월 항공보안 alert level 발령 2020년 1월 항공보안 alert level 발령</a></td>
+								<td class="mo-inline">김나현</td>
+								<td class="mo-inline">객실안전팀</td>
+								<td class="mo-inline">2019.12.27</td>
+								<td data-label="TYPE">DOC</td>
+								<td data-label="BLTN">OTH</td>
+								<td data-label="SENT">N</td>
+								<td class="mo-hide">454937614</td>
+								<td class="mo-hide">5243</td>
+							</tr>
+							<tr>
+								<td class="subject"><a href="#none"><span class="cate">기내탑재</span>2020년 1월 항공보안 alert level 발령</a></td>
+								<td class="mo-inline">김나현</td>
+								<td class="mo-inline">객실안전팀</td>
+								<td class="mo-inline">2019.12.27</td>
+								<td data-label="TYPE">DOC</td>
+								<td data-label="BLTN">OTH</td>
+								<td data-label="SENT">N</td>
+								<td class="mo-hide">454937614</td>
+								<td class="mo-hide">5243</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<br><br>
+				<p style="margin-bottom: 20px;">report\dutyfree_after_list.html</p>
+				<div class="tbl-wrap">
+					<table class="tbl-basic type2">
+						<caption>사후신고</caption>
+						<colgroup>
+							<col style="width: 13%;">
+							<col style="width: 12%;">
+							<col style="width: 12%;">
+							<col style="width: 17%;">
+							<col style="width: 17%;">
+							<col style="width: auto;">
+							<col style="width: 12%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">FLT NO</th>
+								<th scope="col">DEP APT</th>
+								<th scope="col">ARR APT</th>
+								<th scope="col">DEP DATE (LCL)</th>
+								<th scope="col">ARR DATE (KST)</th>
+								<th scope="col">DECLARE</th>
+								<th scope="col">STATUS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-label="FLT NO">KE0082</td>
+								<td data-label="DEP APT">JKF</td>
+								<td data-label="ARR APT">ICN</td>
+								<td data-label="DEP DATE (LCL)">2020.07.13 14:00</td>
+								<td data-label="ARR DATE (KST)">2020.07.14 17:20</td>
+								<td data-label="DECLARE"><a href="#none" class="btn txt">DECLARE</a></td>
+								<td data-label="STATUS"><a href="#none" class="link-txt">정상신고</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+		</div>
+	</div>
+
+	</body>
+</html>

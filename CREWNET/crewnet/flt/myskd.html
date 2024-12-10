@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<title>MY STAFF SKD - CREWNET</title>
+		<link rel="stylesheet" href="../assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/content.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+		<link rel="stylesheet" href="../assets/css/print.css">
+		<script type="text/javascript" src="../assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../assets/script/common.js"></script>
+	</head>
+	<body>
+		<div id="skipNav"><a href="#container">본문내용 바로가기</a></div>
+		<div id="gnb">
+			<div class="gnb-width">
+				<h1>
+					<a href="../main.html" class="logo">CREWNET</a> <!-- 링크 메인페이지로 연결 -->
+					<span>Seoul (KST) 120.5.8 11:28:32</span>
+				</h1>
+				<a href="#none" class="btn-menu" title="모바일/태블릿 메뉴 버튼">메뉴</a>
+				<ul class="nav">
+					<li><a href="#none">FLT DUTY</a></li>
+					<li><a href="#none">BULLETIN</a></li>
+					<li><a href="#none">REPORT</a></li>
+					<li><a href="#none">REQUEST</a></li>
+					<li><a href="#none">OPEN PLAZA</a></li>
+				</ul>
+				<div class="myinfo">
+					<button class="search">검색</button>
+					<a href="#none" class="user">my info</a>
+					<p>안녕하세요! <strong>홍길동님</strong> <br>오늘도 화이팅 :)</p>
+					<div class="tooltip-menu">
+						<p class="txt">안녕하세요! <strong class="accent2">홍길동</strong>님<br>오늘도 화이팅:)</p>
+						<ul>
+							<li><a href="#none" class="info">MY INFO</a></li>
+							<li><a href="#none" class="logout">로그아웃</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="search-wrap">
+				<div class="search-area">
+					<select title="통합검색">
+						<option value="통합검색">통합검색</option>
+						<option value="검색조건1">검색조건1</option>
+						<option value="검색조건2">검색조건2</option>
+					</select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button>검색</button>
+				</div>
+			</div>
+		
+			<button class="menu-close">닫기</button>
+		</div>
+		<!-- //gnb -->
+		
+		<div class="menu-full">
+			<p class="logo"><a href="../main.html">CREWNET</a></p> <!-- 링크 메인페이지로 연결 -->
+			<ul class="depth1">
+				<li>
+					<a href="#none">FLT DUTY</a>
+					<ul class="depth2">
+						<li><a href="#none">MY SKD</a></li>
+						<li><a href="#none">DAY-OFF CHECK</a></li>
+						<li><a href="#none">SKD Q&amp;A</a></li>
+						<li><a href="#none">BRIEFING SHEET</a></li>
+						<li><a href="#none">DUTY ASSIGNMENT</a></li>
+						<li><a href="#none">MY STAFF SKD</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">BULLETIN</a>
+					<ul class="depth2">
+						<li><a href="#none">SAFET</a></li>
+						<li><a href="#none">SERVICE</a></li>
+						<li><a href="#none">SALES</a></li>
+						<li><a href="#none">TRAINING</a></li>
+						<li><a href="#none">NOTICE</a></li>
+						<li><a href="#none">DP NOTICE</a></li>
+						<li><a href="#none">R/S NOTICE</a></li>
+						<li><a href="#none">Voice of Customer</a></li>
+						<li><a href="#none">인사발령</a></li>
+						<li><a href="#none">FOCAL POINT (중점강조)</a></li>
+						<li><a href="#none">최근 주요 지시 공지</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REPORT</a>
+					<ul class="depth2">
+						<li><a href="#none">REPORT</a></li>
+						<li><a href="#none">SAFENET</a></li>
+						<li><a href="#none">MEAL SURVEY</a></li>
+						<li><a href="#none">EVALUATION</a></li>
+						<li><a href="#none">CHECK LIST</a></li>
+						<li><a href="#none">Duty-Free declaration</a></li>
+						<li><a href="#none">기판 과부족 조회</a></li>
+						<li><a href="#none">고충상담</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">REQUEST</a>
+					<ul class="depth2">
+						<li><a href="#none">SKD CHANGE</a></li>
+						<li><a href="#none">VACATION REQUEST</a></li>
+						<li><a href="#none">EDUCATION REQUEST</a></li>
+						<li><a href="#none">SKD SWAP</a></li>
+						<li><a href="#none">지급신청</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#none">OPEN PLAZA</a>
+					<ul class="depth2">
+						<li><a href="#none">BOARD</a></li>
+						<li><a href="#none">R/S BOARD</a></li>
+						<li><a href="#none">MEMBERS' EVENT</a></li>
+						<li><a href="#none">HEALTH PLUS</a></li>
+						<li><a href="#none">FELA MARKET</a></li>
+						<li><a href="#none">승우회/고니회</a></li>
+						<li><a href="#none">Q&amp;A</a></li>
+						<li><a href="#none">COOK방(F&amp;B) CAFE</a></li>
+					</ul>
+				</li>
+			</ul>
+			<button class="btn-close">닫기</button>
+		</div>
+		<!-- //menu-full -->
+
+		<div class="visual title">
+			<h2>MY STAFF SKD</h2>
+			<button class="btn-print">print</button>
+		</div>
+		<!-- //visual -->
+
+		<div id="container">
+			<div class="list-search">
+				<div class="search-box only-btn">
+					<div class="bottom-filter">
+						<div class="group">
+							<p class="half">
+								<label for="name" class="first">NAME</label>
+								<input type="text" id="name" class="mid2" placeholder="이름">
+							</p>
+							<p class="half">
+								<label for="empid">EMP ID</label>
+								<input type="text" id="empid" class="mid2" placeholder="id">
+							</p>
+							<p class="full">
+								<label for="team">TEAM</label>
+								<select id="team" class="mid2">
+									<option value="선택해주세요">선택해주세요</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+								</select>
+							</p>
+						</div>		
+						<button class="btn-search">SEARCH</button>
+						<button class="bottom-close">닫기</button>
+					</div>
+					<button class="btn-filter">필터</button>
+				</div>
+			</div>
+			<!-- //search-area -->
+
+			<div class="content-wrap  skd-wrap">
+				<ul class="box-list col4">
+					<li>
+						<div>
+							<strong>name</strong>
+							<p>
+								<span>kim sangkung</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>emp id</strong>
+							<p>
+								<span>1700403</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>phone number</strong>
+							<p>
+								<span>01033334444</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>team</strong>
+							<p>
+								<span>0112</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+				<!-- //box-list -->
+
+				<div class="tbl-wrap half">
+					<table class="tbl-toggle">
+						<caption>actual flight times</caption>
+						<colgroup>
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">latest 30 days</th>
+								<th scope="col">current month</th>
+								<th scope="col">latest 90 days</th>
+								<th scope="col">latest 1 year</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-label="latest 30 days">79:36</td>
+								<td data-label="current month">79:36</td>
+								<td data-label="latest 90 days">301:16</td>
+								<td data-label="latest 1 year">718:07</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tbl-toggle">
+						<caption>deadhead times</caption>
+						<colgroup>
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">latest 30 days</th>
+								<th scope="col">current month</th>
+								<th scope="col">latest 90 days</th>
+								<th scope="col">latest 1 year</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-label="latest 30 days">79:36</td>
+								<td data-label="current month">79:36</td>
+								<td data-label="latest 90 days">301:16</td>
+								<td data-label="latest 1 year">718:07</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //tbl-wrap -->
+
+				<div class="calendar-wrap">
+					<div class="full-calendar skd-calendar"> <!-- my skd 의 달력에는 class="skd-calendar" 추가 -->
+						<div class="skd-header">
+							<p class="calendar-top">
+								<strong class="mo-hide">2020.06.15 ~ 2020.06.21</strong>
+								<strong class="pc-hide">2020.06</strong>
+								<button class="prev">prev</button>
+								<button class="next">next</button>
+							</p>
+							
+							<span class="calendar-datepicker">
+								<input type="text" class="calendar" title="myskd 날짜 검색" id="dpskdcal">
+							</span>
+							<button class="btn-today">오늘</button>
+						</div>
+
+						<!-- 달력 시작 -->
+						<div class="tbl-calendar">
+							<table>
+								<caption>MY STAFF SKD</caption>
+								<thead>
+									<tr>
+										<th scope="col"><span>S</span>UN</th>
+										<th scope="col"><span>M</span>ON</th>
+										<th scope="col"><span>T</span>UE</th>
+										<th scope="col"><span>W</span>ED</th>
+										<th scope="col"><span>T</span>HU</th>
+										<th scope="col"><span>F</span>RI</th>
+										<th scope="col"><span>S</span>AT</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="other-month">
+											<button class="day">31</button>
+										</td>
+										<td>
+											<button class="day start today">  <!-- 1일 일 경우 class="start" 추가 / 오늘날짜 class="today" -->
+												<strong>6/</strong> <!-- 월 표시 : strong 태그 추가 -->
+												<span>1</span> <!-- 1일의 경우 일자를 span 에 넣음 -->
+											</button>
+										</td>
+										<td>
+											<button class="day">2</button>
+										</td>
+										<td>
+											<button class="day">3</button>
+										</td>
+										<td>
+											<button class="day">4</button>
+										</td>
+										<td>
+											<button class="day">5</button>
+										</td>
+										<td>
+											<button class="day">6</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button class="day">7</button>
+										</td>
+										<td>
+											<button class="day">8</button>
+											<dl>
+												<!-- 근태/위규 : class="type1" / 휴가 : class="type2" / 대기 : class="type3" / 교육 : class="type4" / 기타 : class="type5" / LO = class="type6" -->
+												<dt class="type1">KE 1602</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+												<dt class="type1">KE 1602</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">9</button>
+											<dl>
+												<dt class="type2">ATDO</dt>
+												<dd><strong>icn</strong><span>00:00 - 23:59</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">10</button>
+											<dl>
+												<dt class="type3">yvw</dt>
+												<dd><strong>icn</strong><span>00:00 - 23:59</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">11</button>
+											<dl>
+												<dt class="type1">KE 0023</dt>
+												<dd><strong>icn - sfo</strong><span>08:18 - 09:19</span></dd>
+												<dt class="type6">lo</dt>
+												<dd><strong>sfo - sfo</strong><span>09:25 - 23:59</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">12</button>
+											<dl>
+												<dt class="type7">KE 0023<span>tvl</span></dt>
+												<dd><strong>icn - sfo</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">13</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button class="day">14</button>
+										</td>
+										<td>
+											<button class="day">15</button>
+											<dl>
+												<dt class="type1">KE1101<span>TVL</span></dt>
+												<dd>
+													<strong>GMP - PUS</strong>
+													<span>07:03 - 08:03</span>
+												</dd>
+												<dt class="type2">KE1101<span>TVL</span></dt>
+												<dd>
+													<strong>GMP - PUS</strong>
+													<span>07:03 - 08:03</span>
+												</dd>
+												<dt class="type3">KE1101<span>TVL</span></dt>
+												<dd>
+													<strong>GMP - PUS</strong>
+													<span>07:03 - 08:03</span>
+												</dd>
+												
+												<dt class="type4">KE1108<span>TVL</span></dt>
+												<dd>
+													<strong>GMP - PUS </strong>
+													<span>07:03 - 08:03</span>
+												</dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">16</button>
+										</td>
+										<td>
+											<button class="day today">17</button> <!-- 오늘날짜 class="today" -->
+										</td>
+										<td>
+											<button class="day">18</button>
+										</td>
+										<td>
+											<button class="day on">19</button> <!-- 일자를 클릭했을때 class="on" 추가됨 -->
+										</td>
+										<td>
+											<button class="day">20</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button class="day">21</button>
+										</td>
+										<td>
+											<button class="day">22</button>
+											<dl>
+												<dt class="type4">edu</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">23</button>
+											<dl>
+												<dt class="type5">dsp</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">24</button>
+											<dl>
+												<dt class="type7">dsp</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">25</button>
+										</td>
+										<td>
+											<button class="day">26</button>
+										</td>
+										<td>
+											<button class="day">27</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button class="day">28</button>
+										</td>
+										<td>
+											<button class="day">29</button>
+										</td>
+										<td>
+											<button class="day">30</button>
+										</td>
+										<td class="other-month">
+											<button class="day start">  <!-- 1일 일 경우 class="start" 추가 -->
+												<strong>7/</strong> <!-- 월 표시 : strong 태그 추가 -->
+												<span>1</span> <!-- 1일의 경우 일자를 span 에 넣음 -->
+											</button>
+										</td>
+										<td class="other-month">
+											<button class="day">2</button>
+										</td>
+										<td class="other-month">
+											<button class="day">3</button>
+										</td>
+										<td class="other-month">
+											<button class="day">4</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// 달력 끝 -->
+						<button class="toggle">toggle</button>
+					</div>
+					<!-- //full-calendar -->
+					
+					<div class="calendar-info skd-info"> <!-- my skd 페이지에서는 class="skd-info" 추가 -->
+						<!--left-list-->
+						<div>
+							<dl>
+								<dt>
+									<span>06</span>
+									<strong>8</strong>
+									<span>THU</span>
+								</dt>
+								<!-- 근태/위규 : class="type1" / 휴가 : class="type2" / 대기 : class="type3" / 교육 : class="type4" / 기타 : class="type5" / LO = class="type6" -->
+								<dd class="type1">
+									<span>KE 1602</span>
+									<p>
+										<span class="">gmp - cju</span>
+										<span class="time">/ 08:15 - 09:19</span>
+									</p>
+								</dd>
+								<dd class="type1">
+									<span class="">KE 1602</span>
+									<p>
+										<span class="">cju- gmp</span>
+										<span class="time">/ 08:15 - 09:19</span>
+									</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<span>06</span>
+									<strong>9</strong>
+									<span>FRI</span>
+								</dt>
+								<dd class="type2">
+									<span class="">atdo</span>
+									<p>
+										<span class="">icn </span>
+										<span class="time">/ 00:00 - 23:59</span>
+									</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<span>06</span>
+									<strong>10</strong>
+									<span>SAT</span>
+								</dt>
+								<dd class="type3">
+									<span class="">yvw</span>
+									<p>
+										<span class="">icn </span>
+										<span class="time">/ 00:00 - 23:59</span>
+									</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									<span>06</span>
+									<strong style="color: rgb(255, 83, 83);">11</strong>
+									<span style="color: rgb(255, 83, 83);">SUN</span>
+								</dt>
+								<!-- 210331 상세 내역이 있는 경우-->
+								<dd class="type1 has__data __active"> <!-- 열린 상태일때 __active 클래스 추가-->
+									<span class="">KE 1602</span>
+									<p>
+										<span class="">gmp - cju</span>
+										<span class="time">/ 08:15 - 09:19</span>
+									</p>
+								</dd>
+								<dd class="has__data-box __active">
+									<div class="__details">
+										<div class="__details-box">
+											<div class="__details-title __flex __jcsb">
+												<p class="-name">
+													<span style="color:blue">1.</span>
+													Lim, kumhyun
+												</p>
+												<p class="-regnumb">0054104</p>
+											</div>
+											<div>
+												<ul class="__details-list __flex">
+													<li>FLY</li>
+													<li>0408</li>
+													<li>TP</li>
+													<li>SP15</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+	
+									
+									<div class="__details">
+										<div class="__details-box">
+											<div class="__details-title __flex __jcsb">
+												<p class="-name">
+													<span style="color:blue">2.</span>
+													shibahara, felelfelelfelel</p>
+												<p class="-regnumb">0054104</p>
+											</div>
+											<div>
+												<ul class="__details-list __flex">
+													<li>FLY</li>
+													<li>0408</li>
+													<li>TP</li>
+													<li>SP15</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+	
+	
+									<div class="__details">
+										<div class="__details-box">
+											<div class="__details-title __flex __jcsb">
+												<p class="-name">
+													<span style="color:blue">3.</span>
+													Lim, kumhyun
+												</p>
+												<p class="-regnumb">0054104</p>
+											</div>
+											<div>
+												<ul class="__details-list __flex">
+													<li>FLY</li>
+													<li>0408</li>
+													<li>TP</li>
+													<li>SP15</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</dd>
+	
+	
+								
+								<dd class="type2 has__data"> <!-- 닫힌 상태 -->
+									<span class="">KE 1602</span>
+									<p>
+										<span class="">gmp - cju</span>
+										<span class="time">/ 08:15 - 09:19</span>
+									</p>
+								</dd>
+								<dd class="has__data-box">
+									<div class="__details">
+										<div class="__details-box">
+											<div class="__details-title __flex __jcsb">
+												<p class="-name">
+													<span style="color:blue">1.</span>
+													Lim, kumhyun
+												</p>
+												<p class="-regnumb">0054104</p>
+											</div>
+											<div>
+												<ul class="__details-list __flex">
+													<li>FLY</li>
+													<li>0408</li>
+													<li>TP</li>
+													<li>SP15</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+	
+									
+									<div class="__details">
+										<div class="__details-box">
+											<div class="__details-title __flex __jcsb">
+												<p class="-name">
+													<span style="color:blue">2.</span>
+													shibahara, felelfelelfelel
+												</p>
+												<p class="-regnumb">0054104</p>
+											</div>
+											<div>
+												<ul class="__details-list __flex">
+													<li>FLY</li>
+													<li>0408</li>
+													<li>TP</li>
+													<li>SP15</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+	
+	
+									<div class="__details">
+										<div class="__details-box">
+											<div class="__details-title __flex __jcsb">
+												<p class="-name">
+													<span style="color:blue">3.</span>
+													Lim, kumhyun
+												</p>
+												<p class="-regnumb">0054104</p>
+											</div>
+											<div>
+												<ul class="__details-list __flex">
+													<li>FLY</li>
+													<li>0408</li>
+													<li>TP</li>
+													<li>SP15</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</dd>
+								<!-- 210331 상세 내역이 있는 경우-->
+								<dd class="type6">
+									<span class="">lo</span>
+									<p>
+										<span class="">sfo - sfo</span>
+										<span class="time">/ 00:00 - 23:59</span>
+									</p>
+								</dd>
+							</dl>
+						</div>
+						<!--right-list-->
+						<div>
+							<dl>
+							<dt>
+								<span>06</span>
+								<strong>22</strong>
+								<span>MON</span>
+							</dt>
+							<dd class="type4">
+								<span class="">edu</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<span>06</span>
+								<strong>23</strong>
+								<span>TUE</span>
+							</dt>
+							<dd class="type5">
+								<span class="">dsp</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<span>06</span>
+								<strong>24</strong>
+								<span>WED</span>
+							</dt>
+							<dd class="type7">
+								<span class="">lo (tvl)</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+						</dl>
+						</div>
+						
+						
+					</div>
+					<!-- calendar-info -->
+				</div>
+				<!-- //calendar-wrap -->
+			</div>
+			<!-- //content-wrap -->
+		</div>
+		<!-- //container -->
+
+		<div id="footer">
+			<div class="foot-area">
+				<select title="LINK" class="link" onchange="window.open(value,'_blank')">
+					<option value="LINK">LINK</option>
+					<option value="HANWAY">HANWAY</option>
+					<option value="CYBER CAMPUS">CYBER CAMPUS</option>
+					<option value="SKY SAFETY21">SKY SAFETY21</option>
+					<option value="SAFENET">SAFENET</option>
+					<option value="CYBER SKYSHOP">CYBER SKYSHOP</option>
+					<option value="MMS QRS">MMS QRS</option>
+					<option value="KALMAN">KALMAN</option>
+					<option value="SKY NEWS">SKY NEWS</option>
+					<option value="E-CATERING">E-CATERING</option>
+				</select>
+				<ul>
+					<li><a href="#none">HANWAY</a></li>
+					<li><a href="#none">CYBER CAMPUS</a></li>
+					<li><a href="#none">SKY SAFETY21</a></li>
+					<li><a href="#none">SAFENET</a></li>
+					<li><a href="#none">CYBER SKYSHOP</a></li>
+					<li><a href="#none">MMS QRS</a></li>
+					<li><a href="#none">KALMAN</a></li>
+					<li><a href="#none">SKY NEWS</a></li>
+					<li><a href="#none">E-CATERING</a></li>
+				</ul>
+				<select title="자주쓰는항목" class="bookmark" onchange="window.open(value,'_blank')">
+					<option value="자주쓰는항목">자주쓰는항목</option>
+					<option value="http://www.naver.com">네이버</option>
+				</select>
+				<p class="terms">
+					<a href="#none">OFFICE INFO</a><span>|</span>
+					<a href="#none">CONTACT US</a><span>|</span>
+					<a href="#none">시스템이용약관</a>
+				</p>
+				<p class="copy">&copy; 2020 Korean Air. Crew Net All rights reserved.</p>
+			</div>
+		</div>
+		<!-- //footer -->
+
+		<button class="btn-top">top</button>
+
+		<div class="dimmed"></div>
+
+		<!-- 스크립트 -->
+		<script>
+			$('.has__data').on('click', function() {
+				$(this).toggleClass('__active');
+				$(this).next('.has__data-box').slideToggle();
+			})
+		</script>
+		<!-- 스크립트 -->
+	</body>
+</html>

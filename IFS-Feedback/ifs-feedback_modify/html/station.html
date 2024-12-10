@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifs-feedback</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="gnb">
+            <div class="left">
+                <div class="logo">
+                    <a href="station.html" target="_self" class="logo__koreanair">
+                        Korean Air
+                    </a>
+                </div>
+                <p class="sub_tit">in-Flight Service Feedback System </p>
+                <ul class="menu">
+                    <li><a href="#" class="station -on">Station status</a></li>
+                    <li><a href="#" class="feedback">Feedback</a></li>
+                    <li><a href="#" class="system">System</a></li>
+                </ul>                            
+            </div>
+            <p class="nps"><a href="#">NPS 바로가기</a></p>
+        </div>
+        <div class="contents">
+            <div class="admin">
+                <a href="#" class="out">logout</a>
+                <a href="#" class="login">1150380</a>
+            </div>
+            <h1>STATION STATUS</h1>
+            <div class="grid -total">
+                <p>Total Complant Replied Rate</p>
+                <p class="-per">80%</p>
+                <p>Reply Made Within 3Days.</p>
+            </div>
+            <div class="graph_ex">
+                <span class="option1">Good (85%~100%)</span>
+                <span class="option2">Tolerable (70%~84%)</span>
+                <span class="option3">Poor (0%~69%)</span>
+            </div>
+            <div class="grid -graph">
+                <div class="-list">
+                    <table>
+                        <colgroup>
+                            <col style="width: 102px">
+                            <col style="width: 108px">
+                            <col>
+                            <col style="width: 80px">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>STN</th>
+                                <th>Count</th>
+                                <th colspan="2">Graph</th>
+                            </tr>                            
+                            <tr>
+                                <td>INC</td>
+                                <td>100</td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -good" per="100"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage -strong">100%</span></td>
+                            </tr>
+                            <tr>
+                                <td>CGK</td>
+                                <td>2</td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -poor" per="30"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage">30%</span></td>
+                            </tr>
+                            <tr>
+                                <td>ALK</td>
+                                <td>7</td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -toler" per="82"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage">82%</span></td>
+                            </tr>
+                            <tr>
+                                <td>HNL</td>
+                                <td>4</td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -good" per="90"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage -strong">90%</span></td>
+                            </tr>
+                            <tr>
+                                <td>SIN</td>
+                                <td>1 </td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -toler" per="75"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage">75%</span></td>
+                            </tr>
+                            <tr>
+                                <td>BKK</td>
+                                <td>7</td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -poor" per="20"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage">20%</span></td>
+                            </tr>
+                            <tr>
+                                <td>AMS</td>
+                                <td>4</td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -good" per="98"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage -strong">98%</span></td>
+                            </tr>
+                            <tr>
+                                <td>SVO</td>
+                                <td>60</td>
+                                <td>
+                                    <div class="wrap_graph"> 
+                                        <span class="gauge -good" per="89"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage -strong">89%</span></td>
+                            </tr>
+                            <tr>
+                                <td>CGK</td>
+                                <td>5</td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -toler" per="77"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage">77%</span></td>
+                            </tr>
+                            <tr>
+                                <td>INC</td>
+                                <td>1</td>
+                                <td>
+                                    <div class="wrap_graph">
+                                        <span class="gauge -poor" per="60"></span>
+                                    </div>
+                                </td>
+                                <td><span class="percentage">60%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                </div>
+            </div>
+            <div class="more_btn">
+                <a href="#">VIEW MORE +</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.gauge').each(function () {
+                var $this = $(this);
+                var per = $this.attr('per');
+                $this.animate({
+                    width: per + "%"
+                });
+            });
+        });
+        
+        </script>
+</body>
+</html>

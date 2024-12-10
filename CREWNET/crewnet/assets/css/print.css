@@ -1,0 +1,123 @@
+@media print {
+    * {-webkit-print-color-adjust:exact;} /* print 시 백그라운드 컬러/이미지 표출*/
+    body, input, select, textarea, button {color: #000; font-weight: 500; font-size: 1.9rem; line-height: 2.6rem;}
+    .content-wrap { width: 1050px !important;} /* 프린트 영역 크기 조정 */
+    .briefing-wrap .btn-wrap, .flt-check, .flt-fin, .tbl-btn, .tab-wrap.notice-wrap .tab-menu, .tbl-duty colgroup, .flight-btns, .cont-search{display: none;}
+    .briefing-wrap {width: 100%;}
+    .flt-sheet {margin-top: 0; margin-bottom: 0px; padding-top: 15px; padding-bottom: 15px; border-top: 2px solid #0082ee;}
+    .flt-no .date:before {display: none;}
+    .flt-no .flt strong {font-size: 6rem !important; line-height: 100%; margin-bottom: 0;}
+    .flt-route {padding-bottom: 5px;}
+    .flt-route .from strong, .flt-route .to strong {font-size: 2.5rem;}
+    .flt-route .distance {padding-top: 5px;}
+    .flt-info .desc {margin: 8px 0 15px; padding-bottom: 10px;}
+    .info-list li {margin-top: 0;}
+    .flt-sheet .flt-no {padding: 0 25px;}
+    .flt-sheet .flt-info {padding: 0 15px;}
+    .flt-no .date {margin-top: 14px;}
+    .flt-no .date strong {font-size: 5rem; line-height: 60%; margin-bottom: 5px;letter-spacing: -2px; padding: 5px 0;}
+    .flt-no .date i { font-style: normal; font-size: 2.5rem;}
+    .flt-no .date span {font-size: 2.5rem !important; display: inline-block; letter-spacing: -1px; }
+    .tbl-wrap table td, .tbl-wrap .tbl-service td {padding: 5px 0;}
+    .service-meal li {padding: 5px 10px;}
+    .tbl-toggle caption, h4.tit {margin-top:15px; margin-bottom: 5px; padding-left: 0;}
+    .tbl-toggle caption {padding-bottom: 5px;}
+    .briefing-wrap .btn-wrap + .btn-wrap + h4.tit {margin-top: 10px;}
+    .tab-container {padding-top: 0;}
+    .tbl-top + .bg-box {margin-top: 0px;}
+    .bg-box {margin-bottom: 10px; padding: 10px 30px; background: #f7f7f7;}
+    .box {padding: 10px 15px; box-sizing: border-box;}
+    .service {margin-bottom: 20px;}
+    .service-th {border-bottom: 1px solid #eee; margin-bottom: 10px; line-height: 1.4rem;}
+    .service-th li {padding-bottom: 10px;}
+    .service-cont li {padding-bottom: 10px;}
+    .tbl-top + .scroll-wrap {margin-top: 0;}
+    .justify-list.type2 ul, .tbl-wrap .tbl-service {min-width: unset !important; width: 100%;}
+    .tab-container {padding-left: 10px;}
+    .form-list-wrap .form-tbl.view li {height: auto;}
+    .form-list-wrap .form-tbl.view li label, .form-list-wrap .form-tbl.view li span.label {line-height: 3.2rem; font-size: 1.9rem; padding-left: 10px;}
+    .tbl-wrap table th {padding: 5px 0;}
+    .service-th li:last-child, .service-cont li p:last-child {width: 350px;}
+    .justify-list.type2 {overflow-x: auto;}
+    .justify-list.type2 .tit {margin-left: 0; padding-left: 0px; box-sizing: border-box;}
+    .justify-list.type2 ul {min-width: unset; width: 100%; box-sizing: border-box;}
+    .justify-list > ul > li {box-sizing: border-box;}
+    .justify-list.type2 li ul {padding: 0 5px 5px 0; box-sizing: border-box;}
+    .info-list li {width: 30% !important; margin-top: 0; font-size: 2rem !important;}
+    .info-list li:nth-child(4) .label ,.info-list li:nth-child(5) .label, .info-list li:nth-child(6) .label, .info-list li:nth-child(7) .label, .info-list li:nth-child(8) .label {display: block !important; }
+    .info-list li:nth-child(6) { width: 35% !important; }
+    .info-list li:nth-child(7) {clear: both;}
+    .crew-list li {margin-top: 5px; font-size: 1.9rem; }
+    .tutorial-no-data {display:none;}
+    .print-tutorial-no-data {display:table-row}
+    .service-cont li:before, .service-cont:after {border-color: #000;}
+    .btn.confirm-s {color: #fff !important;}
+    .btn.confirm-s.checked {color: #0082ee !important;}
+    .bg-box .state {top: 50%; right:10px; margin-top: -12px;}
+    .tbl-wrap table, 
+    .tab-container,
+    .form-list-wrap .form-tbl,
+    .service,
+    .justify-list.type2 {border-top: 1px solid #000;}
+    .flt-route .from:after, .flt-route .to:before {top: 8px;}
+    .flt-route .distance {top: 28px;}
+    .form-list-wrap .form-tbl.view li label, 
+    .form-list-wrap .form-tbl.view li span.label {padding-left: 10px;line-height: 3.8rem;}
+
+    .flt-sheet {display: table; vertical-align: middle;}
+    .flt-sheet .flt-no, .flt-sheet .flt-info {float: none;vertical-align: middle;display: table-cell; }
+    .flt-sheet .flt-no { padding: 0 10px;  width: 290px; }
+    .tbl-wrap.half table + table { margin-left: 15px !important;}
+    .tbl-wrap.half table { width: calc(50% - 8px) !important; }
+    .crew-list li { font-size: 1.7rem; }
+    .service-meal li .step {margin-bottom: 10px;}
+    /* font-setting */
+    .flt-info .desc,
+    .flt-route .distance,
+    .flt-no .flt strong,
+    .flt-no .flt span,
+    .flt-no .date span,
+    .accent2,
+    .crew-list li,
+    .justify-list .cont-accent span,
+    .info-list li .label ,
+    .form-list-wrap .form-tbl.view li p, 
+    .form-list-wrap .form-tbl.view li div,
+    .service-cont li p:nth-child(2),
+    .service-meal li .step,
+    .service-meal li span,
+    .service-cont li p:last-child,
+    .bg-box .state,
+    .box {color: #000 !important;font-size: 1.9rem;}
+    /* 18px */
+    .tbl-toggle caption,
+    .justify-list.type2 .tit,
+    .flt-no .flt span,
+    h4.tit
+    {font-size: 1.9rem; line-height: 2.8rem; margin: 5px 0;}
+    /* 16px */
+    .box,
+    .tbl-wrap table th,
+    .tbl-wrap table td,
+    .flt-no .flt span,
+    .flt-no .date span,
+    .service-meal li .step,
+    .notice-wrap .tab-cont .tit {font-size: 1.9rem; line-height: 2.4rem;}
+    /* 14px */
+    .flt-info .desc,
+    .service-wine li span {font-size: 1.9rem; line-height: 2.2rem;}
+    .briefing-wrap .form-list-wrap { margin-top: 20px; }
+    .service-meal li { font-size: 1.9rem; }
+    .service-meal li a, .service-wine li a { font-size: 1.9rem; }
+    .tbl-wrap .tbl-basic td { padding: 10px 5px;}
+    .tbl-duty td.name { text-align: center; }
+    .bul-list>li { font-size: 1.9rem;}
+    .flt-sheet strong { font-size: 2.0rem;}
+    .info-list li span { font-size: 1.9rem;}
+    .ife li + li { margin-left: 20px; }
+    .service-cont li p:first-child{ width: 350px; }
+}
+
+
+
+

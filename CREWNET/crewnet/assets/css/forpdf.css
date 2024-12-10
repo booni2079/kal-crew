@@ -1,0 +1,117 @@
+/*body, input, select, textarea, button { font-size: 1.9rem; }*/
+.brf-pdf, .brf-pdf input,.brf-pdf select,.brf-pdf textarea,.brf-pdf button { font-size: 1.9rem; }
+.brf-pdf .crew-list li { font-size: 1.9rem; }
+.brf-pdf.content-wrap { width: 1250px !important;}
+.brf-pdf.briefing-wrap .btn-wrap, .brf-pdf .flt-check, .brf-pdf .flt-fin, .brf-pdf .tbl-btn, .brf-pdf .tab-wrap.notice-wrap .tab-menu, .brf-pdf .tbl-duty colgroup, .brf-pdf .flight-btns, .brf-pdf .cont-search{display: none;}
+.brf-pdf.briefing-wrap {width: 100%;}
+.brf-pdf .flt-sheet {margin-top: 0; margin-bottom: 0px; padding-top: 10px; padding-bottom: 10px;}
+.brf-pdf .flt-no .date:before {display: none;}
+.brf-pdf .flt-no .flt strong {line-height: 100%; font-size: 6rem !important; margin-bottom: 0;}
+.brf-pdf .flt-no .date i { font-style: normal; font-size: 2.5rem;}
+.brf-pdf .flt-no .date span {font-size: 2.5rem !important; display: inline-block; letter-spacing: -1px; }
+.brf-pdf .flt-route {padding-bottom: 5px;}
+.brf-pdf .flt-no .flt strong,.brf-pdf .flt-route .from strong,.brf-pdf .flt-route .to strong {font-size: 2.5rem;}
+.brf-pdf .flt-route .distance {padding-top: 5px;}
+.brf-pdf .flt-info .desc {margin: 8px 0 20px;}
+.brf-pdf .flt-sheet .flt-no {padding: 0 39px;}
+.brf-pdf .flt-sheet .flt-info {padding: 0 18px;}
+.brf-pdf .flt-no .date {margin-top: 14px;}
+.brf-pdf .flt-no .date strong {font-size: 5rem;line-height: 100%;margin-bottom: 5px;letter-spacing: -1.5px;}
+.brf-pdf .tbl-wrap table td,.brf-pdf .service-meal li,.brf-pdf .tbl-wrap .tbl-service td {padding: 5px 0;}
+.brf-pdf .tbl-toggle caption,.brf-pdf h4.tit {margin-top:10px; margin-bottom: 5px; padding-left: 0;}
+.brf-pdf .tbl-toggle caption {padding-bottom: 5px;}
+.brf-pdf.briefing-wrap .btn-wrap + .btn-wrap + h4.tit {margin-top: 25px;}
+.brf-pdf .tab-container {padding-top: 0;}
+.brf-pdf .tbl-top + .bg-box {margin-top: 0px;}
+.brf-pdf .bg-box {margin-bottom: 10px; padding: 10px 30px; background: #f7f7f7;}
+.brf-pdf .box {padding: 10px 15px; box-sizing: border-box;}
+.brf-pdf .service {margin-bottom: 20px;}
+.brf-pdf .service-th {border-bottom: 1px solid #eee; margin-bottom: 10px; line-height: 1.4rem;}
+.brf-pdf .service-th li {padding-bottom: 10px;}
+.brf-pdf .service-cont li {padding-bottom: 10px;}
+.brf-pdf .tbl-top + .scroll-wrap {margin-top: 0;}
+.brf-pdf .justify-list.type2 ul,.brf-pdf .tbl-wrap .tbl-service {min-width: unset !important; width: 100%;}
+.brf-pdf .tab-container {padding-left: 10px;}
+.brf-pdf .form-list-wrap .form-tbl.view li {height: auto;}
+.brf-pdf .form-list-wrap .form-tbl.view li label,.brf-pdf .form-list-wrap .form-tbl.view li span.label {line-height: 3.2rem; font-size: 1.8rem; padding-left: 10px;}
+.brf-pdf .tbl-wrap table th {padding: 7px 0;}
+.brf-pdf .service-th li:last-child,.brf-pdf .service-cont li p:last-child {width: 350px;}
+.brf-pdf .justify-list.type2 {overflow-x: auto;}
+.brf-pdf .justify-list.type2 .tit { margin: 5px 0; padding-left: 0px; box-sizing: border-box;}
+.brf-pdf .justify-list.type2 ul {min-width: unset; width: 100%; box-sizing: border-box;}
+.brf-pdf .justify-list > ul > li {box-sizing: border-box;}
+.brf-pdf .justify-list.type2 li ul {padding: 0 5px 5px 0; box-sizing: border-box;}
+.brf-pdf .info-list li {width: 30% !important; margin-top: 0; font-size: 2rem !important;}
+.brf-pdf .info-list li:nth-child(4) .label ,.brf-pdf .info-list li:nth-child(5) .label,.brf-pdf .info-list li:nth-child(6) .label,.brf-pdf .info-list li:nth-child(7) .label,.brf-pdf .info-list li:nth-child(8) .label {display: block !important; }
+.brf-pdf .info-list li:nth-child(6) { width: 35% !important; }
+.brf-pdf .info-list li:nth-child(7) {clear: both;}
+.brf-pdf .crew-list li {margin-top: 5px;}
+.brf-pdf .tutorial-no-data {display:none;}
+.brf-pdf .print-tutorial-no-data {display:table-row}
+.brf-pdf .service-cont li:before,.brf-pdf .service-cont:after {border-color: #000;}
+.brf-pdf .btn.confirm-s {color: #fff !important;}
+.brf-pdf .btn.confirm-s.checked {color: #0082ee !important;}
+.brf-pdf .bg-box .state {top: 50%; right:10px; margin-top: -12px;}
+.brf-pdf .tbl-wrap table,
+.brf-pdf .tab-container,
+.brf-pdf .form-list-wrap .form-tbl,
+.brf-pdf .service,
+.brf-pdf .justify-list.type2 {border-top: 1px solid #000;}
+.brf-pdf .flt-route .from:after,.brf-pdf .flt-route .to:before {top: 8px;}
+.brf-pdf .flt-route .distance {top: 28px;}
+.brf-pdf .form-list-wrap .form-tbl.view li label,
+.brf-pdf .form-list-wrap .form-tbl.view li span.label {padding-left: 10px;line-height: 3.8rem;}
+
+.brf-pdf .flt-sheet {display: table; vertical-align: middle;}
+.brf-pdf .flt-sheet .flt-no,.brf-pdf .flt-sheet .flt-info {float: none;vertical-align: middle;display: table-cell;}
+.brf-pdf .flt-sheet .flt-no {padding: 0 39px;width: 250px;}
+
+.brf-pdf .service-meal li .step {margin-bottom: 10px;}
+/* font-setting */
+.brf-pdf .flt-info .desc,
+.brf-pdf .flt-route .distance,
+.brf-pdf .flt-no .flt strong,
+.brf-pdf .flt-no .flt span,
+.brf-pdf .flt-no .date span,
+.brf-pdf .accent2,
+.brf-pdf .crew-list li,
+.brf-pdf .justify-list .cont-accent span,
+.brf-pdf .info-list li .label ,
+.brf-pdf .form-list-wrap .form-tbl.view li p,
+.brf-pdf .form-list-wrap .form-tbl.view li div,
+.brf-pdf .service-cont li p:nth-child(2),
+.brf-pdf .service-meal li .step,
+.brf-pdf .service-meal li span,
+.brf-pdf .service-cont li p:last-child,
+.brf-pdf .bg-box .state,
+.brf-pdf .box {color: #000 !important;font-size: 1.9rem; }
+/* 18px */
+.brf-pdf .tbl-toggle caption,
+.brf-pdf .justify-list.type2 .tit,
+.brf-pdf .flt-no .flt span,
+.brf-pdf h4.tit
+{font-size: 1.9rem; line-height: 2.8rem;}
+/* 16px */
+.brf-pdf .box,
+.brf-pdf .tbl-wrap table th,
+.brf-pdf .tbl-wrap table td,
+.brf-pdf .flt-no .flt span,
+.brf-pdf .flt-no .date span,
+.brf-pdf .service-meal li .step,
+.brf-pdf .notice-wrap .tab-cont .tit {font-size: 1.9rem; line-height: 2.4rem;}
+/* 14px */
+.brf-pdf .flt-info .desc,
+.brf-pdf .service-wine li span {font-size: 1.9rem; line-height: 2.2rem;}
+.brf-pdf .form-list-wrap.type2 .form-tbl {width:100%; font-size: inherit;}
+.brf-pdf .form-list-wrap.type2 th,.brf-pdf .form-list-wrap.type2 td {padding: 10px 0 10px 8px; border: none;border-bottom: 1px solid #ededed; text-align: left; font-size: 1.8rem;}
+.brf-pdf .form-list-wrap.type2 th {background: #f7f7f7; padding-left: 22px;}
+.brf-pdf.briefing-wrap .form-list-wrap { margin-top: 20px; }
+.brf-pdf .service-meal li { font-size: 1.9rem; }
+.brf-pdf .service-meal li a ,.brf-pdf .service-wine li a { font-size: 1.9rem; }
+.brf-pdf .tbl-wrap .tbl-basic td { padding: 10px 5px;}
+.brf-pdf .tbl-duty td.name { text-align: center; }
+.brf-pdf .flt-sheet .flt-no { padding: 0 25px; }
+.brf-pdf .info-list li .label { font-size: 1.9rem;}
+.brf-pdf .tbl-wrap.half table + table { margin-left: 15px !important;}
+.brf-pdf .tbl-wrap.half table { width: calc(50% - 8px) !important; }
+.brf-pdf .crew-list li:after { margin: 0 8px -1px 8px; }

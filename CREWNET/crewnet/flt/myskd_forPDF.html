@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=1370, user-scalable=no">
+		<title>MY STAFF SKD - CREWNET</title>
+		<link rel="stylesheet" href="../assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/content.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+		<link rel="stylesheet" href="../assets/css/print.css">
+		<script type="text/javascript" src="../assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../assets/script/common.js"></script>
+		<style>			
+			.content-wrap { width: 1250px !important;}
+			.box {padding: 10px 15px; box-sizing: border-box;}
+			.form-list-wrap .form-tbl.view li {height: auto;}
+			.form-list-wrap .form-tbl.view li label, .form-list-wrap .form-tbl.view li span.label {line-height: 3.2rem;}
+			.tbl-wrap table th {padding: 7px 0;}
+			.service-th li:last-child, .service-cont li p:last-child {width: 350px;}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="content-wrap  skd-wrap">
+				<ul class="box-list col4">
+					<li>
+						<div>
+							<strong>name</strong>
+							<p>
+								<span>kim sangkung</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>emp id</strong>
+							<p>
+								<span>1700403</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>phone number</strong>
+							<p>
+								<span>01033334444</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>team</strong>
+							<p>
+								<span>0112</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+				<!-- //box-list -->
+
+				<div class="tbl-wrap half">
+					<table class="tbl-toggle">
+						<caption>actual flight times</caption>
+						<colgroup>
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">latest 30 days</th>
+								<th scope="col">current month</th>
+								<th scope="col">latest 90 days</th>
+								<th scope="col">latest 1 year</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-label="latest 30 days">79:36</td>
+								<td data-label="current month">79:36</td>
+								<td data-label="latest 90 days">301:16</td>
+								<td data-label="latest 1 year">718:07</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tbl-toggle">
+						<caption>deadhead times</caption>
+						<colgroup>
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+							<col style="width: 25%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">latest 30 days</th>
+								<th scope="col">current month</th>
+								<th scope="col">latest 90 days</th>
+								<th scope="col">latest 1 year</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-label="latest 30 days">79:36</td>
+								<td data-label="current month">79:36</td>
+								<td data-label="latest 90 days">301:16</td>
+								<td data-label="latest 1 year">718:07</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //tbl-wrap -->
+
+				<div class="calendar-wrap">
+					<div class="full-calendar skd-calendar"> <!-- my skd 의 달력에는 class="skd-calendar" 추가 -->
+						<div class="skd-header">
+							<p class="calendar-top">
+								<strong class="mo-hide">2020.06.15 ~ 2020.06.21</strong>
+								<strong class="pc-hide">2020.06</strong>
+								<button class="prev">prev</button>
+								<button class="next">next</button>
+							</p>
+							
+							<span class="calendar-datepicker">
+								<input type="text" class="calendar" title="myskd 날짜 검색" id="dpskdcal">
+							</span>
+							<button class="btn-today">오늘</button>
+						</div>
+
+						<!-- 달력 시작 -->
+						<div class="tbl-calendar">
+							<table>
+								<caption>MY STAFF SKD</caption>
+								<thead>
+									<tr>
+										<th scope="col"><span>S</span>UN</th>
+										<th scope="col"><span>M</span>ON</th>
+										<th scope="col"><span>T</span>UE</th>
+										<th scope="col"><span>W</span>ED</th>
+										<th scope="col"><span>T</span>HU</th>
+										<th scope="col"><span>F</span>RI</th>
+										<th scope="col"><span>S</span>AT</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="other-month">
+											<button class="day">31</button>
+										</td>
+										<td>
+											<button class="day start today">  <!-- 1일 일 경우 class="start" 추가 / 오늘날짜 class="today" -->
+												<strong>6/</strong> <!-- 월 표시 : strong 태그 추가 -->
+												<span>1</span> <!-- 1일의 경우 일자를 span 에 넣음 -->
+											</button>
+										</td>
+										<td>
+											<button class="day">2</button>
+										</td>
+										<td>
+											<button class="day">3</button>
+										</td>
+										<td>
+											<button class="day">4</button>
+										</td>
+										<td>
+											<button class="day">5</button>
+										</td>
+										<td>
+											<button class="day">6</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button class="day">7</button>
+										</td>
+										<td>
+											<button class="day">8</button>
+											<dl>
+												<!-- 근태/위규 : class="type1" / 휴가 : class="type2" / 대기 : class="type3" / 교육 : class="type4" / 기타 : class="type5" / LO = class="type6" -->
+												<dt class="type1">KE 1602</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+												<dt class="type1">KE 1602</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">9</button>
+											<dl>
+												<dt class="type2">ATDO</dt>
+												<dd><strong>icn</strong><span>00:00 - 23:59</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">10</button>
+											<dl>
+												<dt class="type3">yvw</dt>
+												<dd><strong>icn</strong><span>00:00 - 23:59</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">11</button>
+											<dl>
+												<dt class="type1">KE 0023</dt>
+												<dd><strong>icn - sfo</strong><span>08:18 - 09:19</span></dd>
+												<dt class="type6">lo</dt>
+												<dd><strong>sfo - sfo</strong><span>09:25 - 23:59</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">12</button>
+											<dl>
+												<dt class="type7">KE 0023<span>tvl</span></dt>
+												<dd><strong>icn - sfo</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">13</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button class="day">14</button>
+										</td>
+										<td>
+											<button class="day">15</button>
+											<dl>
+												<dt class="type1">KE1101<span>TVL</span></dt>
+												<dd>
+													<strong>GMP - PUS</strong>
+													<span>07:03 - 08:03</span>
+												</dd>
+												<dt class="type2">KE1101<span>TVL</span></dt>
+												<dd>
+													<strong>GMP - PUS</strong>
+													<span>07:03 - 08:03</span>
+												</dd>
+												<dt class="type3">KE1101<span>TVL</span></dt>
+												<dd>
+													<strong>GMP - PUS</strong>
+													<span>07:03 - 08:03</span>
+												</dd>
+												
+												<dt class="type4">KE1108<span>TVL</span></dt>
+												<dd>
+													<strong>GMP - PUS </strong>
+													<span>07:03 - 08:03</span>
+												</dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">16</button>
+										</td>
+										<td>
+											<button class="day today">17</button> <!-- 오늘날짜 class="today" -->
+										</td>
+										<td>
+											<button class="day">18</button>
+										</td>
+										<td>
+											<button class="day on">19</button> <!-- 일자를 클릭했을때 class="on" 추가됨 -->
+										</td>
+										<td>
+											<button class="day">20</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button class="day">21</button>
+										</td>
+										<td>
+											<button class="day">22</button>
+											<dl>
+												<dt class="type4">edu</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">23</button>
+											<dl>
+												<dt class="type5">dsp</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">24</button>
+											<dl>
+												<dt class="type7">dsp</dt>
+												<dd><strong>gmp - cju</strong><span>08:18 - 09:19</span></dd>
+											</dl>
+										</td>
+										<td>
+											<button class="day">25</button>
+										</td>
+										<td>
+											<button class="day">26</button>
+										</td>
+										<td>
+											<button class="day">27</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button class="day">28</button>
+										</td>
+										<td>
+											<button class="day">29</button>
+										</td>
+										<td>
+											<button class="day">30</button>
+										</td>
+										<td class="other-month">
+											<button class="day start">  <!-- 1일 일 경우 class="start" 추가 -->
+												<strong>7/</strong> <!-- 월 표시 : strong 태그 추가 -->
+												<span>1</span> <!-- 1일의 경우 일자를 span 에 넣음 -->
+											</button>
+										</td>
+										<td class="other-month">
+											<button class="day">2</button>
+										</td>
+										<td class="other-month">
+											<button class="day">3</button>
+										</td>
+										<td class="other-month">
+											<button class="day">4</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// 달력 끝 -->
+						<button class="toggle">toggle</button>
+					</div>
+					<!-- //full-calendar -->
+					
+					<div class="calendar-info skd-info"> <!-- my skd 페이지에서는 class="skd-info" 추가 -->
+						<dl>
+							<dt>
+								<span>6월</span>
+								<strong>8</strong>
+							</dt>
+							<!-- 근태/위규 : class="type1" / 휴가 : class="type2" / 대기 : class="type3" / 교육 : class="type4" / 기타 : class="type5" / LO = class="type6" -->
+							<dd class="type1">
+								<span>KE 1602</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+							<dd class="type1">
+								<span class="">KE 1602</span>
+								<p>
+									<span class="">cju- gmp</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<span>6월</span>
+								<strong>9</strong>
+							</dt>
+							<dd class="type2">
+								<span class="">atdo</span>
+								<p>
+									<span class="">icn </span>
+									<span class="time">/ 00:00 - 23:59</span>
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<span>6월</span>
+								<strong>10</strong>
+							</dt>
+							<dd class="type3">
+								<span class="">yvw</span>
+								<p>
+									<span class="">icn </span>
+									<span class="time">/ 00:00 - 23:59</span>
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<span>6월</span>
+								<strong>11</strong>
+							</dt>
+							<!-- 210331 상세 내역이 있는 경우-->
+							<dd class="type1 has__data __active"> <!-- 열린 상태일때 __active 클래스 추가-->
+								<span class="">KE 1602</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+							<dd class="has__data-box __active">
+								<div class="__details">
+									<div class="__details-box">
+										<div class="__details-title __flex __jcsb">
+											<p class="-name">Lim, kumhyun</p>
+											<p class="-regnumb">0054104</p>
+										</div>
+										<div>
+											<ul class="__details-list __flex">
+												<li>FLY</li>
+												<li>0408</li>
+												<li>TP</li>
+												<li>SP15</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								
+								<div class="__details">
+									<div class="__details-box">
+										<div class="__details-title __flex __jcsb">
+											<p class="-name">shibahara, felelfelelfelel</p>
+											<p class="-regnumb">0054104</p>
+										</div>
+										<div>
+											<ul class="__details-list __flex">
+												<li>FLY</li>
+												<li>0408</li>
+												<li>TP</li>
+												<li>SP15</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="__details">
+									<div class="__details-box">
+										<div class="__details-title __flex __jcsb">
+											<p class="-name">Lim, kumhyun</p>
+											<p class="-regnumb">0054104</p>
+										</div>
+										<div>
+											<ul class="__details-list __flex">
+												<li>FLY</li>
+												<li>0408</li>
+												<li>TP</li>
+												<li>SP15</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</dd>
+
+
+							
+							<dd class="type2 has__data"> <!-- 닫힌 상태 -->
+								<span class="">KE 1602</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+							<dd class="has__data-box">
+								<div class="__details">
+									<div class="__details-box">
+										<div class="__details-title __flex __jcsb">
+											<p class="-name">Lim, kumhyun</p>
+											<p class="-regnumb">0054104</p>
+										</div>
+										<div>
+											<ul class="__details-list __flex">
+												<li>FLY</li>
+												<li>0408</li>
+												<li>TP</li>
+												<li>SP15</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								
+								<div class="__details">
+									<div class="__details-box">
+										<div class="__details-title __flex __jcsb">
+											<p class="-name">shibahara, felelfelelfelel</p>
+											<p class="-regnumb">0054104</p>
+										</div>
+										<div>
+											<ul class="__details-list __flex">
+												<li>FLY</li>
+												<li>0408</li>
+												<li>TP</li>
+												<li>SP15</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="__details">
+									<div class="__details-box">
+										<div class="__details-title __flex __jcsb">
+											<p class="-name">Lim, kumhyun</p>
+											<p class="-regnumb">0054104</p>
+										</div>
+										<div>
+											<ul class="__details-list __flex">
+												<li>FLY</li>
+												<li>0408</li>
+												<li>TP</li>
+												<li>SP15</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</dd>
+							<!-- 210331 상세 내역이 있는 경우-->
+							<dd class="type6">
+								<span class="">lo</span>
+								<p>
+									<span class="">sfo - sfo</span>
+									<span class="time">/ 00:00 - 23:59</span>
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<span>6월</span>
+								<strong>22</strong>
+							</dt>
+							<dd class="type4">
+								<span class="">edu</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<span>6월</span>
+								<strong>23</strong>
+							</dt>
+							<dd class="type5">
+								<span class="">dsp</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<span>6월</span>
+								<strong>24</strong>
+							</dt>
+							<dd class="type7">
+								<span class="">lo (tvl)</span>
+								<p>
+									<span class="">gmp - cju</span>
+									<span class="time">/ 08:15 - 09:19</span>
+								</p>
+							</dd>
+						</dl>
+					</div>
+					<!-- calendar-info -->
+				</div>
+				<!-- //calendar-wrap -->
+			</div>
+			<!-- //content-wrap -->
+		</div>
+		<!-- //container -->
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<title>REPORT LIST - CREWNET</title>
+		<link rel="stylesheet" href="../assets/vendor/jquery-ui/jquery-ui.min.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/content.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick.css">
+		<link rel="stylesheet" href="../assets/vendor/slick/slick-theme.css">
+		<script type="text/javascript" src="../assets/vendor/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../assets/vendor/slick/slick.min.js"></script>
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="./assets/css/common_ie9.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="./assets/vendor/plugins/html5shiv.min.js"></script>
+		<script src="./assets/vendor/plugins/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../assets/script/common.js"></script>
+		<style>
+			.report-list {
+				width: 1920px;
+				margin: 0 auto;
+			}
+			.report-list img {
+				max-width: 100%;
+			}
+			.ta, .mo {
+				display: none;
+			}
+			@media screen and (max-width:1366px) {
+				.report-list {
+					width: 100%;
+				}
+				.pc {
+					display: none;
+				}
+				.ta {
+					display: block;
+				}
+			}
+			@media screen and (max-width:767px) {
+				.ta {
+					display: none;
+				}
+				.mo {
+					display: block;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<p class="report-list">
+			<img src="../assets/img/temp/report_list.png" alt="report list pc화면" class="pc">
+			<img src="../assets/img/temp/report_list01_ta.png" alt="report list tablet화면" class="ta">
+			<img src="../assets/img/temp/report_list01_mo.png" alt="report list mobile화면" class="mo">
+		</p>
+	</body>
+</html>
